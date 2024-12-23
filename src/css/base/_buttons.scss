@@ -1,0 +1,146 @@
+.button {
+    align-items: center;
+    border-radius: 24px;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 16px;
+    font-weight: 400;
+    justify-content: center;
+    line-height: 1;
+    padding: 16px 24px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+
+    &.disabled,
+    &:disabled,
+    &[data-disabled] {
+        background-color: var(--gray_white);
+        color: var(--gray_black);
+        cursor: default;
+        pointer-events: none;
+    }
+
+    &--primary {
+        background-color: var(--active);
+        border: none;
+        color: #fff;
+
+        &:not(.disabled),
+        &:not(:disabled),
+        &:not([data-disabled]) {
+            @include hover {
+                background-color: var(--active-2);
+                color: #fff;
+            }
+        }
+    }
+
+    &--secondary {
+        background-color: transparent;
+        border: 1px solid var(--active);
+        color: #fff;
+
+        &:not(.disabled),
+        &:not(:disabled),
+        &:not([data-disabled]) {
+            @include hover {
+                background-color: var(--active);
+                color: #fff;
+            }
+        }
+    }
+}
+
+a.button--primary {
+    &:not(.disabled),
+    &:not(:disabled),
+    &:not([data-disabled]) {
+        @include hover {
+            color: #fff;
+        }
+    }
+}
+
+a.button--white {
+    &:not(.disabled),
+    &:not(:disabled),
+    &:not([data-disabled]) {
+        @include hover {
+            color: var(--black_dark);
+        }
+    }
+}
+
+.buy-button {
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--black_blue);
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 12px;
+    font-weight: 400;
+    gap: 6px;
+    justify-content: space-between;
+    line-height: 1.3;
+    min-height: 48px;
+    padding: 12px 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+    @media(min-width: $fhd) {
+        font-size: 14px;
+        min-height: 56px;
+    }
+
+    &:not(.disabled),
+    &:not(:disabled),
+    &:not([data-disabled]) {
+        @include hover {
+            background-color: var(--ocher);
+            color: #fff;
+        }
+    }
+
+    &--big {
+        @media(min-width: $fhd) {
+            font-size: 16px;
+            min-height: 72px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        .buy-button__prices {
+            @media(min-width: $fhd) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &__prices {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 11px;
+        @media(min-width: $lg) {
+            font-size: 12px;
+        }
+        @media(min-width: $fhd) {
+            font-size: 14px;
+        }
+    }
+
+    &__price {
+        font-weight: 600;
+    }
+
+    &__total {
+        opacity: 0.4;
+        text-decoration: line-through;
+    }
+}

@@ -1,0 +1,45 @@
+@mixin scrollbar {
+    scrollbar-width: thin;
+}
+@mixin list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+@mixin button-reset {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0;
+}
+@mixin hover {
+    @media (any-hover: hover) {
+        &:hover {
+            @content;
+        }
+    }
+}
+@mixin active {
+    @media (any-hover: hover) {
+        &:active {
+            @content;
+        }
+    }
+}
+@mixin active-area {
+    &::after {
+        content: '';
+        height: 40px;
+        left: 50%;
+        min-width: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        z-index: 1;
+        @media(min-width: $sm) {
+            height: 40px;
+            min-width: 40px;
+        }
+    }
+}

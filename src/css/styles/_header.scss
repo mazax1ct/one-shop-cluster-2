@@ -1,0 +1,110 @@
+.header {
+    background: linear-gradient(90deg, #151438 0%, #19183A 53.5%, #28193B 100%);
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    @media(min-width: $md) {
+        position: absolute;
+    }
+
+    &::after {
+        background: linear-gradient(90deg, rgba(26,15,77,1) 0%, rgba(55,21,90,1) 100%);
+        bottom: 0;
+        content: '';
+        height: 1px;
+        left: 0;
+        position: absolute;
+        top: auto;
+        width: 100%;
+        z-index: 1;
+    }
+
+    &__inner {
+        align-items: center;
+        display: flex;
+        gap: 8px;
+        min-height: var(--header_min_height);
+    }
+
+    &__menu-block {
+        align-items: center;
+        display: flex;
+    }
+
+    &__logo {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.5;
+        @media(min-width: $md) {
+            font-size: 24px;
+            line-height: 1;
+        }
+        @include hover {
+            color: #fff;
+        }
+    }
+
+    &__burger {
+        @include button-reset;
+        align-items: center;
+        display: flex;
+        height: 48px;
+        justify-content: center;
+        width: 48px;
+        @include hover {
+            svg {
+                fill: var(--func-light);
+            }
+        }
+        @media(max-width: $md - 0.02px) {
+            margin-left: auto;
+        }
+
+        svg {
+            fill: var(--func);
+            height: 14px;
+            transition: fill 0.3s;
+            width: 14px;
+            @media(min-width: $md) {
+                height: 24px;
+                width: 24px;
+            }
+        }
+    }
+
+    &__menu {
+        margin-left: auto;
+        position: relative;
+        z-index: 2;
+        @media(max-width: $md - 0.02px) {
+            display: none;
+        }
+    }
+
+    &__menu-list {
+        @include list-reset;
+        display: flex;
+    }
+
+    &__menu-item {}
+
+    &__menu-link {
+        border-bottom: 1px solid transparent;
+        display: block;
+        color: var(--func);
+        font-size: 15px;
+        font-weight: 300;
+        padding: 28px 16px 24px;
+        @include hover {
+            color: #fff;
+        }
+
+        &.is-active {
+            border-bottom-color: var(--active-2);
+            color: #fff;
+        }
+    }
+}

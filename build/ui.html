@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <title>UI</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#101010">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="preload" href="fonts/subset-GeologicaRoman-ExtraLight.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/subset-GeologicaRoman-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/subset-GeologicaRoman-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/subset-GeologicaRoman-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/subset-GeologicaRoman-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/subset-GeologicaRoman-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="page">
+
+    <header class="header">
+        <div class="header__inner container">
+            <a class="header__logo" href="#">
+                Кластер 2.0
+            </a>
+    
+            <button class="header__burger" type="button">
+                <svg aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#burger_icon" />
+                </svg>
+            </button>
+    
+            <div class="header__menu">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">Начало</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link is-active" href="#">Кластер</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">Баланс</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">Калькулятор</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">Помощь</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="page__content">
+        <div class="container">
+            <div style="margin-bottom: 60px;">
+                <h2>Чекбоксы</h2>
+            
+                <label class="checkbox">
+                    <input type="checkbox" name="cb_1">
+                    <span class="checkbox__icon"></span>
+                    <span class="checkbox__text">ВЫБРАТЬ МАТЕРИАЛ <span class="qnt">3</span></span>
+                </label>
+            
+                <label class="checkbox">
+                    <input type="checkbox" name="cb_2" checked>
+                    <span class="checkbox__icon"></span>
+                    <span class="checkbox__text">ВЫБРАТЬ МАТЕРИАЛ <span class="qnt">3</span></span>
+                </label>
+            
+                <label class="checkbox">
+                    <input type="checkbox" name="cb_3" disabled>
+                    <span class="checkbox__icon"></span>
+                    <span class="checkbox__text">ВЫБРАТЬ МАТЕРИАЛ <span class="qnt">3</span></span>
+                </label>
+            
+                <label class="checkbox">
+                    <input type="checkbox" name="cb_4" disabled checked>
+                    <span class="checkbox__icon"></span>
+                    <span class="checkbox__text">ВЫБРАТЬ МАТЕРИАЛ <span class="qnt">3</span></span>
+                </label>
+            
+                <label class="checkbox checkbox--color">
+                    <input type="checkbox" name="cb_5">
+                    <span class="checkbox__icon"></span>
+                    <span class="checkbox__text"><span class="color"><span class="color__icon" style="background-color: #00487D"></span>Синий</span> <span class="qnt">3</span></span>
+                </label>
+            
+                <label class="checkbox checkbox--color">
+                    <input type="checkbox" name="cb_6" checked>
+                    <span class="checkbox__icon"></span>
+                    <span class="checkbox__text"><span class="color"><span class="color__icon" style="background-color: #00487D"></span>Синий</span> <span class="qnt">3</span></span>
+                </label>
+            
+                <label class="checkbox checkbox--color">
+                    <input type="checkbox" name="cb_7" disabled>
+                    <span class="checkbox__icon"></span>
+                    <span class="checkbox__text"><span class="color"><span class="color__icon" style="background-color: #00487D"></span>Синий</span> <span class="qnt">3</span></span>
+                </label>
+            
+                <label class="checkbox checkbox--color">
+                    <input type="checkbox" name="cb_8" checked disabled>
+                    <span class="checkbox__icon"></span>
+                    <span class="checkbox__text"><span class="color"><span class="color__icon" style="background-color: #00487D"></span>Синий</span> <span class="qnt">3</span></span>
+                </label>
+            </div>
+
+            <div style="margin-bottom: 60px;">
+                <h2>Радио-кнопки</h2>
+            
+                <label class="radio">
+                    <input type="radio" name="r" value="1">
+                    <span class="radio__icon"></span>
+                    <span class="radio__text">По умолчанию</span>
+                </label>
+            
+                <label class="radio">
+                    <input type="radio" name="r" value="2" checked>
+                    <span class="radio__icon"></span>
+                    <span class="radio__text">По популярности</span>
+                </label>
+            
+                <label class="radio">
+                    <input type="radio" name="r" value="3" disabled>
+                    <span class="radio__icon"></span>
+                    <span class="radio__text">По возрастанию цены</span>
+                </label>
+            
+                <label class="radio">
+                    <input type="radio" name="r" value="5">
+                    <span class="radio__icon"></span>
+                    <span class="radio__text">По новизне</span>
+                </label>
+            </div>
+
+            <div style="margin-bottom: 60px;">
+                <h2>Кнопки</h2>
+            
+                <button class="button button--primary button--s" type="button">ОСНОВНАЯ КНОПКА</button>
+            
+                <button class="button button--white button--s" type="button">БЕЛАЯ КНОПКА</button>
+            
+                <button class="button button--primary button--s" type="button" disabled>ОСНОВНАЯ КНОПКА</button>
+            
+                <br><br>
+            
+                <button class="button button--primary button--m" type="button">ОСНОВНАЯ КНОПКА</button>
+            
+                <button class="button button--white button--m" type="button">БЕЛАЯ КНОПКА</button>
+            
+                <button class="button button--primary button--m" type="button" disabled>ОСНОВНАЯ КНОПКА</button>
+            
+                <br><br>
+            
+                <h2>Кнопки - ссылки</h2>
+            
+                <a class="button button--primary button--s" href="#">ОСНОВНАЯ КНОПКА</a>
+            
+                <a class="button button--white button--s" href="#">БЕЛАЯ КНОПКА</a>
+            
+                <a class="button button--primary button--s disabled">ОСНОВНАЯ КНОПКА</a>
+            
+                <br><br>
+            
+                <a class="button button--primary button--m" href="#">ОСНОВНАЯ КНОПКА</a>
+            
+                <a class="button button--white button--m" href="#">БЕЛАЯ КНОПКА</a>
+            
+                <a class="button button--primary button--m disabled">ОСНОВНАЯ КНОПКА</a>
+            </div>
+
+            <div style="margin-bottom: 60px;">
+                <h2>Поля ввода</h2>
+            
+                <div class="input-group">
+                    <input id="inp_1" class="input-group__input" type="text" name="" value="">
+                    <label class="input-group__label" for="inp_1">Ваше имя</label>
+                </div>
+            
+                <div class="input-group">
+                    <input id="inp_2" class="input-group__input is-filled" type="text" name="" value="Кригер Игорь">
+                    <label class="input-group__label" for="inp_2">Ваше имя</label>
+                </div>
+            
+                <div class="input-group">
+                    <input id="inp_3" class="input-group__input is-filled invalid" type="text" name="" value="Кригер Игорь">
+                    <label class="input-group__label" for="inp_3">Ваше имя</label>
+                </div>
+            
+                <div class="input-group">
+                    <input id="inp_4" class="input-group__input invalid" type="text" name="" value="">
+                    <label class="input-group__label" for="inp_4">Введите ваше имя</label>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner container">
+            <div class="footer__address">
+                г. Санкт-Петербург, ул. Дедлайновая 7<br>
+                ИНН 5582247836, ОГРН 2257756993449<br>
+                2023, ООО «ВанШоп»
+            </div>
+    
+            <div class="footer__contacts">
+                Техподдержка:<br>
+                <a href="mailto:texpomosh@one-shopw.com">texpomosh@one-shopw.com</a>
+            </div>
+    
+            <div class="footer__links">
+                <a href="#">Политика обработки персональных данных</a><br>
+                <a href="#">Пользовательское соглашение</a>
+            </div>
+        </div>
+    </footer>
+
+    
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

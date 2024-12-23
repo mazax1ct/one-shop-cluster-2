@@ -1,0 +1,61 @@
+.deps-info {
+    &__summ {
+        color: #fff;
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 12px;
+        @media(min-width: $fhd) {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+    }
+
+    &__summ-currency {
+        color: var(--func);
+    }
+
+    &__stage {
+        border-radius: 8px;
+        background: linear-gradient(272.11deg, rgba(43, 27, 80, 0.5) 0%, #1E1C45 100%);
+        padding: 12px 16px;
+        @media(min-width: $fhd) {
+            border-radius: 12px;
+            padding: 16px 24px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 2px;
+        }
+    }
+
+    &__stage-title {
+        align-items: center;
+        color: var(--func-light);
+        display: flex;
+        gap: 8px;
+        font-weight: 300;
+        justify-content: space-between;
+
+        a {
+            color: var(--active-2);
+            text-decoration: underline;
+            @include hover {
+                color: var(--active);
+            }
+        }
+    }
+
+    &__result {
+        color: var(--func);
+
+        b {
+            color: var(--accept);
+            font-size: 20px;
+        }
+
+        span {
+            color: var(--accept);
+        }
+    }
+}

@@ -1,0 +1,73 @@
+.cluster-info {
+    &__admin-title {
+        font-weight: 500;
+        line-height: 2.28571;
+        margin-bottom: 5px;
+        @media(min-width: $fhd) {
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+    }
+
+    &__admin {
+        @media(min-width: $fhd) {
+            align-items: center;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            gap: 12px;
+        }
+    }
+
+    &__admin-avatar {
+        background: linear-gradient(135deg, #45329D 21.1%, #B81CA8 100%);
+        border-radius: 50%;
+        height: 96px;
+        margin-bottom: 8px;
+        min-width: 96px;
+        padding: 3px;
+        width: 96px;
+        @media(min-width: $fhd) {
+            margin-bottom: 0;
+        }
+
+        img {
+            border-radius: 50%;
+            border: 2px solid #19193B;
+            display: block;
+            width: 93px;
+        }
+    }
+
+    &__admin-info {
+        @media(min-width: $fhd) {
+            max-width: calc(100% - 12px - 96px);
+        }
+    }
+
+    &__admin-prop {
+        align-items: center;
+        color: var(--func-light);
+        display: flex;
+        font-weight: 300;
+        gap: 10px;
+        word-break: break-all;
+        @media(min-width: $fhd) {
+            font-size: 14px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 6px;
+            @media(min-width: $fhd) {
+                margin-bottom: 12px;
+            }
+        }
+
+        svg {
+            fill: var(--func);
+            height: 20px;
+            min-width: 20px;
+            width: 20px;
+        }
+    }
+}

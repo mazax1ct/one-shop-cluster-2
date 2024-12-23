@@ -1,0 +1,50 @@
+.footer {
+    background: linear-gradient(90deg, #090919 0%, #090817 100%);
+    color: var(--func-dark);
+    flex-shrink: 0;
+    font-size: 14px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    @media(min-width: $lg) {
+        font-size: 15px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    a {
+        color: var(--func);
+        text-decoration: underline;
+        @include hover {
+            color: var(--func-light);
+        }
+    }
+
+    &__inner {
+        @media(min-width: $md) {
+            align-items: flex-end;
+            display: flex;
+        }
+        @media(max-width: $md - 0.02px) {
+            text-align: center;
+        }
+    }
+
+    &__address,
+    &__contacts {
+        @media(max-width: $md - 0.02px) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__address {
+        @media(min-width: $md) {
+            margin-right: auto;
+        }
+    }
+
+    &__contacts {
+        @media(min-width: $md) {
+            margin-right: 130px;
+        }
+    }
+}

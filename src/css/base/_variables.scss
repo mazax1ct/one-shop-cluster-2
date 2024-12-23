@@ -1,0 +1,41 @@
+$xs: 480px;
+$sm: 768px;
+$md: 1024px;
+$hd: 1280px;
+$lg: 1300px;
+$fhd: 1600px;
+
+:root {
+    --main-font: 'Geologica Roman', Arial, sans-serif;
+    --container_padding: 16px;
+    --bg: #070713;
+    --panel-dark-3: #0D0D1B;
+    --panel-dark-2: #141428;
+    --panel-dark: #19193B;
+    --active: #1D4BFF;
+    --active-2: #1E73FF;
+    --accept: #00A056;
+    --highlight-green: #22ED8E;
+    --attention: #FF1D70;
+    --func-dark: #38374E;
+    --func: #666587;
+    --func-light: #B9B8D3;
+    --purple: #A82F9C;
+    --container_max_width: 1920px;
+    --page_content_padding_top: 20px;
+    --page_content_padding_bottom: 32px;
+    --header_min_height: 48px;
+    --vertical_indent: 16px;
+    @media(min-width: $md) {
+        --header_min_height: 72px;
+    }
+    @media(min-width: $lg) {
+        --container_padding: 32px;
+    }
+    @media(min-width: $fhd) {
+        --vertical_indent: 24px;
+        --page_content_padding_top: 48px;
+        --page_content_padding_bottom: 48px;
+        --container_padding: 64px;
+    }
+}
