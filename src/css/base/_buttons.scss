@@ -34,6 +34,10 @@
                 color: #fff;
             }
         }
+
+        &.shadow {
+            box-shadow: 0 0 12px rgba(29, 75, 255, 0.5);
+        }
     }
 
     &--secondary {

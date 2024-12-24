@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-    <title></title>
+    <title>Кластер</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
@@ -27,6 +27,8 @@
     <link rel="preload" href="fonts/subset-GeologicaRoman-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/subset-GeologicaRoman-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="plugins_css/jquery.fancybox.css" />
+    
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -37,7 +39,7 @@
                 Кластер 2.0
             </a>
     
-            <button class="header__burger" type="button">
+            <button class="js-menu-toggler header__burger" type="button">
                 <svg aria-hidden="true">
                     <use xlink:href="images/sprite.svg#burger_icon" />
                 </svg>
@@ -59,6 +61,23 @@
                     </li>
                     <li class="header__menu-item">
                         <a class="header__menu-link" href="#">Помощь</a>
+                    </li>
+                    <li class="header__menu-item header__menu-item--separator"></li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#" title="Администрирование">
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#wrench_icon" />
+                            </svg>
+                            <span>Администрирование</span>
+                        </a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#" title="Выход">
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#exit_icon" />
+                            </svg>
+                            <span>Выход</span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -150,14 +169,1503 @@
                                     </svg>
                                     <span>Москва</span>
                                 </p>
+                            </div>
+                        </div>
                     
-                                <button class="button button--primary" type="button">Получить доступ</button>
+                        <button class="button button--primary shadow" type="button">Получить доступ</button>
+                    </div>
+                </div>
+
+                <div class="column column-big">
+                    <div class="title-block">
+                        <div class="title-block__left">
+                            <h1>Обзор кластера</h1>
+                            <div class="cluster-stage-info">
+                                <small>Этап III</small>
+                                <button class="info-button" type="button" title="Информация" data-fancybox data-src="#info">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#question_icon" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="title-block__right">
+                            <div class="cluster-stage-deps">
+                                <div class="cluster-stage-deps__summ">₽ <span>278 000</span></div>
+                                <div class="cluster-stage-deps__info"><span>15</span> депозитов в <span>6</span> секциях</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cluster">
+                        <div class="cluster-item cluster-item--type_1">
+                            <div class="cluster-item__title-block">
+                                <div>
+                                    <div class="cluster-item__title">
+                                        <span class="status">
+                                            I (100%)
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#double_check_icon" />
+                                            </svg>
+                                        </span>
+                                        <span class="users">
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#users_icon" />
+                                            </svg>
+                                            30
+                                        </span>
+                                    </div>
+                                    <div class="cluster-item__summ">Сумма <span>0 ₽</span></div>
+                                    <div class="cluster-item__summ">Доходность <span>3%</span></div>
+                                </div>
+                    
+                                <button class="js-cluster-item-toggler cluster-item__toggler" type="button">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#chevron_down_icon" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="cluster-item__dropdown">
+                                <div class="cluster-item__cells">
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">1</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">2</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">3</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">4</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">5</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">6</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">7</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">8</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">9</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">10</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cluster-item cluster-item--type_1">
+                            <div class="cluster-item__title-block">
+                                <div>
+                                    <div class="cluster-item__title">
+                                        <span class="status">
+                                            II (100%)
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#double_check_icon" />
+                                            </svg>
+                                        </span>
+                                        <span class="users">
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#users_icon" />
+                                            </svg>
+                                            32
+                                        </span>
+                                    </div>
+                                    <div class="cluster-item__summ">Сумма <span>100 000 ₽</span></div>
+                                    <div class="cluster-item__summ">Доходность <span>3.2%</span></div>
+                                </div>
+                    
+                                <button class="js-cluster-item-toggler cluster-item__toggler" type="button">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#chevron_down_icon" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="cluster-item__dropdown">
+                                <div class="cluster-item__cells">
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">1</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <button class="cluster-item__cell" type="button">
+                                            <div class="cluster-item__cell-num">2</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                    
+                                            <div class="cluster-item__cell-summ">65 000 ₽</div>
+                                        </button>
+                    
+                                        <button class="cluster-item__cell" type="button">
+                                            <div class="cluster-item__cell-num">3</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                    
+                                            <div class="cluster-item__cell-summ">13 000 ₽</div>
+                                        </button>
+                    
+                                        <button class="cluster-item__cell" type="button">
+                                            <div class="cluster-item__cell-num">4</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                    
+                                            <div class="cluster-item__cell-summ">29 000 ₽</div>
+                                        </button>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">5</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">6</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">7</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">8</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">9</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">10</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cluster-item cluster-item--type_2">
+                            <div class="cluster-item__title-block">
+                                <div>
+                                    <div class="cluster-item__title">
+                                        <span class="status">
+                                            III (65%)
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#check_icon" />
+                                            </svg>
+                                        </span>
+                                        <span class="users">
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#users_icon" />
+                                            </svg>
+                                            5
+                                        </span>
+                                    </div>
+                                    <div class="cluster-item__summ">Сумма <span>40 000 ₽</span></div>
+                                    <div class="cluster-item__summ">Доходность <span>0.05%</span></div>
+                                </div>
+                    
+                                <button class="js-cluster-item-toggler cluster-item__toggler" type="button">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#chevron_down_icon" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="cluster-item__dropdown">
+                                <div class="cluster-item__cells">
+                                    <div class="cluster-item__column">
+                                        <button class="cluster-item__cell" type="button">
+                                            <div class="cluster-item__cell-num">1</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                    
+                                            <div class="cluster-item__cell-summ">35 000 ₽</div>
+                                        </button>
+                    
+                                        <button class="cluster-item__cell" type="button">
+                                            <div class="cluster-item__cell-num">2</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                    
+                                            <div class="cluster-item__cell-summ">65 000 ₽</div>
+                                        </button>
+                    
+                                        <button class="cluster-item__cell" type="button">
+                                            <div class="cluster-item__cell-num">3</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                    
+                                            <div class="cluster-item__cell-summ">13 000 ₽</div>
+                                        </button>
+                    
+                                        <button class="cluster-item__cell" type="button">
+                                            <div class="cluster-item__cell-num">4</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                    
+                                            <div class="cluster-item__cell-summ">29 000 ₽</div>
+                                        </button>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">5</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">6</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                1000
+                                            </div>
+                                        </div>
+                    
+                                        <button class="cluster-item__cell cluster-item__cell--type_1" type="button">
+                                            <div class="cluster-item__cell-num">7</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                564
+                                            </div>
+                    
+                                            <div class="cluster-item__cell-summ">5 000 ₽</div>
+                                        </button>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">8</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">9</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">10</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cluster-item cluster-item--type_2">
+                            <div class="cluster-item__title-block">
+                                <div>
+                                    <div class="cluster-item__title">
+                                        <span class="status">
+                                            IV (1%)
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#check_icon" />
+                                            </svg>
+                                        </span>
+                                        <span class="users">
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#users_icon" />
+                                            </svg>
+                                            2
+                                        </span>
+                                    </div>
+                                    <div class="cluster-item__summ">Сумма <span>0 ₽</span></div>
+                                    <div class="cluster-item__summ">Доходность <span>0.02%</span></div>
+                                </div>
+                    
+                                <button class="js-cluster-item-toggler cluster-item__toggler" type="button">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#chevron_down_icon" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="cluster-item__dropdown">
+                                <div class="cluster-item__cells">
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell cluster-item__cell--type_1">
+                                            <div class="cluster-item__cell-num">1</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                12
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">2</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">3</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">4</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">5</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">6</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                408
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">7</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">8</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">9</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">10</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cluster-item cluster-item--type_2">
+                            <div class="cluster-item__title-block">
+                                <div>
+                                    <div class="cluster-item__title">
+                                        <span class="status">
+                                            V (0%)
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#check_icon" />
+                                            </svg>
+                                        </span>
+                                        <span class="users">
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#users_icon" />
+                                            </svg>
+                                            0
+                                        </span>
+                                    </div>
+                                    <div class="cluster-item__summ">Сумма <span>0 ₽</span></div>
+                                    <div class="cluster-item__summ">Доходность <span>0%</span></div>
+                                </div>
+                    
+                                <button class="js-cluster-item-toggler cluster-item__toggler" type="button">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#chevron_down_icon" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="cluster-item__dropdown">
+                                <div class="cluster-item__cells">
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">1</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">2</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">3</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">4</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">5</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">6</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">7</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">8</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">9</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">10</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cluster-item cluster-item--type_2">
+                            <div class="cluster-item__title-block">
+                                <div>
+                                    <div class="cluster-item__title">
+                                        <span class="status">
+                                            VI (0%)
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#check_icon" />
+                                            </svg>
+                                        </span>
+                                        <span class="users">
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#users_icon" />
+                                            </svg>
+                                            0
+                                        </span>
+                                    </div>
+                                    <div class="cluster-item__summ">Сумма <span>0 ₽</span></div>
+                                    <div class="cluster-item__summ">Доходность <span>0%</span></div>
+                                </div>
+                    
+                                <button class="js-cluster-item-toggler cluster-item__toggler" type="button">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#chevron_down_icon" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="cluster-item__dropdown">
+                                <div class="cluster-item__cells">
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">1</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">2</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">3</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">4</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">5</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">6</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">7</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">8</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">9</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">10</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cluster-item cluster-item--type_2">
+                            <div class="cluster-item__title-block">
+                                <div>
+                                    <div class="cluster-item__title">
+                                        <span class="status">
+                                            VII (0%)
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#check_icon" />
+                                            </svg>
+                                        </span>
+                                        <span class="users">
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#users_icon" />
+                                            </svg>
+                                            0
+                                        </span>
+                                    </div>
+                                    <div class="cluster-item__summ">Сумма <span>0 ₽</span></div>
+                                    <div class="cluster-item__summ">Доходность <span>0%</span></div>
+                                </div>
+                    
+                                <button class="js-cluster-item-toggler cluster-item__toggler" type="button">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#chevron_down_icon" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="cluster-item__dropdown">
+                                <div class="cluster-item__cells">
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">1</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">2</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">3</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">4</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">5</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">6</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">7</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">8</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">9</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">10</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cluster-item cluster-item--type_2">
+                            <div class="cluster-item__title-block">
+                                <div>
+                                    <div class="cluster-item__title">
+                                        <span class="status">
+                                            VIII (0%)
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#check_icon" />
+                                            </svg>
+                                        </span>
+                                        <span class="users">
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#users_icon" />
+                                            </svg>
+                                            0
+                                        </span>
+                                    </div>
+                                    <div class="cluster-item__summ">Сумма <span>0 ₽</span></div>
+                                    <div class="cluster-item__summ">Доходность <span>0%</span></div>
+                                </div>
+                    
+                                <button class="js-cluster-item-toggler cluster-item__toggler" type="button">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#chevron_down_icon" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="cluster-item__dropdown">
+                                <div class="cluster-item__cells">
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">1</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">2</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">3</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">4</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">5</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">6</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">7</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">8</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">9</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">10</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cluster-item cluster-item--type_2">
+                            <div class="cluster-item__title-block">
+                                <div>
+                                    <div class="cluster-item__title">
+                                        <span class="status">
+                                            IX (0%)
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#check_icon" />
+                                            </svg>
+                                        </span>
+                                        <span class="users">
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#users_icon" />
+                                            </svg>
+                                            0
+                                        </span>
+                                    </div>
+                                    <div class="cluster-item__summ">Сумма <span>0 ₽</span></div>
+                                    <div class="cluster-item__summ">Доходность <span>0%</span></div>
+                                </div>
+                    
+                                <button class="js-cluster-item-toggler cluster-item__toggler" type="button">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#chevron_down_icon" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="cluster-item__dropdown">
+                                <div class="cluster-item__cells">
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">1</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">2</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">3</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">4</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">5</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">6</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">7</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">8</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">9</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">10</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="cluster-item cluster-item--type_3">
+                            <div class="cluster-item__title-block">
+                                <div>
+                                    <div class="cluster-item__title">
+                                        <span class="status">
+                                            X (0%)
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#lock_icon" />
+                                            </svg>
+                                        </span>
+                                        <span class="users">
+                                            <svg aria-hidden="true">
+                                                <use xlink:href="images/sprite.svg#users_icon" />
+                                            </svg>
+                                            0
+                                        </span>
+                                    </div>
+                                    <div class="cluster-item__summ">Сумма <span>0 ₽</span></div>
+                                    <div class="cluster-item__summ">Доходность <span>0%</span></div>
+                                </div>
+                    
+                                <button class="js-cluster-item-toggler cluster-item__toggler" type="button">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#chevron_down_icon" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="cluster-item__dropdown">
+                                <div class="cluster-item__cells">
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">1</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">2</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">3</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">4</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">5</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cluster-item__column">
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">6</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">7</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">8</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">9</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                    
+                                        <div class="cluster-item__cell">
+                                            <div class="cluster-item__cell-num">10</div>
+                    
+                                            <div class="cluster-item__cell-deps">
+                                                <svg aria-hidden="true">
+                                                    <use xlink:href="images/sprite.svg#box_icon" />
+                                                </svg>
+                                                0
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="column column-big"></div>
             </div>
         </div>
     </main>
@@ -182,11 +1690,17 @@
         </div>
     </footer>
 
+    <div id="info" class="popup">
+        <p class="popup__title">Условные обозначения <small>Работа с кластером</small></p>
+    </div>
+
+
+    <script src="js/jquery-3.7.1.min.js"></script>
     
-
-
-    <script src="js/main.js"></script>
-
+    <script src="js/jquery.fancybox.min.js"></script>
+    
+    <script src="js/fancybox-defaults.js"></script>
+    
     <script src="js/main.js"></script>
 </body>
 

@@ -62,6 +62,9 @@
         @media(max-width: $md - 0.02px) {
             margin-left: auto;
         }
+        @media(min-width: $md) {
+            display: none;
+        }
 
         svg {
             fill: var(--func);
@@ -80,31 +83,86 @@
         position: relative;
         z-index: 2;
         @media(max-width: $md - 0.02px) {
+            background-color: var(--panel-dark-2);
             display: none;
+            height: calc(100dvh - var(--header_min_height));
+            left: 0;
+            overflow-y: auto;
+            position: fixed;
+            right: 0;
+            top: var(--header_min_height);
+            z-index: 1;
+        }
+
+        &.is-open {
+            display: block;
         }
     }
 
     &__menu-list {
         @include list-reset;
-        display: flex;
+        @media(min-width: $md) {
+            display: flex;
+        }
     }
 
-    &__menu-item {}
+    &__menu-item {
+        &--separator {
+            border-bottom: 1px solid #1B1737;
+            padding-top: 16px;
+            margin-bottom: 16px;
+            @media(min-width: $md) {
+                display: none;
+            }
+
+            & ~ .header__menu-item {
+                .header__menu-link {
+                    span {
+                        @media(max-width: $md - 0.02px) {
+                            color: var(--func-light);
+                        }
+                    }
+                }
+            }
+        }
+    }
 
     &__menu-link {
-        border-bottom: 1px solid transparent;
-        display: block;
+        align-items: center;
+        border-left: 2px solid transparent;
+        display: flex;
         color: var(--func);
         font-size: 15px;
         font-weight: 300;
-        padding: 28px 16px 24px;
+        gap: 12px;
+        min-height: 48px;
+        padding: 16px 24px;
+        @media(min-width: $md) {
+            border-bottom: 1px solid transparent;
+            border-left: none;
+            min-height: var(--header_min_height);
+            padding-left: 16px;
+        }
         @include hover {
             color: #fff;
         }
 
         &.is-active {
-            border-bottom-color: var(--active-2);
+            border-color: var(--active-2);
             color: #fff;
+        }
+
+        svg {
+            fill: currentColor;
+            height: 20px;
+            min-width: 20px;
+            width: 20px;
+
+            & + span {
+                @media(min-width: $md) {
+                    display: none;
+                }
+            }
         }
     }
 }

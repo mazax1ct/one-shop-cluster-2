@@ -27,6 +27,8 @@
     <link rel="preload" href="fonts/subset-GeologicaRoman-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/subset-GeologicaRoman-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="plugins_css/jquery.fancybox.css" />
+    
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -38,7 +40,7 @@
                 Кластер 2.0
             </a>
     
-            <button class="header__burger" type="button">
+            <button class="js-menu-toggler header__burger" type="button">
                 <svg aria-hidden="true">
                     <use xlink:href="images/sprite.svg#burger_icon" />
                 </svg>
@@ -60,6 +62,23 @@
                     </li>
                     <li class="header__menu-item">
                         <a class="header__menu-link" href="#">Помощь</a>
+                    </li>
+                    <li class="header__menu-item header__menu-item--separator"></li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#" title="Администрирование">
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#wrench_icon" />
+                            </svg>
+                            <span>Администрирование</span>
+                        </a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#" title="Выход">
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#exit_icon" />
+                            </svg>
+                            <span>Выход</span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -230,8 +249,16 @@
         </div>
     </footer>
 
-    
+    <div id="info" class="popup">
+        <p class="popup__title">Условные обозначения <small>Работа с кластером</small></p>
+    </div>
 
+    <script src="js/jquery-3.7.1.min.js"></script>
+    
+    <script src="js/jquery.fancybox.min.js"></script>
+    
+    <script src="js/fancybox-defaults.js"></script>
+    
     <script src="js/main.js"></script>
 </body>
 

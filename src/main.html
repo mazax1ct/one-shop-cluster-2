@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-    <title></title>
+    <title>Кластер</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
@@ -29,7 +29,30 @@
                     //= template/cluster/cluster-info.html
                 </div>
 
-                <div class="column column-big"></div>
+                <div class="column column-big">
+                    <div class="title-block">
+                        <div class="title-block__left">
+                            <h1>Обзор кластера</h1>
+                            <div class="cluster-stage-info">
+                                <small>Этап III</small>
+                                <button class="info-button" type="button" title="Информация" data-fancybox data-src="#info">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#question_icon" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="title-block__right">
+                            <div class="cluster-stage-deps">
+                                <div class="cluster-stage-deps__summ">₽ <span>278 000</span></div>
+                                <div class="cluster-stage-deps__info"><span>15</span> депозитов в <span>6</span> секциях</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    //= template/cluster/cluster.html
+                </div>
             </div>
         </div>
     </main>
@@ -40,8 +63,6 @@
 
 
     //= template/common/scripts.html
-
-    <script src="js/main.js"></script>
 </body>
 
 </html>
