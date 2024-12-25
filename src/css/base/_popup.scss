@@ -1,6 +1,6 @@
 .popup {
     @include scrollbar;
-    background: linear-gradient(var(--panel-dark), var(--panel-dark) 0) padding-box, linear-gradient(45deg, #251668, #2A0F46) border-box;
+    background: linear-gradient(var(--panel-dark-2), var(--panel-dark-2) 0) padding-box, linear-gradient(45deg, #251668, #2A0F46) border-box;
     border: 1px solid transparent;
     border-radius: 24px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
@@ -40,7 +40,7 @@
     &__closer {
         @include button-reset;
         align-items: center;
-        background: linear-gradient(var(--panel-dark), var(--panel-dark) 0) padding-box, linear-gradient(90deg, #251668, #2A0F46) border-box;
+        background: linear-gradient(var(--panel-dark-2), var(--panel-dark-2) 0) padding-box, linear-gradient(90deg, #251668, #2A0F46) border-box;
         border: 1px solid transparent;
         border-radius: 24px;
         box-shadow: none;
@@ -69,6 +69,27 @@
             fill: currentColor;
             height: 16px;
             width: 16px;
+        }
+    }
+
+    &__text-block {
+        color: var(--func-light);
+        font-weight: 300;
+
+        h2 {
+            font-size: 18px;
+            line-height: 1.22222;
+            margin-top: 0;
+
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
+        }
+
+        p {
+            &:not(:last-child) {
+                margin-bottom: 24px;
+            }
         }
     }
 }

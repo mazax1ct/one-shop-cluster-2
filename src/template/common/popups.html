@@ -1,3 +1,65 @@
 <div id="info" class="popup">
     <p class="popup__title">Условные обозначения <small>Работа с кластером</small></p>
+
+    <div class="popup__text-block">
+        <h2>Сектор</h2>
+
+        <p>Ячейка сектора содержит информацию о номере и проценте заполненности, состоянии сектора, количестве пользователей в секторе, вложенной Вами сумме и общей доходности по этой сумме.</p>
+
+        <p class="cluster-legend">
+            <svg class="green" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#check_icon" />
+            </svg>
+            Сектор активен и доступен для создания депозитов
+        </p>
+
+        <p class="cluster-legend">
+            <svg class="green" aria-hidden="true">
+                <use xlink:href="images/sprite.svg#double_check_icon" />
+            </svg>
+            Сектор заполнен и недоступен для создания депозитов
+        </p>
+
+        <p class="cluster-legend">
+            <svg aria-hidden="true">
+                <use xlink:href="images/sprite.svg#lock_icon" />
+            </svg>
+            Сектор заблокирован
+        </p>
+
+        <p class="cluster-legend">
+            <svg aria-hidden="true">
+                <use xlink:href="images/sprite.svg#users_icon" />
+            </svg>
+            Число пользователей в секторе
+        </p>
+
+        <h2>Секция</h2>
+
+        <p>Ячейка секции содержит информацию о номере секции, числе депозитов, размещенных в секции и сумме Ваших депозитов в этой секции.</p>
+
+        <p class="cluster-legend">
+            <svg aria-hidden="true">
+                <use xlink:href="images/sprite.svg#box_icon" />
+            </svg>
+            Общее число депозитов в секции
+        </p>
+
+        <h2>Цветовые обозначения ячеек</h2>
+
+        <p class="cluster-legend">
+            <span class="color-legend color-legend--type_1"></span>
+            Сектор/секция заблокированы
+        </p>
+
+        <p class="cluster-legend">
+            <span class="color-legend color-legend--type_2"></span>
+            Сектор/секция активны
+        </p>
+
+        <p class="cluster-legend">
+            <span class="color-legend color-legend--type_3"></span>
+            Секция активна и содержит Ваши депозиты
+        </p>
+    </div>
 </div>

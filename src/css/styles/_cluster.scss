@@ -189,21 +189,6 @@
         &:not(:last-child) {
             border-bottom: 1px solid rgba(#000,0.15);
         }
-
-        &--type_1 {
-            background-color: #5B066C;
-
-            .cluster-item__cell-num,
-            .cluster-item__cell-summ {
-                color: #B60EE0;
-            }
-
-            .cluster-item__cell-deps {
-                svg {
-                    fill: #B60EE0;
-                }
-            }
-        }
     }
 
     &__cell-num {
@@ -251,16 +236,23 @@ button {
         display: block;
         transition: background-color 0.3s;
         width: 100%;
-        @include hover {
-            background-color: var(--active);
 
-            .cluster-item__cell-num {
-                color: #fff;
+        .cluster-item__cell-deps {
+            svg {
+                fill: var(--highlight-green);
+            }
+        }
+        @include hover {
+            background-color: #222275;
+
+            .cluster-item__cell-num,
+            .cluster-item__cell-summ {
+                color: var(--active-2);
             }
 
             .cluster-item__cell-deps {
                 svg {
-                    fill: #fff;
+                    fill: var(--active-2);
                 }
             }
         }
@@ -279,6 +271,45 @@ button {
             .cluster-item__cell-deps {
                 svg {
                     fill: #fff;
+                }
+            }
+        }
+    }
+}
+
+.cluster-item--type_2 {
+    button {
+        &.cluster-item__cell {
+            @include hover {
+                background-color: #5B066C;
+
+                .cluster-item__cell-num,
+                .cluster-item__cell-summ {
+                    color: #B60EE0;
+                }
+
+                .cluster-item__cell-deps {
+                    svg {
+                        fill: #B60EE0;
+                    }
+                }
+            }
+        }
+
+        &.cluster-item__cell--type_1 {
+            background-color: #261D33;
+            @include hover {
+                background-color: #332645;
+
+                .cluster-item__cell-num,
+                .cluster-item__cell-summ {
+                    color: #8043D6;
+                }
+
+                .cluster-item__cell-deps {
+                    svg {
+                        fill: #8043D6;
+                    }
                 }
             }
         }
