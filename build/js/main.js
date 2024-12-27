@@ -14,7 +14,6 @@ $(document).on('click', '.js-menu-toggler', function() {
   return false;
 });
 
-
 $(document).on('click', '.js-cluster-item-toggler', function () {
   if(!$(this).hasClass('is-active')) {
     $(this).closest('.cluster-item').find('.cluster-item__dropdown').slideDown();
@@ -24,4 +23,22 @@ $(document).on('click', '.js-cluster-item-toggler', function () {
     $(this).removeClass('is-active');
   }
   return false;
+});
+
+$(document).ready(function () {
+  //кастомный селект
+  $('.js-select').each(function() {
+    var $p = $(this).closest('.select-wrapper');
+    $(this).select2({
+      dropdownPosition: 'below',
+      dropdownParent: $p,
+      minimumResultsForSearch: Infinity
+    });
+	}).on('select2:open', function (e) {
+    var $p = $(this).closest('.select-wrapper');
+    $p.addClass('open');
+	}).on('select2:close', function (e) {
+    var $p = $(this).closest('.select-wrapper');
+    $p.removeClass('open');
+	});
 });

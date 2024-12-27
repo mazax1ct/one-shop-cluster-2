@@ -29,6 +29,8 @@
 
     <link rel="stylesheet" href="plugins_css/jquery.fancybox.css" />
     
+    <link rel="stylesheet" href="plugins_css/select2.css" />
+    
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -93,137 +95,112 @@
                 <label class="checkbox">
                     <input type="checkbox" name="cb_1">
                     <span class="checkbox__icon"></span>
-                    <span class="checkbox__text">ВЫБРАТЬ МАТЕРИАЛ <span class="qnt">3</span></span>
+                    <span class="checkbox__text">Я ознакомлен со всеми <a href="#">соглашениями</a></span>
                 </label>
+            
+                <br>
             
                 <label class="checkbox">
                     <input type="checkbox" name="cb_2" checked>
                     <span class="checkbox__icon"></span>
-                    <span class="checkbox__text">ВЫБРАТЬ МАТЕРИАЛ <span class="qnt">3</span></span>
+                    <span class="checkbox__text">Я ознакомлен со всеми <a href="#">соглашениями</a></span>
                 </label>
+            
+                <br>
             
                 <label class="checkbox">
                     <input type="checkbox" name="cb_3" disabled>
                     <span class="checkbox__icon"></span>
-                    <span class="checkbox__text">ВЫБРАТЬ МАТЕРИАЛ <span class="qnt">3</span></span>
+                    <span class="checkbox__text">Я ознакомлен со всеми <a href="#">соглашениями</a></span>
                 </label>
+            
+                <br>
             
                 <label class="checkbox">
                     <input type="checkbox" name="cb_4" disabled checked>
                     <span class="checkbox__icon"></span>
-                    <span class="checkbox__text">ВЫБРАТЬ МАТЕРИАЛ <span class="qnt">3</span></span>
-                </label>
-            
-                <label class="checkbox checkbox--color">
-                    <input type="checkbox" name="cb_5">
-                    <span class="checkbox__icon"></span>
-                    <span class="checkbox__text"><span class="color"><span class="color__icon" style="background-color: #00487D"></span>Синий</span> <span class="qnt">3</span></span>
-                </label>
-            
-                <label class="checkbox checkbox--color">
-                    <input type="checkbox" name="cb_6" checked>
-                    <span class="checkbox__icon"></span>
-                    <span class="checkbox__text"><span class="color"><span class="color__icon" style="background-color: #00487D"></span>Синий</span> <span class="qnt">3</span></span>
-                </label>
-            
-                <label class="checkbox checkbox--color">
-                    <input type="checkbox" name="cb_7" disabled>
-                    <span class="checkbox__icon"></span>
-                    <span class="checkbox__text"><span class="color"><span class="color__icon" style="background-color: #00487D"></span>Синий</span> <span class="qnt">3</span></span>
-                </label>
-            
-                <label class="checkbox checkbox--color">
-                    <input type="checkbox" name="cb_8" checked disabled>
-                    <span class="checkbox__icon"></span>
-                    <span class="checkbox__text"><span class="color"><span class="color__icon" style="background-color: #00487D"></span>Синий</span> <span class="qnt">3</span></span>
-                </label>
-            </div>
-
-            <div style="margin-bottom: 60px;">
-                <h2>Радио-кнопки</h2>
-            
-                <label class="radio">
-                    <input type="radio" name="r" value="1">
-                    <span class="radio__icon"></span>
-                    <span class="radio__text">По умолчанию</span>
-                </label>
-            
-                <label class="radio">
-                    <input type="radio" name="r" value="2" checked>
-                    <span class="radio__icon"></span>
-                    <span class="radio__text">По популярности</span>
-                </label>
-            
-                <label class="radio">
-                    <input type="radio" name="r" value="3" disabled>
-                    <span class="radio__icon"></span>
-                    <span class="radio__text">По возрастанию цены</span>
-                </label>
-            
-                <label class="radio">
-                    <input type="radio" name="r" value="5">
-                    <span class="radio__icon"></span>
-                    <span class="radio__text">По новизне</span>
+                    <span class="checkbox__text">Я ознакомлен со всеми <a href="#">соглашениями</a></span>
                 </label>
             </div>
 
             <div style="margin-bottom: 60px;">
                 <h2>Кнопки</h2>
             
-                <button class="button button--primary button--s" type="button">ОСНОВНАЯ КНОПКА</button>
+                <button class="button button--primary" type="button">Основная кнопка</button>
             
-                <button class="button button--white button--s" type="button">БЕЛАЯ КНОПКА</button>
+                <button class="button button--secondary" type="button">Второстепенная кнопка</button>
             
-                <button class="button button--primary button--s" type="button" disabled>ОСНОВНАЯ КНОПКА</button>
-            
-                <br><br>
-            
-                <button class="button button--primary button--m" type="button">ОСНОВНАЯ КНОПКА</button>
-            
-                <button class="button button--white button--m" type="button">БЕЛАЯ КНОПКА</button>
-            
-                <button class="button button--primary button--m" type="button" disabled>ОСНОВНАЯ КНОПКА</button>
+                <button class="button button--primary" type="button" disabled>Кнопка выключена</button>
             
                 <br><br>
             
                 <h2>Кнопки - ссылки</h2>
             
-                <a class="button button--primary button--s" href="#">ОСНОВНАЯ КНОПКА</a>
+                <a class="button button--primary" href="#">Основная кнопка</a>
             
-                <a class="button button--white button--s" href="#">БЕЛАЯ КНОПКА</a>
+                <a class="button button--secondary" href="#">Второстепенная кнопка</a>
             
-                <a class="button button--primary button--s disabled">ОСНОВНАЯ КНОПКА</a>
-            
-                <br><br>
-            
-                <a class="button button--primary button--m" href="#">ОСНОВНАЯ КНОПКА</a>
-            
-                <a class="button button--white button--m" href="#">БЕЛАЯ КНОПКА</a>
-            
-                <a class="button button--primary button--m disabled">ОСНОВНАЯ КНОПКА</a>
+                <a class="button button--primary disabled">Кнопка выключена</a>
             </div>
 
             <div style="margin-bottom: 60px;">
                 <h2>Поля ввода</h2>
             
                 <div class="input-group">
-                    <input id="inp_1" class="input-group__input" type="text" name="" value="">
-                    <label class="input-group__label" for="inp_1">Ваше имя</label>
+                    <label class="input-label" for="inp_1">Сумма пополнения</label>
+                    <input id="inp_1" class="input-group__input" type="text" name="" value="" placeholder="Минимум: 50 000₽">
+                    <div class="error-text">Фактическая сумма вывода составит 47 500 рублей</div>
                 </div>
             
                 <div class="input-group">
-                    <input id="inp_2" class="input-group__input is-filled" type="text" name="" value="Кригер Игорь">
-                    <label class="input-group__label" for="inp_2">Ваше имя</label>
+                    <label class="input-label" for="inp_2">Ваше имя</label>
+                    <input id="inp_2" class="input-group__input" type="text" name="" value="Кригер Игорь">
                 </div>
             
                 <div class="input-group">
-                    <input id="inp_3" class="input-group__input is-filled invalid" type="text" name="" value="Кригер Игорь">
-                    <label class="input-group__label" for="inp_3">Ваше имя</label>
+                    <label class="input-label" for="inp_4">Введите ваше имя</label>
+                    <input id="inp_4" class="input-group__input" type="text" name="" value="Кригер Игорь" disabled>
                 </div>
             
                 <div class="input-group">
-                    <input id="inp_4" class="input-group__input invalid" type="text" name="" value="">
-                    <label class="input-group__label" for="inp_4">Введите ваше имя</label>
+                    <label class="input-label" for="inp_5">Комментарий</label>
+                    <textarea id="inp_5" class="input-group__textarea" name="" placeholder="Введите ваш комментарий"></textarea>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 60px;">
+                <h2>Селект</h2>
+            
+                <div class="select-wrapper">
+                    <label class="input-label" for="sel">Сектор</label>
+                    <select id="sel" class="js-select">
+                        <option value="1">I</option>
+                        <option value="2">II</option>
+                        <option value="3" disabled>III</option>
+                        <option value="4">IV</option>
+                        <option value="5">V</option>
+                        <option value="6">VI</option>
+                        <option value="7">VII</option>
+                        <option value="8">VIII</option>
+                    </select>
+                    <div class="success-text">Сектор доступен</div>
+                </div>
+            
+                <br>
+            
+                <div class="select-wrapper">
+                    <label class="input-label" for="sel_2">Сектор</label>
+                    <select id="sel_2" class="js-select" disabled>
+                        <option value="1">I</option>
+                        <option value="2">II</option>
+                        <option value="3">III</option>
+                        <option value="4">IV</option>
+                        <option value="5">V</option>
+                        <option value="6">VI</option>
+                        <option value="7">VII</option>
+                        <option value="8">VIII</option>
+                    </select>
+                    <div class="error-text">Сектор не доступен</div>
                 </div>
             </div>
         </div>
@@ -318,8 +295,10 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     
     <script src="js/jquery.fancybox.min.js"></script>
-    
     <script src="js/fancybox-defaults.js"></script>
+    
+    <script src="js/select2.full.min.js"></script>
+    <script src="js/select2-addon.js"></script>
     
     <script src="js/main.js"></script>
 </body>

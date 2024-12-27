@@ -36,14 +36,6 @@
         gap: 8px;
         font-weight: 300;
         justify-content: space-between;
-
-        a {
-            color: var(--active-2);
-            text-decoration: underline;
-            @include hover {
-                color: var(--active);
-            }
-        }
     }
 
     &__result {

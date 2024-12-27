@@ -7,6 +7,7 @@
     font-weight: 400;
     justify-content: center;
     line-height: 1;
+    min-width: 70px;
     padding: 16px 24px;
     text-decoration: none;
     text-align: center;
@@ -15,9 +16,8 @@
     &.disabled,
     &:disabled,
     &[data-disabled] {
-        background-color: var(--gray_white);
-        color: var(--gray_black);
         cursor: default;
+        opacity: 0.5;
         pointer-events: none;
     }
 

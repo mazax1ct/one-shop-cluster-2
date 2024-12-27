@@ -72,11 +72,11 @@ html {
 }
 
 a {
-    color: var(--black_dark);
+    color: var(--active-2);
     transition: color 0.3s;
-    text-decoration: none;
+    text-decoration: underline;
     @include hover {
-        color: var(--ocher);
+        color: var(--active);
     }
 }
 
