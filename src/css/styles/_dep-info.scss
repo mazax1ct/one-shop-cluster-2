@@ -1,0 +1,45 @@
+.deps-list {
+    .accordion {
+        &:not(:last-child) {
+            margin-bottom: 4px;
+        }
+    }
+}
+
+.dep-title {
+    color: var(--func);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+    gap: 8px 16px;
+
+    &__num {
+        color: var(--highlight-green);
+    }
+
+    &__summ {
+        color: #fff;
+    }
+}
+
+.dep-info {
+    &:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    &__item {
+        align-items: center;
+        color: var(--func-light);
+        display: flex;
+        font-size: 14px;
+        flex-wrap: wrap;
+        gap: 8px 16px;
+        min-height: 32px;
+
+        span {
+            &:nth-child(2) {
+                color: #fff;
+            }
+        }
+    }
+}

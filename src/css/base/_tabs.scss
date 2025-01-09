@@ -1,0 +1,30 @@
+.tabs-nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__button {
+        align-items: center;
+        border-radius: 16px;
+        border: none;
+        background-color: transparent;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        font-size: 15px;
+        justify-content: center;
+        line-height: 1;
+        min-width: 70px;
+        min-height: 32px;
+        padding: 8px 16px;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s;
+
+        &.is-active {
+            background-color: var(--active);
+            @include hover {
+                color: #fff;
+            }
+        }
+    }
+}

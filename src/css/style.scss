@@ -9,6 +9,9 @@
 @import "base/_inputs_and_textareas.scss";
 @import "base/_popup.scss";
 @import "base/_form.scss";
+@import "base/_tabs.scss";
+@import "base/_accordion.scss";
+@import "base/_quantity.scss";
 @import "styles/_header.scss";
 @import "styles/_footer.scss";
 @import "styles/_deps-info.scss";
@@ -17,3 +20,5 @@
 @import "styles/_cluster-stage-deps.scss";
 @import "styles/_cluster.scss";
 @import "styles/_cluster-legend.scss";
+@import "styles/_faq.scss";
+@import "styles/_dep-info.scss";

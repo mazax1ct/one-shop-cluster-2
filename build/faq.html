@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-    <title>UI</title>
+    <title>Кластер</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
@@ -35,7 +35,6 @@
 </head>
 
 <body class="page">
-
     <header class="header">
         <div class="header__inner container">
             <a class="header__logo" href="#">
@@ -89,133 +88,173 @@
 
     <main class="page__content">
         <div class="container">
-            <div style="margin-bottom: 60px;">
-                <h2>Чекбоксы</h2>
-            
-                <label class="checkbox">
-                    <input type="checkbox" name="cb_1">
-                    <span class="checkbox__icon"></span>
-                    <span class="checkbox__text">Я ознакомлен со всеми <a href="#">соглашениями</a></span>
-                </label>
-            
-                <br>
-            
-                <label class="checkbox">
-                    <input type="checkbox" name="cb_2" checked>
-                    <span class="checkbox__icon"></span>
-                    <span class="checkbox__text">Я ознакомлен со всеми <a href="#">соглашениями</a></span>
-                </label>
-            
-                <br>
-            
-                <label class="checkbox">
-                    <input type="checkbox" name="cb_3" disabled>
-                    <span class="checkbox__icon"></span>
-                    <span class="checkbox__text">Я ознакомлен со всеми <a href="#">соглашениями</a></span>
-                </label>
-            
-                <br>
-            
-                <label class="checkbox">
-                    <input type="checkbox" name="cb_4" disabled checked>
-                    <span class="checkbox__icon"></span>
-                    <span class="checkbox__text">Я ознакомлен со всеми <a href="#">соглашениями</a></span>
-                </label>
-            </div>
+            <div class="title-block">
+                <div class="title-block__left">
+                    <h2>Часто задаваемые вопросы</h2>
+                </div>
 
-            <div style="margin-bottom: 60px;">
-                <h2>Кнопки</h2>
-            
-                <button class="button button--primary" type="button">Основная кнопка</button>
-            
-                <button class="button button--secondary" type="button">Второстепенная кнопка</button>
-            
-                <button class="button button--primary" type="button" disabled>Кнопка выключена</button>
-            
-                <br><br>
-            
-                <h2>Кнопки - ссылки</h2>
-            
-                <a class="button button--primary" href="#">Основная кнопка</a>
-            
-                <a class="button button--secondary" href="#">Второстепенная кнопка</a>
-            
-                <a class="button button--primary disabled">Кнопка выключена</a>
-            </div>
-
-            <div style="margin-bottom: 60px;">
-                <h2>Поля ввода</h2>
-            
-                <div class="input-group">
-                    <label class="input-label" for="inp_1">Сумма пополнения</label>
-                    <input id="inp_1" class="input-group__input" type="text" name="" value="" placeholder="Минимум: 50 000₽">
-                    <div class="error-text">Фактическая сумма вывода составит 47 500 рублей</div>
-                </div>
-            
-                <div class="input-group">
-                    <label class="input-label" for="inp_2">Ваше имя</label>
-                    <input id="inp_2" class="input-group__input" type="text" name="" value="Кригер Игорь">
-                </div>
-            
-                <div class="input-group">
-                    <label class="input-label" for="inp_4">Введите ваше имя</label>
-                    <input id="inp_4" class="input-group__input" type="text" name="" value="Кригер Игорь" disabled>
-                </div>
-            
-                <div class="input-group">
-                    <label class="input-label" for="inp_5">Комментарий</label>
-                    <textarea id="inp_5" class="input-group__textarea" name="" placeholder="Введите ваш комментарий"></textarea>
+                <div class="title-block__right">
+                    <div class="tabs-nav">
+                        <button class="tabs-nav__button is-active" type="button">Технические вопросы</button>
+                        <button class="tabs-nav__button" type="button">Юридические вопросы</button>
+                    </div>
                 </div>
             </div>
 
-            <div style="margin-bottom: 60px;">
-                <h2>Селект</h2>
-            
-                <div class="select-wrapper">
-                    <label class="input-label" for="sel">Сектор</label>
-                    <select id="sel" class="js-select">
-                        <option value="1">I</option>
-                        <option value="2">II</option>
-                        <option value="3" disabled>III</option>
-                        <option value="4">IV</option>
-                        <option value="5">V</option>
-                        <option value="6">VI</option>
-                        <option value="7">VII</option>
-                        <option value="8">VIII</option>
-                    </select>
-                    <div class="success-text">Сектор доступен</div>
-                </div>
-            
-                <br>
-            
-                <div class="select-wrapper">
-                    <label class="input-label" for="sel_2">Сектор</label>
-                    <select id="sel_2" class="js-select" disabled>
-                        <option value="1">I</option>
-                        <option value="2">II</option>
-                        <option value="3">III</option>
-                        <option value="4">IV</option>
-                        <option value="5">V</option>
-                        <option value="6">VI</option>
-                        <option value="7">VII</option>
-                        <option value="8">VIII</option>
-                    </select>
-                    <div class="error-text">Сектор не доступен</div>
-                </div>
-            </div>
+            <div class="columns columns--gap_24">
+                <div class="column">
+                    <div class="accordion accordion--type_1">
+                        <button class="accordion__toggler" type="button">
+                            <span>Для чего используется кластер?</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                            </svg>
+                        </button>
+                        <div class="accordion__body">
+                            <p>Без паники! Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки
+                                образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.</p>
+                            <p>Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется
+                                Lorem Ipsum.</p>
+                        </div>
+                    </div>
 
-            <div style="margin-bottom: 60px;">
-                <h2>Попапы</h2>
-            
-                <button class="button button--primary" type="button" data-fancybox="section_popup" data-src="#section_popup">Депозиты секции</button>
-            
-                <button class="button button--primary" type="button" data-fancybox="dep_add_popup" data-src="#dep_add_popup">Пополнение депозита</button>
-            
-                <button class="button button--primary" type="button" data-fancybox="dep_add_check_popup" data-src="#dep_add_check_popup">Пополнение депозита проверка данных</button>
-            
-                <button class="button button--primary" type="button" data-fancybox="success_popup" data-src="#success_popup">Успешно</button>
-            
-                <button class="button button--primary" type="button" data-fancybox="error_popup" data-src="#error_popup">Ошибка</button>
+                    <div class="accordion accordion--type_1">
+                        <button class="accordion__toggler" type="button">
+                            <span>Для чего используется кластер?</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                            </svg>
+                        </button>
+                        <div class="accordion__body">
+                            <p>Без паники! Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки
+                                образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.</p>
+                            <p>Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется
+                                Lorem Ipsum.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion--type_1">
+                        <button class="accordion__toggler" type="button">
+                            <span>Для чего используется кластер?</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                            </svg>
+                        </button>
+                        <div class="accordion__body">
+                            <p>Без паники! Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки
+                                образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.</p>
+                            <p>Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется
+                                Lorem Ipsum.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion--type_1">
+                        <button class="accordion__toggler" type="button">
+                            <span>Для чего используется кластер?</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                            </svg>
+                        </button>
+                        <div class="accordion__body">
+                            <p>Без паники! Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки
+                                образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.</p>
+                            <p>Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется
+                                Lorem Ipsum.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion--type_1">
+                        <button class="accordion__toggler" type="button">
+                            <span>Для чего используется кластер?</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                            </svg>
+                        </button>
+                        <div class="accordion__body">
+                            <p>Без паники! Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки
+                                образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.</p>
+                            <p>Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется
+                                Lorem Ipsum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="accordion accordion--type_1">
+                        <button class="accordion__toggler" type="button">
+                            <span>Для чего используется кластер?</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                            </svg>
+                        </button>
+                        <div class="accordion__body">
+                            <p>Без паники! Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки
+                                образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.</p>
+                            <p>Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется
+                                Lorem Ipsum.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion--type_1">
+                        <button class="accordion__toggler" type="button">
+                            <span>Для чего используется кластер?</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                            </svg>
+                        </button>
+                        <div class="accordion__body">
+                            <p>Без паники! Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки
+                                образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.</p>
+                            <p>Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется
+                                Lorem Ipsum.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion--type_1">
+                        <button class="accordion__toggler" type="button">
+                            <span>Для чего используется кластер?</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                            </svg>
+                        </button>
+                        <div class="accordion__body">
+                            <p>Без паники! Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки
+                                образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.</p>
+                            <p>Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется
+                                Lorem Ipsum.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion--type_1">
+                        <button class="accordion__toggler" type="button">
+                            <span>Для чего используется кластер?</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                            </svg>
+                        </button>
+                        <div class="accordion__body">
+                            <p>Без паники! Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки
+                                образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.</p>
+                            <p>Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется
+                                Lorem Ipsum.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion--type_1">
+                        <button class="accordion__toggler" type="button">
+                            <span>Для чего используется кластер?</span>
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                            </svg>
+                        </button>
+                        <div class="accordion__body">
+                            <p>Без паники! Lorem Ipsum является стандартной "рыбой" для текстов на латинице с начала XVI века. В то время некий безымянный печатник создал большую коллекцию размеров и форм шрифтов, используя Lorem Ipsum для распечатки
+                                образцов. Lorem Ipsum не только успешно пережил без заметных изменений пять веков, но и перешагнул в электронный дизайн.</p>
+                            <p>Его популяризации в новое время послужили публикация листов Letraset с образцами Lorem Ipsum в 60-х годах и, в более недавнее время, программы электронной вёрстки типа Aldus PageMaker, в шаблонах которых используется
+                                Lorem Ipsum.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

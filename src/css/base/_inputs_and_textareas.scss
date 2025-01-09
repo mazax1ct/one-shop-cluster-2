@@ -8,7 +8,7 @@
         border: 1px solid transparent;
         background-color: #101020;
         box-shadow: none !important;
-        color: inherit;
+        color: #fff;
         font-size: 15px;
         font-weight: 300;
         height: 48px;
@@ -31,8 +31,18 @@
             opacity: 1;
         }
 
-        &:focus {
-            border-color: var(--active);
+        &:not(:read-only) {
+            &:focus {
+                border-color: var(--active);
+            }
+        }
+
+        &:read-only {
+            color: var(--func-light);
+
+            &:focus {
+                caret-color: transparent;
+            }
         }
 
         &:disabled {
@@ -46,7 +56,7 @@
         border: 1px solid transparent;
         background-color: #101020;
         box-shadow: none !important;
-        color: inherit;
+        color: #fff;
         font-size: 15px;
         font-weight: 300;
         height: 120px;
@@ -70,8 +80,18 @@
             opacity: 1;
         }
 
-        &:focus {
-            border-color: var(--active);
+        &:not(:read-only) {
+            &:focus {
+                border-color: var(--active);
+            }
+        }
+
+        &:read-only {
+            color: var(--func-light);
+
+            &:focus {
+                caret-color: transparent;
+            }
         }
 
         &:disabled {
@@ -99,6 +119,7 @@
     font-size: 13px;
     font-weight: 300;
     line-height: 1.38461;
+    min-height: 18px;
 }
 
 .error-text {

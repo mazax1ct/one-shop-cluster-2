@@ -1,63 +1,79 @@
 .accordion {
-    &:first-child {
+    --indent: 16px;
+    @media(min-width: $fhd) {
+        --indent: 24px;
+    }
+
+    &.is-open {
         .accordion__toggler {
-            border-top: 1px solid var(--gray_white);
+            svg {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    &--type_1 {
+        border-radius: 16px;
+        background: linear-gradient(var(--panel-dark-2), var(--panel-dark-2) 0) padding-box, linear-gradient(45deg, #251668, #2A0F46) border-box;
+        border: 1px solid transparent;
+        @media(min-width: $fhd) {
+            border-radius: 24px;
+        }
+
+        .accordion__body {
+            color: var(--func-light);
+            @media(min-width: $fhd) {
+                font-size: 16px;
+            }
+        }
+    }
+
+    &--type_2 {
+        border-radius: 12px;
+        overflow: hidden;
+
+        .accordion__toggler {
+            background-color: #1F1648;
+        }
+
+        .accordion__body {
+            background-color: #191433;
+            color: var(--func-light);
+            @media(min-width: $fhd) {
+                font-size: 16px;
+            }
         }
     }
 
     &__toggler {
         @include button-reset;
         align-items: center;
-        border-bottom: 1px solid var(--gray_white);
         cursor: pointer;
         display: flex;
         gap: 16px;
         justify-content: space-between;
-        font-size: 11px;
-        height: 56px;
-        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 400;
+        min-height: 72px;
+        padding: var(--indent);
         text-align: left;
         transition: color 0.3s;
         width: 100%;
-        @media(min-width: $sm) {
-            font-size: 12px;
-        }
         @media(min-width: $fhd) {
-            font-size: 14px;
-            height: 72px;
-        }
-        @include hover {
-            color: var(--ocher);
-        }
-
-        &.is-open {
-            border-bottom-color: transparent;
-
-            svg {
-                transform: rotate(180deg);
-            }
+            font-size: 18px;
         }
 
         svg {
-            fill: currentColor;
-            height: 24px;
-            min-width: 24px;
-            width: 24px;
+            fill: var(--func);
+            height: 16px;
+            min-width: 16px;
+            width: 16px;
         }
     }
 
     &__body {
-        border-bottom: 1px solid var(--gray_white);
         display: none;
         overflow: hidden;
-        transition: height 0.5s ease;
-
-        &.is-open {
-            display: block;
-        }
-    }
-
-    &__body-inner {
-        padding-bottom: 16px;
+        padding: var(--indent);
     }
 }

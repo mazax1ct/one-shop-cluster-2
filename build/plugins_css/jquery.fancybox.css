@@ -137,6 +137,8 @@ body.compensate-for-scrollbar {
   white-space: normal;
   width: 100%;
   z-index: 99994;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
 }
 
 .fancybox-slide::before {

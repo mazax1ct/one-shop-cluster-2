@@ -1,0 +1,12 @@
+.quantity {
+    display: flex;
+    gap: 8px;
+
+    .button {
+        svg {
+            fill: currentColor;
+            height: 14px;
+            width: 14px;
+        }
+    }
+}

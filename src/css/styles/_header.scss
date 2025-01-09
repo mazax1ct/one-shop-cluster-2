@@ -38,6 +38,7 @@
         font-size: 16px;
         font-weight: 600;
         line-height: 1.5;
+        text-decoration: none;
         @media(min-width: $md) {
             font-size: 24px;
             line-height: 1;
@@ -133,7 +134,6 @@
         display: flex;
         color: var(--func);
         font-size: 15px;
-        font-weight: 300;
         gap: 12px;
         min-height: 48px;
         padding: 16px 24px;
@@ -143,6 +143,7 @@
             border-left: none;
             min-height: var(--header_min_height);
             padding-left: 16px;
+            padding-right: 16px;
         }
         @include hover {
             color: #fff;

@@ -1,3 +1,4 @@
+//кнопка бургер
 $(document).on('click', '.js-menu-toggler', function() {
   if(!$(this).hasClass('is-active')) {
     $('.page').addClass('is-overflow');
@@ -14,6 +15,7 @@ $(document).on('click', '.js-menu-toggler', function() {
   return false;
 });
 
+//тогглер секции кластера на мобиле
 $(document).on('click', '.js-cluster-item-toggler', function () {
   if(!$(this).hasClass('is-active')) {
     $(this).closest('.cluster-item').find('.cluster-item__dropdown').slideDown();
@@ -22,6 +24,13 @@ $(document).on('click', '.js-cluster-item-toggler', function () {
     $(this).closest('.cluster-item').find('.cluster-item__dropdown').slideUp();
     $(this).removeClass('is-active');
   }
+  return false;
+});
+
+//аккордион
+$(document).on('click', '.accordion__toggler', function () {
+  $(this).closest('.accordion').toggleClass('is-open');
+  $(this).closest('.accordion').find('.accordion__body').slideToggle();
   return false;
 });
 
