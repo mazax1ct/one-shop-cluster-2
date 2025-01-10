@@ -170,8 +170,6 @@ textarea {
     }
 
     .column-big {
-        padding-left: 16px;
-        padding-right: 16px;
         @media(min-width: $lg) {
             width: 74.55357%;
         }
@@ -218,29 +216,25 @@ textarea {
                 font-size: 24px;
                 line-height: 1;
             }
-        }
 
-        small {
-            font-size: 13px;
-            font-weight: 300;
-            line-height: 1.53846;
-            @media(min-width: $fhd) {
-                font-size: 15px;
-                line-height: 1.2;
+            small {
+                font-size: 13px;
+                font-weight: 300;
+                line-height: 1.53846;
+                @media(min-width: $fhd) {
+                    font-size: 15px;
+                    line-height: 1.2;
+                }
             }
         }
     }
 }
 
 .title-block {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-    @media(min-width: $lg) {
-        padding-top: 16px;
-        padding-bottom: 16px;
-    }
 
     &:not(:last-child) {
         margin-bottom: 16px;

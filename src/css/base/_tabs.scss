@@ -7,10 +7,11 @@
         border-radius: 16px;
         border: none;
         background-color: transparent;
-        color: #fff;
+        color: var(--func);
         cursor: pointer;
         display: inline-flex;
         font-size: 15px;
+        font-weight: 300;
         justify-content: center;
         line-height: 1;
         min-width: 70px;
@@ -22,9 +23,10 @@
 
         &.is-active {
             background-color: var(--active);
-            @include hover {
-                color: #fff;
-            }
+            color: #fff;
+        }
+        @include hover {
+            color: #fff;
         }
     }
 }

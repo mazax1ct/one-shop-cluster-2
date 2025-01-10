@@ -1,0 +1,69 @@
+.cluster-account {
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+    @media(min-width: $lg) {
+        padding-top: 8px;
+    }
+    @media(min-width: $fhd) {
+        padding-top: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin-top: 0;
+        margin-bottom: 16px;
+        @media(min-width: $fhd) {
+            font-size: 24px;
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        small {
+            color: var(--func);
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.53846;
+            @media(min-width: $fhd) {
+                font-size: 15px;
+                line-height: 1.2;
+            }
+        }
+    }
+
+    &__balance {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 0;
+        @media(min-width: $fhd) {
+            font-size: 56px;
+        }
+
+        span {
+            color: var(--func);
+        }
+    }
+
+    &__dynamic {
+        align-items: center;
+        display: flex;
+        gap: 4px;
+
+        svg {
+            fill: currentColor;
+            height: 16px;
+            width: 16px;
+        }
+
+        &--increase {
+            color: var(--highlight-green);
+        }
+
+        &--decrease {
+            color: var(--attention);
+        }
+    }
+}
