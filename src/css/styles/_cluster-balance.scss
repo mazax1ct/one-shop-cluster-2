@@ -49,6 +49,9 @@
         @include list-reset;
         @include scrollbar;
         overflow-y: auto;
+        @media(max-width: $lg - 0.02px) {
+            height: 400px;
+        }
 
         table {
             border: none;

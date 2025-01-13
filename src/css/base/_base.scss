@@ -10,15 +10,16 @@
 
 body,
 html {
-    @include scrollbar;
     margin: 0;
     padding: 0;
-    scrollbar-gutter: stable;
 }
 
 html {
+    @include scrollbar;
+    background: var(--bg);
     min-height: 100dvh;
     scroll-behavior: smooth;
+    scrollbar-gutter: stable;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: none;
@@ -27,6 +28,7 @@ html {
 }
 
 .page {
+    @include scrollbar;
     background: radial-gradient(41.07% 29.57% at 100% 100%, rgba(72, 8, 120, 0.12) 0%, rgba(123, 0, 255, 0) 100%), radial-gradient(69.97% 92.86% at 0% 0%, #070713 0%, #101026 28%, #12122F 33.85%, #15153E 46.22%, #12122F 53.95%, #070713 100%);
     background-repeat: no-repeat;
     background-size: cover;
@@ -39,6 +41,7 @@ html {
     line-height: 1.3;
     min-height: 100dvh;
     overflow-x: hidden;
+    scrollbar-gutter: stable;
     @media(min-width: $fhd) {
         font-size: 15px;
     }
@@ -51,6 +54,43 @@ html {
         flex: 1 0 auto;
         padding-top: calc(var(--header_min_height) + var(--page_content_padding_top));
         padding-bottom: var(--page_content_padding_bottom);
+    }
+
+    &--graph {
+        .page__content {
+            @media(min-width: $lg) {
+                height: calc(100dvh - (var(--header_min_height) + var(--page_content_padding_top) + var(--page_content_padding_bottom) + var(--footer_min_height)));
+            }
+
+            .container {
+                @media(min-width: $lg) {
+                    height: 100%;
+                }
+
+                .columns {
+                    @media(min-width: $lg) {
+                        height: 100%;
+                    }
+
+                    .cluster-balance {
+                        @media(min-width: $lg) {
+                            display: flex;
+                            flex-direction: column;
+                            height: calc(100% - 115px - 24px - 16px);
+                        }
+                        @media(min-width: $fhd) {
+                            height: calc(100% - 144px - 24px - 24px);
+                        }
+                    }
+
+                    .graph {
+                        flex-grow: 1;
+                        height: 300px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
     }
 }
 

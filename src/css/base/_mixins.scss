@@ -1,4 +1,5 @@
 @mixin scrollbar {
+    scrollbar-color: var(--func) var(--bg);
     scrollbar-width: thin;
 }
 @mixin list-reset {

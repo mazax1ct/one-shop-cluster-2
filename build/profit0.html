@@ -387,22 +387,15 @@
                     
                             xRenderer.grid.template.set("visible", false);
                     
-                            xRenderer.labels.template.setAll({
-                                centerX: am5.p0
-                            });
-                    
                             xAxis.set("minorDateFormats", {
                                 "day": "dd",
                                 "month": "MM"
                             });
                     
-                            var yRenderer = am5xy.AxisRendererY.new(root, {});
                     
                             var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-                                renderer: yRenderer
+                                renderer: am5xy.AxisRendererY.new(root, {})
                             }));
-                    
-                            yRenderer.labels.template.set('visible', false);
                     
                     
                             // Add series
@@ -411,7 +404,7 @@
                                 autoTextColor: false,
                                 getFillFromObject: false,
                                 getFillFromSprite: false,
-                                labelText: "{valueY}",
+                                labelText: "{valueY}"
                             });
                     
                             var series = chart.series.push(am5xy.ColumnSeries.new(root, {
@@ -445,14 +438,6 @@
                             }));
                     
                             series.columns.template.setAll({
-                                strokeOpacity: 0,
-                                shadowColor: am5.color(0x1336AC),
-                                shadowBlur: 10,
-                                shadowOffsetX: 0,
-                                shadowOffsetY: 0
-                            });
-                    
-                            series.columns.template.setAll({
                                 cornerRadiusTL: 20,
                                 cornerRadiusTR: 20,
                                 cornerRadiusBR: 20,
@@ -460,33 +445,6 @@
                                 strokeOpacity: 0,
                                 width: 8
                             });
-                    
-                            series.columns.template.events.on("pointerover", function(ev) {
-                                console.log(ev.target);
-                    
-                                ev.target.animate({
-                                    key: "shadowColor",
-                                    to: am5.color(0x1E73FF),
-                                    duration: 500,
-                                    easing: am5.ease.linear
-                                });
-                            }, this);
-                    
-                            series.columns.template.events.on("pointerout", function(ev) {
-                                console.log(ev.target);
-                                ev.target.animate({
-                                    key: "shadowBlur",
-                                    to: 10,
-                                    duration: 500,
-                                    easing: am5.ease.linear
-                                });
-                                ev.target.animate({
-                                    key: "shadowColor",
-                                    to: am5.color(0x1336AC),
-                                    duration: 500,
-                                    easing: am5.ease.linear
-                                });
-                            }, this);
                     
                             var data = generateDatas(30);
                             series.data.setAll(data);
@@ -497,7 +455,7 @@
                             series.appear(1000);
                             chart.appear(1000, 100);
                     
-                        });
+                        }); // end am5.ready()
                     </script>
                     
                     <div id="chartdiv" class="graph"></div>

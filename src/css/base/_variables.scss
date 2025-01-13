@@ -30,6 +30,7 @@ $fhd: 1600px;
         --header_min_height: 72px;
     }
     @media(min-width: $lg) {
+        --footer_min_height: 120px;
         --container_padding: 32px;
     }
     @media(min-width: $fhd) {
