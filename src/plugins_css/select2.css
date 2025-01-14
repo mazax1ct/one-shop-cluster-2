@@ -332,32 +332,72 @@
   padding: 6px;
 }
 
+.select-wrapper--type_2 .select2-container {
+  color: var(--func)
+}
+
 .select-wrapper--type_2 .select2-container .select2-selection--single {
-  min-height: 40px;
+  min-height: 32px;
 }
 
 .select-wrapper--type_2 .select2-container .select2-selection--single .select2-selection__rendered {
-  min-height: 38px;
+  min-height: 30px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 20px;
+  padding-left: 0;
+}
+
+.select-wrapper--type_2 .select2-container--default .select2-selection--single .select2-selection__arrow {
+  right: 0
+}
+
+.select-wrapper--type_2 .select2-container--default .select2-selection--single .select2-selection__arrow b {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.71875 5.875L1.09375 1.28125C0.9375 1.15625 0.9375 0.90625 1.09375 0.75L1.71875 0.15625C1.875 0 2.09375 0 2.25 0.15625L6 3.84375L9.71875 0.15625C9.875 0 10.125 0 10.25 0.15625L10.875 0.75C11.0312 0.90625 11.0312 1.15625 10.875 1.28125L6.25 5.875C6.09375 6.03125 5.875 6.03125 5.71875 5.875Z' fill='%23666587'/%3E%3C/svg%3E%0A");
 }
 
 .select-wrapper--type_2 .select2-search--dropdown {
   top: -40px;
 }
 
-.select-wrapper--type_2 .select2-container--default .select2-search--dropdown .select2-search__field {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
 .select-wrapper--type_2 .select2-container--default .select2-selection--single {
-  background-color: #fff;
-  border: 1px solid var(--grey_2);
-}
-
-.select-wrapper--type_2 .select2-container--default .select2-selection--single:hover {
-  border-color: var(--grey_2);
+  background-color: transparent;
+  border: none
 }
 
 .select-wrapper--type_2 .select2-dropdown {
-  border-color: var(--grey_2);
+  border: none;
+  border-radius: 8px;
+}
+
+.select-wrapper--type_2 .select2-results {
+  border-radius: 8px;
+}
+
+.select-wrapper--type_2 .select2-results__option {
+  color: #fff;
+  padding: 8px
+}
+
+.select-wrapper--type_2 .select2-results__option:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.select-wrapper--type_2 .select2-results__option:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.select-wrapper--type_3 .select2-container--default .select2-selection--single {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.select-wrapper--type_3 .select2-results {
+  border-radius: 12px;
+}
+
+.select-wrapper--type_3 .select2-container--open .select2-dropdown--below {
+  border-radius: 12px;
 }

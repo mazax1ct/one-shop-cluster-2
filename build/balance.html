@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="format-detection" content="telephone=no">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
     <link rel="manifest" href="images/favicon/site.webmanifest">
@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="images/favicon/favicon.ico">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">-->
 
     <link rel="preload" href="fonts/subset-GeologicaRoman-ExtraLight.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="fonts/subset-GeologicaRoman-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -108,20 +108,29 @@
                     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
                     <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
                     <script src="https://cdn.amcharts.com/lib/5/themes/Responsive.js"></script>
+                    <script src="//cdn.amcharts.com/lib/5/locales/ru_RU.js"></script>
                     
                     <script>
                         am5.ready(function() {
+                    
+                            console.log(new Date(2025, 0, 22).getTime());
                     
                             // Create root element
                             // https://www.amcharts.com/docs/v5/getting-started/#Root_element
                             var root = am5.Root.new("chartdiv");
                             root._logo.dispose();
+                            root.locale = am5locales_ru_RU;
+                    
+                            root.dateFormatter.setAll({
+                                dateFormat: "yyyy-MM-dd",
+                                dateFields: ["valueX"]
+                            });
                     
                             const myTheme = am5.Theme.new(root);
                     
-                            myTheme.rule("AxisLabel", ["minor"]).setAll({
+                            /*myTheme.rule("AxisLabel", ["minor"]).setAll({
                                 dy: 1
-                            });
+                            });*/
                     
                             myTheme.rule("Label").setAll({
                                 fontFamily: 'Geologica Roman'
@@ -155,27 +164,6 @@
                             var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
                             cursor.lineY.set("visible", false);
                             cursor.lineX.set("visible", false);
-                    
-                            var date = new Date();
-                            date.setHours(0, 0, 0, 0);
-                            var value = 100;
-                    
-                            function generateData() {
-                                value = Math.round((Math.random() * 10 - 5) + value);
-                                am5.time.add(date, "day", 1);
-                                return {
-                                    date: date.getTime(),
-                                    value: value
-                                };
-                            }
-                    
-                            function generateDatas(count) {
-                                var data = [];
-                                for (var i = 0; i < count; ++i) {
-                                    data.push(generateData());
-                                }
-                                return data;
-                            }
                     
                     
                             // Create axes
@@ -216,10 +204,10 @@
                                 centerX: am5.p0
                             });
                     
-                            xAxis.set("minorDateFormats", {
+                            /*xAxis.set("minorDateFormats", {
                                 "day": "dd",
                                 "month": "MM"
-                            });
+                            });*/
                     
                             var yRenderer = am5xy.AxisRendererY.new(root, {});
                     
@@ -287,8 +275,6 @@
                             });
                     
                             series.columns.template.events.on("pointerover", function(ev) {
-                                console.log(ev.target);
-                    
                                 ev.target.animate({
                                     key: "shadowColor",
                                     to: am5.color(0x1E73FF),
@@ -298,7 +284,6 @@
                             }, this);
                     
                             series.columns.template.events.on("pointerout", function(ev) {
-                                console.log(ev.target);
                                 ev.target.animate({
                                     key: "shadowBlur",
                                     to: 10,
@@ -313,15 +298,57 @@
                                 });
                             }, this);
                     
-                            var data = generateDatas(30);
-                            series.data.setAll(data);
+                    
+                            am5.net.load("json/day.json").then(function(result) {
+                                var data = am5.JSONParser.parse(result.response);
+                    
+                                series.data.setAll(data);
+                            }).catch(function(result) {
+                                // Error
+                                console.log("Error loading " + result.xhr.responseURL);
+                            });
+                    
+                            let dataTogglers = document.querySelectorAll('.js-data-toggler');
+                    
+                            dataTogglers.forEach((dataToggler) => {
+                                dataToggler.addEventListener('click', function(event) {
+                                    dataTogglers.forEach((dataToggler) => {
+                                        dataToggler.classList.remove('is-active');
+                                    });
+                                    dataToggler.classList.add('is-active');
+                                    var src = dataToggler.dataset.src;
+                                    var interval = dataToggler.dataset.interval;
+                    
+                                    am5.net.load(src).then(function(result) {
+                                        var data = am5.JSONParser.parse(result.response);
+                    
+                                        xAxis.set('baseInterval', {
+                                            timeUnit: interval,
+                                            count: 1
+                                        });
+                    
+                                        am5.array.each(data, function(item) {
+                    
+                    
+                    
+                                            console.log(item);
+                                        });
+                    
+                                        tooltip.set('labelText', data.title);
+                    
+                                        series.data.setAll(data);
+                                    }).catch(function(result) {
+                                        // Error
+                                        console.log("Error loading " + result.xhr.responseURL);
+                                    });
+                                });
+                            });
                     
                     
                             // Make stuff animate on load
                             // https://www.amcharts.com/docs/v5/concepts/animations/
                             series.appear(1000);
                             chart.appear(1000, 100);
-                    
                         });
                     </script>
                     
@@ -346,9 +373,17 @@
                         <div class="cluster-balance__title-block">
                             <h2>Кластер <small>Баланс</small></h2>
                     
-                            <div class="tabs-nav">
+                            <!--<div class="tabs-nav">
                                 <button class="tabs-nav__button is-active" type="button">Этап I</button>
                                 <button class="tabs-nav__button" type="button">Этап II</button>
+                            </div>-->
+                    
+                            <div class="select-wrapper select-wrapper--type_3">
+                                <select id="etap" class="js-select">
+                                    <option value="1">Этап I</option>
+                                    <option value="2">Этап II</option>
+                                    <option value="3">Этап III</option>
+                                </select>
                             </div>
                         </div>
                     
