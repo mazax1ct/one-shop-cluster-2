@@ -221,14 +221,12 @@
                         count: 1
                     });
 
-                    am5.array.each(data, function(item) {
-
-
-
-                        console.log(item);
+                    xAxis.get("tooltip").adapters.add("labelText", function(text, target) {
+                        console.log(target);
+                        //return data[target].title;
                     });
 
-                    tooltip.set('labelText', data.title);
+                    //tooltip.set('labelText', 'd');
 
                     series.data.setAll(data);
                 }).catch(function(result) {
