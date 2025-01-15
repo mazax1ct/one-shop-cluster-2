@@ -306,7 +306,7 @@
 .select2-container--default .select2-results>.select2-results__options {
   max-height: 172px;
   overflow-y: auto;
-  scrollbar-color: var(--blue_5) transparent;
+  scrollbar-color: var(--func) var(--bg);
   scrollbar-width: thin;
 }
 
