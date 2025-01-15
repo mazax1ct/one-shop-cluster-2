@@ -34,7 +34,7 @@ $(document).on('click', '.accordion__toggler', function () {
   return false;
 });
 
-$(document).ready(function () {
+function formInit () {
   //кастомный селект
   $('.js-select').each(function() {
     var $p = $(this).closest('.select-wrapper');
@@ -50,4 +50,12 @@ $(document).ready(function () {
     var $p = $(this).closest('.select-wrapper');
     $p.removeClass('open');
 	});
+}
+
+$(document).on('afterLoad.fb', function( e, instance, slide ) {
+    formInit();
+});
+
+$(document).ready(function () {
+  formInit();
 });

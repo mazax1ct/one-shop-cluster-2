@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="page page--gradient page--graph">
+<body class="page page--gradient">
     <header class="header">
         <div class="header__inner container">
             <a class="header__logo" href="#">
@@ -88,458 +88,277 @@
 
     <main class="page__content">
         <div class="container">
-            <div class="columns columns--gap_32">
-                <div class="column column-small">
-                    <div class="cluster-account">
-                        <h2>Кластерный счет <small>Баланс</small></h2>
-                    
-                        <p class="cluster-account__balance">1 034 150 <span>₽</span></p>
-                    
-                        <p class="cluster-account__dynamic cluster-account__dynamic--increase">
-                            <svg aria-hidden="true">
-                                <use xlink:href="images/sprite.svg#arrow_up_icon" />
-                            </svg>
-                            1,35% динамика начислений за сутки
-                        </p>
-                    </div>
+            <div class="calc columns columns--gap_32">
+                <div class="column">
+                    <div class="box box--type_2">
+                        <div class="box__title-block">
+                            <h2>Текущая доходность <small class="color-func">от аренды серверных мощностей</small></h2>
+                        </div>
 
-                    <div class="cluster-balance box box--type_2">
-                        <div class="cluster-balance__title-block">
-                            <h2>Кластер <small>Баланс</small></h2>
-                    
-                            <!--<div class="tabs-nav">
-                                <button class="tabs-nav__button is-active" type="button">Этап I</button>
-                                <button class="tabs-nav__button" type="button">Этап II</button>
-                            </div>-->
-                    
-                            <div class="select-wrapper select-wrapper--type_3">
-                                <select id="etap" class="js-select">
-                                    <option value="1">Этап I</option>
-                                    <option value="2">Этап II</option>
-                                    <option value="3">Этап III</option>
-                                </select>
+                        <div class="box__title-block">
+                            <div class="box__title-block-left">
+                                <h2>Квалификация</h2>
+                            </div>
+
+                            <div>
+                                <span class="color-func">Директор</span>
+                                <span class="calc__val color-orange">5,0%</span>
                             </div>
                         </div>
-                    
-                        <p class="cluster-balance__summ">452 000 ₽</p>
-                    
-                        <h2>Активные депозиты <small>Этап II</small></h2>
-                    
-                        <div class="cluster-balance__deps-list">
-                            <table>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>445 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/10</td>
-                                </tr>
-                                <tr>
-                                    <td>24 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/9</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>445 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/10</td>
-                                </tr>
-                                <tr>
-                                    <td>24 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/9</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>445 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/10</td>
-                                </tr>
-                                <tr>
-                                    <td>24 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/9</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>445 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/10</td>
-                                </tr>
-                                <tr>
-                                    <td>24 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/9</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                            </table>
+
+                        <div class="calc__badges">
+                            <div class="calc__badge calc__badge--type_1 is-active">
+                                <div class="calc__badge-title">Консультант</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_1 is-active">
+                                <div class="calc__badge-title">Менеджер</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_1 is-active">
+                                <div class="calc__badge-title">Ведущий специалист</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_1 is-active">
+                                <div class="calc__badge-title">Вице директор</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_1 is-active">
+                                <div class="calc__badge-title">Директор</div>
+                                <div class="calc__badge-val">+3%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_1">
+                                <div class="calc__badge-title">Серебряный директор</div>
+                                <div class="calc__badge-val">+0%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_1">
+                                <div class="calc__badge-title">Золотой директор</div>
+                                <div class="calc__badge-val">+1%</div>
+                            </div>
+                        </div>
+
+                        <div class="box__title-block">
+                            <h2>Активность в кластере <small class="color-func">по активным депозитам</small></h2>
+                        </div>
+
+                        <div class="calc__tabs-nav">
+                            <button class="calc__tabs-nav-button" type="button"><span>I</span><span>(0)</span></button>
+                            <button class="calc__tabs-nav-button calc__tabs-nav-button--type_1" type="button"><span>II</span><span>(7)</span></button>
+                            <button class="calc__tabs-nav-button calc__tabs-nav-button--type_1 is-active" type="button"><span>III</span><span>(6)</span></button>
+                            <button class="calc__tabs-nav-button" type="button"><span>VI</span><span>(0)</span></button>
+                            <button class="calc__tabs-nav-button" type="button"><span>V</span><span>(0)</span></button>
+                            <button class="calc__tabs-nav-button" type="button"><span>VI</span><span>(0)</span></button>
+                            <button class="calc__tabs-nav-button" type="button"><span>VII</span><span>(0)</span></button>
+                            <button class="calc__tabs-nav-button calc__tabs-nav-button--type_1" type="button"><span>VIII</span><span>(2)</span></button>
+                            <button class="calc__tabs-nav-button" type="button"><span>IX</span><span>(0)</span></button>
+                            <button class="calc__tabs-nav-button" type="button"><span>X</span><span>(0)</span></button>
+                        </div>
+
+                        <div class="box__title-block">
+                            <div class="box__title-block-left">
+                                <h2>Личный доход</h2>
+                            </div>
+
+                            <div>
+                                <span class="color-func">40 000,00 ₽</span>
+                                <span class="calc__val color-green">4,0%</span>
+                            </div>
+                        </div>
+
+                        <div class="calc__badges">
+                            <div class="calc__badge calc__badge--type_2 is-active">
+                                <div class="calc__badge-title">1&nbsp;000—50&nbsp;000&nbsp;₽</div>
+                                <div class="calc__badge-val">+4%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_2">
+                                <div class="calc__badge-title">51&nbsp;000—100&nbsp;000&nbsp;₽</div>
+                                <div class="calc__badge-val">+1%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_2">
+                                <div class="calc__badge-title">101&nbsp;000—200&nbsp;000&nbsp;₽</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_2">
+                                <div class="calc__badge-title">201&nbsp;000—300&nbsp;000&nbsp;₽</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_2">
+                                <div class="calc__badge-title">301&nbsp;000—400&nbsp;000&nbsp;₽</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_2">
+                                <div class="calc__badge-title">401&nbsp;000—500&nbsp;000&nbsp;₽</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_2">
+                                <div class="calc__badge-title">501&nbsp;000—600&nbsp;000&nbsp;₽</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_2">
+                                <div class="calc__badge-title">601&nbsp;000—700&nbsp;000&nbsp;₽</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_2">
+                                <div class="calc__badge-title">701&nbsp;000—800&nbsp;000&nbsp;₽</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_2">
+                                <div class="calc__badge-title">801&nbsp;000—900&nbsp;000&nbsp;₽</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_2">
+                                <div class="calc__badge-title">901&nbsp;000—1&nbsp;000&nbsp;000&nbsp;₽</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_2">
+                                <div class="calc__badge-title">1&nbsp;001&nbsp;000—1&nbsp;100&nbsp;000&nbsp;₽</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                        </div>
+
+                        <div class="box__title-block">
+                            <div class="box__title-block-left">
+                                <h2>Кластерный доход</h2>
+                            </div>
+
+                            <div>
+                                <span class="color-func">120 человек</span>
+                                <span class="calc__val color-blue">5,0%</span>
+                            </div>
+                        </div>
+
+                        <div class="calc__badges">
+                            <div class="calc__badge calc__badge--type_3 is-active">
+                                <div class="calc__badge-title">Консультант</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_3 is-active">
+                                <div class="calc__badge-title">Менеджер</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_3 is-active">
+                                <div class="calc__badge-title">Ведущий специалист</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_3 is-active">
+                                <div class="calc__badge-title">Вице директор</div>
+                                <div class="calc__badge-val">+0,5%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_3 is-active">
+                                <div class="calc__badge-title">Директор</div>
+                                <div class="calc__badge-val">+3%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_3">
+                                <div class="calc__badge-title">Серебряный директор</div>
+                                <div class="calc__badge-val">+0%</div>
+                            </div>
+                            <div class="calc__badge calc__badge--type_3">
+                                <div class="calc__badge-title">Золотой директор</div>
+                                <div class="calc__badge-val">+1%</div>
+                            </div>
+                        </div>
+
+                        <div class="calc__row calc__row--flex">
+                            <div class="calc__cell">
+                                <div class="input-group">
+                                    <label class="input-label" for="calc_1">Совокупный процент</label>
+                                    <input id="calc_1" class="input-group__input" type="text" name="" value="17,88%" placeholder="" readonly>
+                                </div>
+                            </div>
+
+                            <div class="calc__cell">
+                                <div class="input-group">
+                                    <label class="input-label" for="calc_2">Начисления за 11 месяцев</label>
+                                    <input id="calc_2" class="input-group__input" type="text" name="" value="8 940,00 ₽" placeholder="" readonly>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="column column-big">
-                    <div class="title-block">
-                        <div class="title-block__left">
-                            <h1>Начисления</h1>
-                            <div class="select-wrapper select-wrapper--type_2">
-                                <select id="god" class="js-select">
-                                    <option value="2024">2024</option>
-                                    <option value="2025">2025</option>
-                                </select>
+                <div class="column">
+                    <div class="box box--type_2">
+                        <div class="box__title-block">
+                            <h2>Прогнозирование</h2>
+                        </div>
+
+                        <div class="calc__form">
+                            <div class="calc__form-block">
+                                <div class="calc__row">
+                                    <div class="input-group">
+                                        <label class="input-label" for="calc_3">Сумма депозита</label>
+                                        <input id="calc_3" class="input-group__input" type="text" name="" value="50 000" placeholder="" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="calc__row">
+                                    <div class="input-group">
+                                        <label class="input-label" for="calc_4">Число людей в секторе</label>
+                                        <input id="calc_4" class="input-group__input" type="text" name="" value="8 882" placeholder="" readonly>
+                                    </div>
+                                </div>
+
+                                <div class="calc__row">
+                                    <div class="select-wrapper">
+                                        <label class="input-label" for="calc_5">Сектор</label>
+                                        <select id="calc_5" class="js-select">
+                                            <option value="1">Консультант</option>
+                                            <option value="2">Менеджер</option>
+                                            <option value="3">Ведущий специалист</option>
+                                            <option value="4">Вице директор</option>
+                                            <option value="5">Директор</option>
+                                            <option value="6">Серебряный директор</option>
+                                            <option value="7">Золотой директор</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="calc__form-block">
+                                бублик
+                            </div>
+
+                            <div class="calc__form-block">
+                                <div class="input-label">Личный доход</div>
+
+                                <div class="calc__income color-green">
+                                    4% <small>из 9</small>
+                                </div>
+
+                                <div class="input-label">Кластерный доход</div>
+
+                                <div class="calc__income color-blue">
+                                    8,88% <small>из 10</small>
+                                </div>
+
+                                <div class="input-label">Квалификационный доход </div>
+
+                                <div class="calc__income color-orange">
+                                    5% <small>из 6</small>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="title-block__right">
-                            <div class="tabs-nav">
-                                <button class="js-data-toggler tabs-nav__button is-active" type="button" data-src="json/day.json" data-interval="day">По дням</button>
-                                <button class="js-data-toggler tabs-nav__button" type="button" data-src="json/week.json" data-interval="week">По неделям</button>
-                                <button class="js-data-toggler tabs-nav__button" type="button" data-src="json/month.json" data-interval="month">По месяцам</button>
+                        <hr>
+
+                        <div class="calc__row calc__row--flex">
+                            <div class="calc__cell">
+                                <div class="input-group">
+                                    <label class="input-label" for="calc_1">Совокупный процент</label>
+                                    <input id="calc_1" class="input-group__input" type="text" name="" value="17,88%" placeholder="" readonly>
+                                </div>
+                            </div>
+
+                            <div class="calc__cell">
+                                <div class="input-group">
+                                    <label class="input-label" for="calc_2">Начисления за 11 месяцев</label>
+                                    <input id="calc_2" class="input-group__input" type="text" name="" value="8 940,00 ₽" placeholder="" readonly>
+                                </div>
                             </div>
                         </div>
+
+                        <button class="button button--primary shadow" type="button">Рассчитать результат</button>
                     </div>
-
-                    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-                    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-                    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-                    <script src="https://cdn.amcharts.com/lib/5/themes/Responsive.js"></script>
-                    <script src="//cdn.amcharts.com/lib/5/locales/ru_RU.js"></script>
-                    
-                    <script>
-                        am5.ready(function() {
-                    
-                            console.log(new Date(2025, 0, 22).getTime());
-                    
-                            // Create root element
-                            // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-                            var root = am5.Root.new("chartdiv");
-                            root._logo.dispose();
-                            root.locale = am5locales_ru_RU;
-                    
-                            root.dateFormatter.setAll({
-                                dateFormat: "yyyy-MM-dd",
-                                dateFields: ["valueX"]
-                            });
-                    
-                            const myTheme = am5.Theme.new(root);
-                    
-                            /*myTheme.rule("AxisLabel", ["minor"]).setAll({
-                                dy: 1
-                            });*/
-                    
-                            myTheme.rule("Label").setAll({
-                                fontFamily: 'Geologica Roman'
-                            });
-                    
-                            // Set themes
-                            // https://www.amcharts.com/docs/v5/concepts/themes/
-                            root.setThemes([
-                                am5themes_Animated.new(root),
-                                myTheme,
-                                am5themes_Responsive.new(root)
-                            ]);
-                    
-                            root.interfaceColors.set("grid", am5.color(0x666587));
-                            root.interfaceColors.set("text", am5.color(0x666587));
-                    
-                    
-                            // Create chart
-                            // https://www.amcharts.com/docs/v5/charts/xy-chart/
-                            var chart = root.container.children.push(am5xy.XYChart.new(root, {
-                                panX: false,
-                                panY: false,
-                                wheelX: "none",
-                                wheelY: "none",
-                                paddingLeft: 0
-                            }));
-                    
-                    
-                            // Add cursor
-                            // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-                            var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
-                            cursor.lineY.set("visible", false);
-                            cursor.lineX.set("visible", false);
-                    
-                    
-                            // Create axes
-                            // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-                            var xRenderer = am5xy.AxisRendererX.new(root, {
-                                minorGridEnabled: false,
-                                minorLabelsEnabled: false,
-                            });
-                    
-                            var tooltip = am5.Tooltip.new(root, {
-                                autoTextColor: false
-                            });
-                    
-                            var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-                                maxDeviation: 0,
-                                baseInterval: {
-                                    timeUnit: "day",
-                                    count: 1
-                                },
-                                renderer: xRenderer,
-                                tooltip: tooltip
-                            }));
-                    
-                            tooltip.get("background").setAll({
-                                fill: am5.color(0x1D4BFF),
-                                stroke: am5.color(0x1D4BFF),
-                                cornerRadius: 5
-                            });
-                    
-                            tooltip.label.setAll({
-                                fill: am5.color(0xffffff),
-                                fontFamily: 'Geologica Roman'
-                            });
-                    
-                            xRenderer.grid.template.set("visible", false);
-                    
-                            xRenderer.labels.template.setAll({
-                                centerX: am5.p0
-                            });
-                    
-                            /*xAxis.set("minorDateFormats", {
-                                "day": "dd",
-                                "month": "MM"
-                            });*/
-                    
-                            var yRenderer = am5xy.AxisRendererY.new(root, {});
-                    
-                            var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-                                renderer: yRenderer
-                            }));
-                    
-                            yRenderer.labels.template.set('visible', false);
-                    
-                    
-                            // Add series
-                            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-                            var tooltip_2 = am5.Tooltip.new(root, {
-                                autoTextColor: false,
-                                getFillFromObject: false,
-                                getFillFromSprite: false,
-                                labelText: "{valueY}",
-                            });
-                    
-                            var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-                                name: "Series",
-                                xAxis: xAxis,
-                                yAxis: yAxis,
-                                valueYField: "value",
-                                valueXField: "date",
-                                tooltip: tooltip_2
-                            }));
-                    
-                            tooltip_2.get("background").setAll({
-                                stroke: am5.color(0x1D4BFF),
-                                fill: am5.color(0x1D4BFF),
-                                fillOpacity: 1,
-                                cornerRadius: 5,
-                            });
-                    
-                            tooltip_2.label.setAll({
-                                fill: am5.color(0xffffff),
-                                fontFamily: 'Geologica Roman'
-                            });
-                    
-                            series.columns.template.set("fillGradient", am5.LinearGradient.new(root, {
-                                stops: [{
-                                    color: am5.color(0x1336AC)
-                                }, {
-                                    color: am5.color(0xA301A6)
-                                }],
-                                rotation: 90
-                            }));
-                    
-                            series.columns.template.setAll({
-                                strokeOpacity: 0,
-                                shadowColor: am5.color(0x1336AC),
-                                shadowBlur: 10,
-                                shadowOffsetX: 0,
-                                shadowOffsetY: 0
-                            });
-                    
-                            series.columns.template.setAll({
-                                cornerRadiusTL: 20,
-                                cornerRadiusTR: 20,
-                                cornerRadiusBR: 20,
-                                cornerRadiusBL: 20,
-                                strokeOpacity: 0,
-                                width: 8
-                            });
-                    
-                            series.columns.template.events.on("pointerover", function(ev) {
-                                ev.target.animate({
-                                    key: "shadowColor",
-                                    to: am5.color(0x1E73FF),
-                                    duration: 500,
-                                    easing: am5.ease.linear
-                                });
-                            }, this);
-                    
-                            series.columns.template.events.on("pointerout", function(ev) {
-                                ev.target.animate({
-                                    key: "shadowBlur",
-                                    to: 10,
-                                    duration: 500,
-                                    easing: am5.ease.linear
-                                });
-                                ev.target.animate({
-                                    key: "shadowColor",
-                                    to: am5.color(0x1336AC),
-                                    duration: 500,
-                                    easing: am5.ease.linear
-                                });
-                            }, this);
-                    
-                    
-                            am5.net.load("json/day.json").then(function(result) {
-                                var data = am5.JSONParser.parse(result.response);
-                    
-                                series.data.setAll(data);
-                            }).catch(function(result) {
-                                // Error
-                                console.log("Error loading " + result.xhr.responseURL);
-                            });
-                    
-                            let dataTogglers = document.querySelectorAll('.js-data-toggler');
-                    
-                            dataTogglers.forEach((dataToggler) => {
-                                dataToggler.addEventListener('click', function(event) {
-                                    dataTogglers.forEach((dataToggler) => {
-                                        dataToggler.classList.remove('is-active');
-                                    });
-                                    dataToggler.classList.add('is-active');
-                                    var src = dataToggler.dataset.src;
-                                    var interval = dataToggler.dataset.interval;
-                    
-                                    am5.net.load(src).then(function(result) {
-                                        var data = am5.JSONParser.parse(result.response);
-                    
-                                        xAxis.set('baseInterval', {
-                                            timeUnit: interval,
-                                            count: 1
-                                        });
-                    
-                                        xAxis.get("tooltip").adapters.add("labelText", function(text, target) {
-                                            console.log(target);
-                                            //return data[target].title;
-                                        });
-                    
-                                        //tooltip.set('labelText', 'd');
-                    
-                                        series.data.setAll(data);
-                                    }).catch(function(result) {
-                                        // Error
-                                        console.log("Error loading " + result.xhr.responseURL);
-                                    });
-                                });
-                            });
-                    
-                    
-                            // Make stuff animate on load
-                            // https://www.amcharts.com/docs/v5/concepts/animations/
-                            series.appear(1000);
-                            chart.appear(1000, 100);
-                        });
-                    </script>
-                    
-                    <div id="chartdiv" class="graph"></div>
                 </div>
             </div>
         </div>

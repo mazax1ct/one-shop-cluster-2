@@ -1,15 +1,9 @@
 hr {
-    background-color: var(--gray_white);
+    background-color: #1B1B46;
     border: none;
     height: 1px;
-    margin-top: 0;
+    margin-top: 24px;
     margin-bottom: 24px;
-
-    & + .article-block {
-        @media(min-width: $fhd) {
-            margin-top: 80px;
-        }
-    }
 }
 
 ol,

@@ -29,9 +29,7 @@ html {
 
 .page {
     @include scrollbar;
-    background: radial-gradient(41.07% 29.57% at 100% 100%, rgba(72, 8, 120, 0.12) 0%, rgba(123, 0, 255, 0) 100%), radial-gradient(69.97% 92.86% at 0% 0%, #070713 0%, #101026 28%, #12122F 33.85%, #15153E 46.22%, #12122F 53.95%, #070713 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: var(--bg);
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -54,6 +52,12 @@ html {
         flex: 1 0 auto;
         padding-top: calc(var(--header_min_height) + var(--page_content_padding_top));
         padding-bottom: var(--page_content_padding_bottom);
+    }
+
+    &--gradient {
+        background: radial-gradient(41.07% 29.57% at 100% 100%, rgba(72, 8, 120, 0.12) 0%, rgba(123, 0, 255, 0) 100%), radial-gradient(69.97% 92.86% at 0% 0%, #070713 0%, #101026 28%, #12122F 33.85%, #15153E 46.22%, #12122F 53.95%, #070713 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
     &--graph {
@@ -80,6 +84,14 @@ html {
                         }
                         @media(min-width: $fhd) {
                             height: calc(100% - 144px - 24px - 24px);
+                        }
+                    }
+
+                    .move {
+                        @media(min-width: $lg) {
+                            display: flex;
+                            flex-direction: column;
+                            height: 100%;
                         }
                     }
 
@@ -240,6 +252,10 @@ textarea {
     }
 
     &__title-block {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 16px;
         padding-top: var(--indent);
         padding-bottom: var(--indent);
 
@@ -267,6 +283,10 @@ textarea {
                 }
             }
         }
+    }
+
+    &__title-block-left {
+        margin-right: auto;
     }
 }
 
@@ -330,4 +350,12 @@ textarea {
 
 .color-purple {
     color: var(--purple);
+}
+
+.color-orange {
+    color: #FF611D;
+}
+
+.color-blue {
+    color: #195DDC;
 }

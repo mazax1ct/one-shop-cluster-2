@@ -1,4 +1,4 @@
-.cluster-balance {
+.move {
     &__title-block {
         align-items: center;
         display: flex;
@@ -37,17 +37,15 @@
         margin-bottom: 16px;
     }
 
-    &__summ {
-        color: var(--func);
-        font-size: 40px;
-        font-weight: 700;
-        line-height: 1;
+    .select-wrapper {
         margin-bottom: 24px;
     }
 
-    &__deps-list {
+    &__list {
         @include list-reset;
         @include scrollbar;
+        color: var(--func-light);
+        font-size: 14px;
         overflow-y: auto;
         @media(max-width: $lg - 0.02px) {
             height: 400px;
@@ -63,10 +61,6 @@
 
                 &:not(:last-child) {
                     padding-right: 8px;
-                }
-
-                &:last-child {
-                    color: var(--func-light);
                 }
             }
         }

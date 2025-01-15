@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="page page--graph">
+<body class="page page--gradient page--graph">
     <header class="header">
         <div class="header__inner container">
             <a class="header__logo" href="#">
@@ -354,182 +354,100 @@
                 </div>
 
                 <div class="column column-small">
-                    <div class="cluster-account">
-                        <h2>Кластерный счет <small>Баланс</small></h2>
-                    
-                        <p class="cluster-account__balance">1 034 150 <span>₽</span></p>
-                    
-                        <p class="cluster-account__dynamic cluster-account__dynamic--increase">
-                            <svg aria-hidden="true">
-                                <use xlink:href="images/sprite.svg#arrow_up_icon" />
-                            </svg>
-                            1,35% динамика начислений за сутки
-                        </p>
-                    </div>
-
-                    <div class="cluster-balance box box--type_2">
-                        <div class="cluster-balance__title-block">
-                            <h2>Кластер <small>Баланс</small></h2>
-                    
-                            <!--<div class="tabs-nav">
-                                <button class="tabs-nav__button is-active" type="button">Этап I</button>
-                                <button class="tabs-nav__button" type="button">Этап II</button>
-                            </div>-->
-                    
-                            <div class="select-wrapper select-wrapper--type_3">
-                                <select id="etap" class="js-select">
-                                    <option value="1">Этап I</option>
-                                    <option value="2">Этап II</option>
-                                    <option value="3">Этап III</option>
-                                </select>
-                            </div>
+                    <div class="move box box--type_2">
+                        <div class="move__title-block">
+                            <h2>Движение средств <small>Детализация</small></h2>
                         </div>
                     
-                        <p class="cluster-balance__summ">452 000 ₽</p>
+                        <div class="select-wrapper">
+                            <select id="sobitiya" class="js-select">
+                                <option value="1">Все события</option>
+                                <option value="2">Начисление процента</option>
+                                <option value="3">Перевод на депозит</option>
+                            </select>
+                        </div>
                     
-                        <h2>Активные депозиты <small>Этап II</small></h2>
-                    
-                        <div class="cluster-balance__deps-list">
+                        <div class="move__list">
                             <table>
                                 <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
+                                    <td class="color-green">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Начисление процента</td>
                                 </tr>
                                 <tr>
-                                    <td>445 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/10</td>
+                                    <td class="color-red">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
-                                    <td>24 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/9</td>
+                                    <td class="color-green">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Начисление процента</td>
                                 </tr>
                                 <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
+                                    <td class="color-red">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
+                                    <td class="color-green">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Начисление процента</td>
                                 </tr>
                                 <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
+                                    <td class="color-red">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
+                                    <td class="color-green">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Начисление процента</td>
                                 </tr>
                                 <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
+                                    <td class="color-red">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
-                                    <td>445 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/10</td>
+                                    <td class="color-green">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Начисление процента</td>
                                 </tr>
                                 <tr>
-                                    <td>24 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/9</td>
+                                    <td class="color-red">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
+                                    <td class="color-green">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Начисление процента</td>
                                 </tr>
                                 <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
+                                    <td class="color-red">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
+                                    <td class="color-green">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Начисление процента</td>
                                 </tr>
                                 <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
+                                    <td class="color-red">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
+                                    <td class="color-green">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Начисление процента</td>
                                 </tr>
                                 <tr>
-                                    <td>445 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/10</td>
-                                </tr>
-                                <tr>
-                                    <td>24 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/9</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>445 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/10</td>
-                                </tr>
-                                <tr>
-                                    <td>24 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/9</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
+                                    <td class="color-red">888 888.88 ₽</td>
+                                    <td>24 сен 2025</td>
+                                    <td>Перевод на депозит</td>
                                 </tr>
                             </table>
                         </div>
