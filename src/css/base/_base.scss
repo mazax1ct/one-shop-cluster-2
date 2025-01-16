@@ -60,7 +60,7 @@ html {
         background-size: cover;
     }
 
-    &--graph {
+    &--h_100 {
         .page__content {
             @media(min-width: $lg) {
                 height: calc(100dvh - (var(--header_min_height) + var(--page_content_padding_top) + var(--page_content_padding_bottom) + var(--footer_min_height)));
@@ -99,6 +99,12 @@ html {
                         flex-grow: 1;
                         height: 300px;
                         width: 100%;
+                    }
+
+                    .column {
+                        & > .box {
+                            height: 100%;
+                        }
                     }
                 }
             }
@@ -326,6 +332,12 @@ textarea {
             font-size: 24px;
             margin: 0;
             font-weight: 500;
+
+            small {
+                color: var(--func);
+                font-size: 15px;
+                font-weight: 300;
+            }
         }
     }
 
@@ -358,4 +370,8 @@ textarea {
 
 .color-blue {
     color: #195DDC;
+}
+
+.fw_500 {
+    font-weight: 500;
 }

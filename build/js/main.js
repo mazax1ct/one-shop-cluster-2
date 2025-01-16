@@ -59,3 +59,14 @@ $(document).on('afterLoad.fb', function( e, instance, slide ) {
 $(document).ready(function () {
   formInit();
 });
+
+//табы этапов в блоке фанансов в кластере
+$(document).on('click', '.js-cluster-account-tab-toggler', function () {
+  $(this).closest('.tabs-nav').find('.tabs-nav__button').removeClass('is-active');
+  $(this).addClass('is-active');
+
+  $(this).closest('.cluster-account').find('.cluster-account__tab').removeClass('is-active');
+  $(this).closest('.cluster-account').find('.cluster-account__tab[data-target="'+$(this).attr('data-target')+'"]').addClass('is-active');
+
+  return false;
+});

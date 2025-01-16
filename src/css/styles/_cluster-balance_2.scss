@@ -1,0 +1,74 @@
+.cluster-balance_2 {
+    &__title-block {
+        align-items: center;
+        display: flex;
+        gap: 16px;
+        justify-content: space-between;
+        margin-bottom: 24px;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    h2 {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.2;
+        @media(min-width: $fhd) {
+            font-size: 24px;
+            line-height: 1;
+        }
+
+        small {
+            color: var(--func);
+            font-size: 13px;
+            font-weight: 300;
+            line-height: 1.53846;
+            @media(min-width: $fhd) {
+                font-size: 15px;
+                line-height: 1.2;
+            }
+        }
+    }
+
+    & > h2 {
+        margin-top: 0;
+        margin-bottom: 16px;
+    }
+
+    &__summ {
+        color: var(--func);
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 24px;
+    }
+
+    &__deps-list {
+        @include list-reset;
+        @include scrollbar;
+        overflow-y: auto;
+        @media(max-width: $lg - 0.02px) {
+            height: 400px;
+        }
+
+        table {
+            border: none;
+            width: 100%;
+
+            td {
+                height: 36px;
+                padding: 0;
+
+                &:not(:last-child) {
+                    padding-right: 8px;
+                }
+
+                &:last-child {
+                    color: var(--func-light);
+                }
+            }
+        }
+    }
+}

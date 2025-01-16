@@ -34,7 +34,7 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body class="page page--gradient page--graph">
+<body class="page page--gradient page--h_100">
     <header class="header">
         <div class="header__inner container">
             <a class="header__logo" href="#">
@@ -101,173 +101,43 @@
                             </svg>
                             1,35% динамика начислений за сутки
                         </p>
+                    
+                        <div class="cluster-account__buttons">
+                            <button class="button button--primary shadow" type="button">Вывести</button>
+                        </div>
                     </div>
 
-                    <div class="cluster-balance box box--type_2">
-                        <div class="cluster-balance__title-block">
-                            <h2>Кластер <small>Баланс</small></h2>
+                    <div class="cluster-account">
+                        <h2>Депозиты <small>Финансы в кластере</small></h2>
                     
-                            <!--<div class="tabs-nav">
-                                <button class="tabs-nav__button is-active" type="button">Этап I</button>
-                                <button class="tabs-nav__button" type="button">Этап II</button>
-                            </div>-->
+                        <p class="cluster-account__balance">1 634 000 <span>₽</span></p>
                     
-                            <div class="select-wrapper select-wrapper--type_3">
-                                <select id="etap" class="js-select">
-                                    <option value="1">Этап I</option>
-                                    <option value="2">Этап II</option>
-                                    <option value="3">Этап III</option>
-                                </select>
-                            </div>
+                        <p class="cluster-account__dynamic cluster-account__dynamic--increase">28 депозитов работают на Вас прямо сейчас</p>
+                    
+                        <div class="cluster-account__tabs-nav tabs-nav">
+                            <button class="js-cluster-account-tab-toggler tabs-nav__button is-active" type="button" data-target="3">Этап III</button>
+                            <button class="js-cluster-account-tab-toggler tabs-nav__button" type="button" data-target="2">Этап II</button>
+                            <button class="js-cluster-account-tab-toggler tabs-nav__button" type="button" data-target="1">Этап I</button>
                         </div>
                     
-                        <p class="cluster-balance__summ">452 000 ₽</p>
+                        <div class="cluster-account__tab" data-target="1">
+                            <p class="cluster-account__step-title">Этап I</p>
+                            <p class="cluster-account__step-info"><b>104 000 ₽</b> <small>на <span>10</span> депозитах</small></p>
+                        </div>
                     
-                        <h2>Активные депозиты <small>Этап II</small></h2>
+                        <div class="cluster-account__tab" data-target="2">
+                            <p class="cluster-account__step-title">Этап II</p>
+                            <p class="cluster-account__step-info"><b>48 000 ₽</b> <small>на <span>6</span> депозитах</small></p>
+                        </div>
                     
-                        <div class="cluster-balance__deps-list">
-                            <table>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>445 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/10</td>
-                                </tr>
-                                <tr>
-                                    <td>24 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/9</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>445 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/10</td>
-                                </tr>
-                                <tr>
-                                    <td>24 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/9</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>445 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/10</td>
-                                </tr>
-                                <tr>
-                                    <td>24 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/9</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>445 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/10</td>
-                                </tr>
-                                <tr>
-                                    <td>24 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция I/9</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>5 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция II/6</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                                <tr>
-                                    <td>12 000 ₽</td>
-                                    <td><a href="#">Кластер №1</a></td>
-                                    <td>Секция X/2</td>
-                                </tr>
-                            </table>
+                        <div class="cluster-account__tab is-active" data-target="3">
+                            <p class="cluster-account__step-title">Этап III</p>
+                            <p class="cluster-account__step-info"><b>1 278 000 ₽</b> <small>на <span>15</span> депозитах</small></p>
+                        </div>
+                    
+                        <div class="cluster-account__buttons">
+                            <button class="button button--primary shadow" type="button">Открыть новый</button>
+                            <button class="button button--secondary shadow" type="button">Управлять</button>
                         </div>
                     </div>
                 </div>
@@ -276,12 +146,12 @@
                     <div class="title-block">
                         <div class="title-block__left">
                             <h1>Начисления</h1>
-                            <div class="select-wrapper select-wrapper--type_2">
+                            <!--<div class="select-wrapper select-wrapper--type_2">
                                 <select id="god" class="js-select">
                                     <option value="2024">2024</option>
                                     <option value="2025">2025</option>
                                 </select>
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="title-block__right">
@@ -309,11 +179,6 @@
                             var root = am5.Root.new("chartdiv");
                             root._logo.dispose();
                             root.locale = am5locales_ru_RU;
-                    
-                            root.dateFormatter.setAll({
-                                dateFormat: "yyyy-MM-dd",
-                                dateFields: ["valueX"]
-                            });
                     
                             const myTheme = am5.Theme.new(root);
                     
@@ -413,7 +278,8 @@
                                 autoTextColor: false,
                                 getFillFromObject: false,
                                 getFillFromSprite: false,
-                                labelText: "{valueY}",
+                                //labelText: "{valueY}",
+                                labelText: "{valueX.formatDate('dd.MM.yyyy')}\n {title}\n {valueY}"
                             });
                     
                             var series = chart.series.push(am5xy.ColumnSeries.new(root, {
@@ -422,6 +288,7 @@
                                 yAxis: yAxis,
                                 valueYField: "value",
                                 valueXField: "date",
+                                title: "title",
                                 tooltip: tooltip_2
                             }));
                     
@@ -516,12 +383,13 @@
                                             count: 1
                                         });
                     
-                                        xAxis.get("tooltip").adapters.add("labelText", function(text, target) {
+                                        /*xAxis.get("tooltip").adapters.add("labelText", function(text, target) {
                                             console.log(target);
-                                            //return data[target].title;
-                                        });
+                                            return data[target].title;
+                                        });*/
                     
-                                        //tooltip.set('labelText', 'd');
+                                        //tooltip.set('labelText', '{title}');
+                                        //tooltip.label.set("text", "{title}");
                     
                                         series.data.setAll(data);
                                     }).catch(function(result) {

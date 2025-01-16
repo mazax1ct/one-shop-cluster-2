@@ -15,11 +15,6 @@
         root._logo.dispose();
         root.locale = am5locales_ru_RU;
 
-        root.dateFormatter.setAll({
-            dateFormat: "yyyy-MM-dd",
-            dateFields: ["valueX"]
-        });
-
         const myTheme = am5.Theme.new(root);
 
         /*myTheme.rule("AxisLabel", ["minor"]).setAll({
@@ -118,7 +113,8 @@
             autoTextColor: false,
             getFillFromObject: false,
             getFillFromSprite: false,
-            labelText: "{valueY}",
+            //labelText: "{valueY}",
+            labelText: "{valueX.formatDate('dd.MM.yyyy')}\n {title}\n {valueY}"
         });
 
         var series = chart.series.push(am5xy.ColumnSeries.new(root, {
@@ -127,6 +123,7 @@
             yAxis: yAxis,
             valueYField: "value",
             valueXField: "date",
+            title: "title",
             tooltip: tooltip_2
         }));
 
@@ -221,12 +218,13 @@
                         count: 1
                     });
 
-                    xAxis.get("tooltip").adapters.add("labelText", function(text, target) {
+                    /*xAxis.get("tooltip").adapters.add("labelText", function(text, target) {
                         console.log(target);
-                        //return data[target].title;
-                    });
+                        return data[target].title;
+                    });*/
 
-                    //tooltip.set('labelText', 'd');
+                    //tooltip.set('labelText', '{title}');
+                    //tooltip.label.set("text", "{title}");
 
                     series.data.setAll(data);
                 }).catch(function(result) {

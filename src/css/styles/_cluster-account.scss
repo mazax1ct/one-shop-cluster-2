@@ -1,6 +1,6 @@
 .cluster-account {
     &:not(:last-child) {
-        margin-bottom: 24px;
+        margin-bottom: 16px;
     }
     @media(min-width: $lg) {
         padding-top: 8px;
@@ -34,12 +34,15 @@
     }
 
     &__balance {
-        font-size: 48px;
+        font-size: 40px;
         font-weight: 700;
         line-height: 1;
         margin-bottom: 0;
         @media(min-width: $fhd) {
             font-size: 56px;
+        }
+        @media(min-width: $lg) and (max-height: 740px) {
+            font-size: 28px;
         }
 
         span {
@@ -51,6 +54,16 @@
         align-items: center;
         display: flex;
         gap: 4px;
+        @media(min-width: $lg) and (max-height: 740px) {
+            font-size: 12px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+            @media(min-width: $fhd) {
+                margin-bottom: 24px;
+            }
+        }
 
         svg {
             fill: currentColor;
@@ -64,6 +77,71 @@
 
         &--decrease {
             color: var(--attention);
+        }
+    }
+
+    &__tabs-nav {
+        &:not(:last-child) {
+            margin-bottom: 16px;
+            @media(min-width: $fhd) {
+                margin-bottom: 24px;
+            }
+        }
+        @media(min-width: $fhd) and (min-height: 960px) {
+            display: none;
+        }
+    }
+
+    &__tab {
+        display: none;
+        @media(min-width: $lg) and (min-height: 960px) {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        &.is-active {
+            display: block;
+        }
+    }
+
+    &__step-title {
+        display: none;
+        font-size: 14px;
+        margin-bottom: 0;
+        @media(min-width: $fhd) and (min-height: 960px) {
+            display: block;
+        }
+    }
+
+    &__step-info {
+        b {
+            color: var(--highlight-green);
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        small {
+            color: var(--func);
+            font-size: 15px;
+
+            span {
+                color: var(--highlight-green);
+            }
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+        @media(min-width: $fhd) {
+            margin-top: 24px;
+        }
+
+        .button {
+            padding-left: 8px;
+            padding-right: 8px;
+            width: calc(100% / 2 - 12px / 2);
         }
     }
 }
