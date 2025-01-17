@@ -32,6 +32,15 @@
         }
     }
 
+    &--w_478 {
+        min-height: 0;
+        max-width: 478px;
+
+        &.fancybox-content {
+            max-width: 478px;
+        }
+    }
+
     &__title {
         font-size: 18px;
         font-weight: 500;

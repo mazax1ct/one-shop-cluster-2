@@ -89,363 +89,143 @@
     <main class="page__content">
         <div class="container">
             <div class="columns columns--gap_32">
-                <div class="column column-big">
-                    <div class="title-block">
-                        <div class="title-block__left">
-                            <h1>Баланс</h1>
+                <div class="column column-small">
+                    <div class="depositos-menu box box--type_1">
+                        <div class="box__title-block">
+                            <h2>Депозиты <small class="color-func">Финансы в кластере</small></h2>
                         </div>
-
-                        <div class="title-block__right">
-                            <div class="tabs-nav">
-                                <button class="tabs-nav__button is-active" type="button">По дням</button>
-                                <button class="tabs-nav__button" type="button">По неделям</button>
-                                <button class="tabs-nav__button" type="button">По месяцам</button>
-                            </div>
-                        </div>
+                    
+                        <p class="depositos-menu__balance">1 034 150 <span>₽</span></p>
+                    
+                        <ul class="depositos-menu__list">
+                            <li class="depositos-menu__item">
+                                <a class="depositos-menu__link is-active" href="#">
+                                    <div><span>Этап I</span> <b>104 000 ₽</b></div>
+                                    <div><span>10</span> депозитов, из них <span>3</span> завершено</div>
+                                </a>
+                            </li>
+                    
+                            <li class="depositos-menu__item">
+                                <a class="depositos-menu__link" href="#">
+                                    <div><span>Этап II</span> <b>48 000 ₽</b></div>
+                                    <div><span>6</span> депозитов, из них <span>1</span> завершен</div>
+                                </a>
+                            </li>
+                    
+                            <li class="depositos-menu__item">
+                                <a class="depositos-menu__link" href="#">
+                                    <div><span>Этап III</span> <b>1 278 000 ₽</b></div>
+                                    <div><span>15</span> депозитов, из них <span>0</span> завершено</div>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-
-                    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-                    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-                    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
-                    <script src="https://cdn.amcharts.com/lib/5/themes/Responsive.js"></script>
-                    <script src="//cdn.amcharts.com/lib/5/locales/ru_RU.js"></script>
-                    
-                    <script>
-                        am5.ready(function() {
-                    
-                            console.log(new Date(2025, 0, 22).getTime());
-                    
-                            // Create root element
-                            // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-                            var root = am5.Root.new("chartdiv");
-                            root._logo.dispose();
-                            root.locale = am5locales_ru_RU;
-                    
-                            const myTheme = am5.Theme.new(root);
-                    
-                            /*myTheme.rule("AxisLabel", ["minor"]).setAll({
-                                dy: 1
-                            });*/
-                    
-                            myTheme.rule("Label").setAll({
-                                fontFamily: 'Geologica Roman'
-                            });
-                    
-                            // Set themes
-                            // https://www.amcharts.com/docs/v5/concepts/themes/
-                            root.setThemes([
-                                am5themes_Animated.new(root),
-                                myTheme,
-                                am5themes_Responsive.new(root)
-                            ]);
-                    
-                            root.interfaceColors.set("grid", am5.color(0x666587));
-                            root.interfaceColors.set("text", am5.color(0x666587));
-                    
-                    
-                            // Create chart
-                            // https://www.amcharts.com/docs/v5/charts/xy-chart/
-                            var chart = root.container.children.push(am5xy.XYChart.new(root, {
-                                panX: false,
-                                panY: false,
-                                wheelX: "none",
-                                wheelY: "none",
-                                paddingLeft: 0
-                            }));
-                    
-                    
-                            // Add cursor
-                            // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-                            var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
-                            cursor.lineY.set("visible", false);
-                            cursor.lineX.set("visible", false);
-                    
-                    
-                            // Create axes
-                            // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-                            var xRenderer = am5xy.AxisRendererX.new(root, {
-                                minorGridEnabled: false,
-                                minorLabelsEnabled: false,
-                            });
-                    
-                            var tooltip = am5.Tooltip.new(root, {
-                                autoTextColor: false
-                            });
-                    
-                            var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-                                maxDeviation: 0,
-                                baseInterval: {
-                                    timeUnit: "day",
-                                    count: 1
-                                },
-                                renderer: xRenderer,
-                                tooltip: tooltip
-                            }));
-                    
-                            tooltip.get("background").setAll({
-                                fill: am5.color(0x1D4BFF),
-                                stroke: am5.color(0x1D4BFF),
-                                cornerRadius: 5
-                            });
-                    
-                            tooltip.label.setAll({
-                                fill: am5.color(0xffffff),
-                                fontFamily: 'Geologica Roman'
-                            });
-                    
-                            xRenderer.grid.template.set("visible", false);
-                    
-                            xRenderer.labels.template.setAll({
-                                centerX: am5.p0
-                            });
-                    
-                            /*xAxis.set("minorDateFormats", {
-                                "day": "dd",
-                                "month": "MM"
-                            });*/
-                    
-                            var yRenderer = am5xy.AxisRendererY.new(root, {});
-                    
-                            var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-                                renderer: yRenderer
-                            }));
-                    
-                            yRenderer.labels.template.set('visible', false);
-                    
-                    
-                            // Add series
-                            // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-                            var tooltip_2 = am5.Tooltip.new(root, {
-                                autoTextColor: false,
-                                getFillFromObject: false,
-                                getFillFromSprite: false,
-                                //labelText: "{valueY}",
-                                labelText: "{valueX.formatDate('dd.MM.yyyy')}\n {title}\n {valueY}"
-                            });
-                    
-                            var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-                                name: "Series",
-                                xAxis: xAxis,
-                                yAxis: yAxis,
-                                valueYField: "value",
-                                valueXField: "date",
-                                title: "title",
-                                tooltip: tooltip_2
-                            }));
-                    
-                            tooltip_2.get("background").setAll({
-                                stroke: am5.color(0x1D4BFF),
-                                fill: am5.color(0x1D4BFF),
-                                fillOpacity: 1,
-                                cornerRadius: 5,
-                            });
-                    
-                            tooltip_2.label.setAll({
-                                fill: am5.color(0xffffff),
-                                fontFamily: 'Geologica Roman'
-                            });
-                    
-                            series.columns.template.set("fillGradient", am5.LinearGradient.new(root, {
-                                stops: [{
-                                    color: am5.color(0x1336AC)
-                                }, {
-                                    color: am5.color(0xA301A6)
-                                }],
-                                rotation: 90
-                            }));
-                    
-                            series.columns.template.setAll({
-                                strokeOpacity: 0,
-                                shadowColor: am5.color(0x1336AC),
-                                shadowBlur: 10,
-                                shadowOffsetX: 0,
-                                shadowOffsetY: 0
-                            });
-                    
-                            series.columns.template.setAll({
-                                cornerRadiusTL: 20,
-                                cornerRadiusTR: 20,
-                                cornerRadiusBR: 20,
-                                cornerRadiusBL: 20,
-                                strokeOpacity: 0,
-                                width: 8
-                            });
-                    
-                            series.columns.template.events.on("pointerover", function(ev) {
-                                ev.target.animate({
-                                    key: "shadowColor",
-                                    to: am5.color(0x1E73FF),
-                                    duration: 500,
-                                    easing: am5.ease.linear
-                                });
-                            }, this);
-                    
-                            series.columns.template.events.on("pointerout", function(ev) {
-                                ev.target.animate({
-                                    key: "shadowBlur",
-                                    to: 10,
-                                    duration: 500,
-                                    easing: am5.ease.linear
-                                });
-                                ev.target.animate({
-                                    key: "shadowColor",
-                                    to: am5.color(0x1336AC),
-                                    duration: 500,
-                                    easing: am5.ease.linear
-                                });
-                            }, this);
-                    
-                    
-                            am5.net.load("json/day.json").then(function(result) {
-                                var data = am5.JSONParser.parse(result.response);
-                    
-                                series.data.setAll(data);
-                            }).catch(function(result) {
-                                // Error
-                                console.log("Error loading " + result.xhr.responseURL);
-                            });
-                    
-                            let dataTogglers = document.querySelectorAll('.js-data-toggler');
-                    
-                            dataTogglers.forEach((dataToggler) => {
-                                dataToggler.addEventListener('click', function(event) {
-                                    dataTogglers.forEach((dataToggler) => {
-                                        dataToggler.classList.remove('is-active');
-                                    });
-                                    dataToggler.classList.add('is-active');
-                                    var src = dataToggler.dataset.src;
-                                    var interval = dataToggler.dataset.interval;
-                    
-                                    am5.net.load(src).then(function(result) {
-                                        var data = am5.JSONParser.parse(result.response);
-                    
-                                        xAxis.set('baseInterval', {
-                                            timeUnit: interval,
-                                            count: 1
-                                        });
-                    
-                                        /*xAxis.get("tooltip").adapters.add("labelText", function(text, target) {
-                                            console.log(target);
-                                            return data[target].title;
-                                        });*/
-                    
-                                        //tooltip.set('labelText', '{title}');
-                                        //tooltip.label.set("text", "{title}");
-                    
-                                        series.data.setAll(data);
-                                    }).catch(function(result) {
-                                        // Error
-                                        console.log("Error loading " + result.xhr.responseURL);
-                                    });
-                                });
-                            });
-                    
-                    
-                            // Make stuff animate on load
-                            // https://www.amcharts.com/docs/v5/concepts/animations/
-                            series.appear(1000);
-                            chart.appear(1000, 100);
-                        });
-                    </script>
-                    
-                    <div id="chartdiv" class="graph"></div>
                 </div>
 
-                <div class="column column-small">
-                    <div class="move box box--type_2">
-                        <div class="move__title-block">
-                            <h2>Движение средств <small>Детализация</small></h2>
+                <div class="column column-big">
+                    <div class="depositos box box--type_2">
+                        <div class="box__title-block">
+                            <div class="box__title-block-left">
+                                <h2>Депозиты <small class="color-func">Этап III, Кластер №1</small></h2>
+                            </div>
+                    
+                            <button class="button button--primary button--h_32" type="button">Создать депозит</button>
                         </div>
                     
-                        <div class="select-wrapper">
-                            <select id="sobitiya" class="js-select">
-                                <option value="1">Все события</option>
-                                <option value="2">Начисление процента</option>
-                                <option value="3">Перевод на депозит</option>
-                            </select>
-                        </div>
+                        <div class="depositos__list">
+                            <h3>Сектор I</h3>
                     
-                        <div class="move__list">
-                            <table>
-                                <tr>
-                                    <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Начисление процента</td>
+                            <table class="depositos__table depositos__table--type_2">
+                                <tr class="depositos__table-titles">
+                                    <th class="color-func-light">Номер</th>
+                                    <th>Сумма</th>
+                                    <th>Дата окончания</th>
+                                    <th>Секция</th>
+                                    <th>Пополнения</th>
+                                    <th>Статус</th>
+                                    <th></th>
                                 </tr>
                                 <tr>
-                                    <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Перевод на депозит</td>
+                                    <td class="color-func-light fw_500" data-title="ID">#567339</td>
+                                    <td class="fw_500" data-title="Сумма">1 000 000 ₽</td>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025</td>
+                                    <td class="color-func-light" data-title="Секция">секция 2</td>
+                                    <td class="color-func-light" data-title="Пополнения"><a href="javascript:void(0)" data-fancybox="poplnenia_1" data-src="#popolnenia">1 пополнение</a></td>
+                                    <td class="color-green" data-title="Статус">Завершен</td>
+                                    <td><button class="button button--primary button--h_32" type="button">Закрыть депозит</button></td>
                                 </tr>
                                 <tr>
-                                    <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Начисление процента</td>
+                                    <td class="color-func-light fw_500" data-title="ID">#567339</td>
+                                    <td class="fw_500" data-title="Сумма">1 000 000 ₽</td>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025</td>
+                                    <td class="color-func-light" data-title="Секция">секция 2</td>
+                                    <td class="color-func-light" data-title="Пополнения"><a href="javascript:void(0)" data-fancybox="poplnenia_2" data-src="#popolnenia">1 пополнение</a></td>
+                                    <td class="color-func-light" data-title="Статус">В работе</td>
+                                    <td><button class="button button--secondary button--h_32" type="button">Пополнить</button></td>
+                                </tr>
+                            </table>
+                    
+                            <h3>Сектор II</h3>
+                    
+                            <table class="depositos__table depositos__table--type_2">
+                                <tr class="depositos__table-titles">
+                                    <th class="color-func-light">Номер</th>
+                                    <th>Сумма</th>
+                                    <th>Дата окончания</th>
+                                    <th>Секция</th>
+                                    <th>Пополнения</th>
+                                    <th>Статус</th>
+                                    <th></th>
                                 </tr>
                                 <tr>
-                                    <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Перевод на депозит</td>
+                                    <td class="color-func-light fw_500" data-title="ID">#567339</td>
+                                    <td class="fw_500" data-title="Сумма">1 000 000 ₽</td>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025</td>
+                                    <td class="color-func-light" data-title="Секция">секция 2</td>
+                                    <td class="color-func-light" data-title="Пополнения"><a href="javascript:void(0)" data-fancybox="poplnenia_3" data-src="#popolnenia">1 пополнение</a></td>
+                                    <td class="color-green" data-title="Статус">Завершен</td>
+                                    <td><button class="button button--primary button--h_32" type="button">Закрыть депозит</button></td>
                                 </tr>
                                 <tr>
-                                    <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Начисление процента</td>
+                                    <td class="color-func-light fw_500" data-title="ID">#567339</td>
+                                    <td class="fw_500" data-title="Сумма">1 000 000 ₽</td>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025</td>
+                                    <td class="color-func-light" data-title="Секция">секция 2</td>
+                                    <td class="color-func-light" data-title="Пополнения"><a href="javascript:void(0)" data-fancybox="poplnenia_4" data-src="#popolnenia">1 пополнение</a></td>
+                                    <td class="color-func-light" data-title="Статус">В работе</td>
+                                    <td><button class="button button--secondary button--h_32" type="button">Пополнить</button></td>
+                                </tr>
+                            </table>
+                    
+                            <h3>Сектор III</h3>
+                    
+                            <table class="depositos__table depositos__table--type_2">
+                                <tr class="depositos__table-titles">
+                                    <th class="color-func-light">Номер</th>
+                                    <th>Сумма</th>
+                                    <th>Дата окончания</th>
+                                    <th>Секция</th>
+                                    <th>Пополнения</th>
+                                    <th>Статус</th>
+                                    <th></th>
                                 </tr>
                                 <tr>
-                                    <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Перевод на депозит</td>
+                                    <td class="color-func-light fw_500" data-title="ID">#567339</td>
+                                    <td class="fw_500" data-title="Сумма">1 000 000 ₽</td>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025</td>
+                                    <td class="color-func-light" data-title="Секция">секция 2</td>
+                                    <td class="color-func-light" data-title="Пополнения"><a href="javascript:void(0)" data-fancybox="poplnenia_5" data-src="#popolnenia">1 пополнение</a></td>
+                                    <td class="color-green" data-title="Статус">Завершен</td>
+                                    <td><button class="button button--primary button--h_32" type="button">Закрыть депозит</button></td>
                                 </tr>
                                 <tr>
-                                    <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Начисление процента</td>
-                                </tr>
-                                <tr>
-                                    <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Перевод на депозит</td>
-                                </tr>
-                                <tr>
-                                    <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Начисление процента</td>
-                                </tr>
-                                <tr>
-                                    <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Перевод на депозит</td>
-                                </tr>
-                                <tr>
-                                    <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Начисление процента</td>
-                                </tr>
-                                <tr>
-                                    <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Перевод на депозит</td>
-                                </tr>
-                                <tr>
-                                    <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Начисление процента</td>
-                                </tr>
-                                <tr>
-                                    <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Перевод на депозит</td>
-                                </tr>
-                                <tr>
-                                    <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Начисление процента</td>
-                                </tr>
-                                <tr>
-                                    <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
-                                    <td>Перевод на депозит</td>
+                                    <td class="color-func-light fw_500" data-title="ID">#567339</td>
+                                    <td class="fw_500" data-title="Сумма">1 000 000 ₽</td>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025</td>
+                                    <td class="color-func-light" data-title="Секция">секция 2</td>
+                                    <td class="color-func-light" data-title="Пополнения"><a href="javascript:void(0)" data-fancybox="poplnenia_6" data-src="#popolnenia">1 пополнение</a></td>
+                                    <td class="color-func-light" data-title="Статус">В работе</td>
+                                    <td><button class="button button--secondary button--h_32" type="button">Пополнить</button></td>
                                 </tr>
                             </table>
                         </div>

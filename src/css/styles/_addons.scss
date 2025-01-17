@@ -1,0 +1,49 @@
+.addons {
+    color: #fff;
+    font-size: 14px;
+
+    tr {
+        @media(max-width: 480px) {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    td {
+        padding: 10px 0;
+        @media(min-width: 480px) {
+            height: 44px;
+        }
+
+        &:nth-child(1) {
+            @media(max-width: 480px - 0.02px) {
+                font-size: 18px;
+                font-weight: 700;
+                display: block;
+                padding: 10px 0 0;
+                width: 100%;
+            }
+        }
+
+        &:nth-child(2) {
+            color: var(--func-light);
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+            @media(max-width: 480px - 0.02px) {
+                border-bottom: 1px solid var(--func);
+                width: 50%;
+            }
+        }
+
+        &:nth-child(3) {
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        &:not(:last-child) {
+            padding-right: 24px;
+        }
+    }
+}
