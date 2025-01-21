@@ -96,12 +96,13 @@ html {
                     }
 
                     .graph {
+                        display: flex;
                         flex-grow: 1;
                         min-height: 300px;
                         width: 100%;
 
                         & > div {
-                            height: 100%;
+                            height: auto;
                             width: 100%;
                         }
                     }
@@ -330,6 +331,10 @@ textarea {
             }
             @media(min-width: $fhd) {
                 font-size: 48px;
+            }
+
+            .balance-value {
+                font-size: 80%;
             }
         }
 

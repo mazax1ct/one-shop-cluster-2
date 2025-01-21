@@ -92,14 +92,14 @@
                 <div class="column column-big">
                     <div class="title-block">
                         <div class="title-block__left">
-                            <h1>Баланс</h1>
+                            <h1>Баланс <span class="balance-value">452 357,33 ₽</span></h1>
                         </div>
 
                         <div class="title-block__right">
                             <div class="tabs-nav">
-                                <button class="tabs-nav__button is-active" type="button">По дням</button>
-                                <button class="tabs-nav__button" type="button">По неделям</button>
-                                <button class="tabs-nav__button" type="button">По месяцам</button>
+                                <button class="js-data-toggler tabs-nav__button is-active" type="button" data-interval="day">По дням</button>
+                                <button class="js-data-toggler tabs-nav__button" type="button" data-interval="week">По неделям</button>
+                                <button class="js-data-toggler tabs-nav__button" type="button" data-interval="month">По месяцам</button>
                             </div>
                         </div>
                     </div>
@@ -127,82 +127,82 @@
                             <table>
                                 <tr>
                                     <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Начисление процента</td>
                                 </tr>
                                 <tr>
                                     <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
                                     <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Начисление процента</td>
                                 </tr>
                                 <tr>
                                     <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
                                     <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Начисление процента</td>
                                 </tr>
                                 <tr>
                                     <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
                                     <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Начисление процента</td>
                                 </tr>
                                 <tr>
                                     <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
                                     <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Начисление процента</td>
                                 </tr>
                                 <tr>
                                     <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
                                     <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Начисление процента</td>
                                 </tr>
                                 <tr>
                                     <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
                                     <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Начисление процента</td>
                                 </tr>
                                 <tr>
                                     <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Перевод на депозит</td>
                                 </tr>
                                 <tr>
                                     <td class="color-green">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Начисление процента</td>
                                 </tr>
                                 <tr>
                                     <td class="color-red">888 888.88 ₽</td>
-                                    <td>24 сен 2025</td>
+                                    <td>24.09.2025</td>
                                     <td>Перевод на депозит</td>
                                 </tr>
                             </table>
@@ -758,6 +758,13 @@
     <script src="js/select2-addon.js"></script>
     
     <script src="js/main.js"></script>
+
+    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+    <script src="https://cdn.amcharts.com/lib/5/themes/Responsive.js"></script>
+    <script src="//cdn.amcharts.com/lib/5/locales/ru_RU.js"></script>
+    <script src="js/profit-chart.js"></script>
 </body>
 
 </html>

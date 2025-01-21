@@ -139,12 +139,19 @@
         flex-direction: column;
         @media(min-width: $sm) {
             flex-direction: row;
+            gap: 8px;
         }
     }
 
     &__form-block {
         @media(min-width: $sm) {
-            width: calc(100% / 3 - 24px * 2 / 3);
+            width: calc(100% / 3 - 8px * 2 / 3);
+        }
+
+        .graph {
+            aspect-ratio: 1;
+            min-height: 200px;
+            width: 100%;
         }
     }
 
