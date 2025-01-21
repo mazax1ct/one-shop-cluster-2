@@ -18,7 +18,7 @@ function maybeDisposeRoot(divId) {
   });
 }
 
-function dayChartInit(divId) {
+function chartInit(divId, chartType) {
   maybeDisposeRoot(divId);
 
 
@@ -71,19 +71,18 @@ function dayChartInit(divId) {
       minorLabelsEnabled: false,
   });
 
+  xRenderer.grid.template.set("visible", false);
+
+  if(chartType === 'day') {
+    xRenderer.labels.template.setAll({
+        centerX: am5.p0
+    });
+  }
+
+
   var tooltip = am5.Tooltip.new(root, {
       autoTextColor: false
   });
-
-  var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
-      maxDeviation: 0,
-      baseInterval: {
-          timeUnit: "day",
-          count: 1
-      },
-      renderer: xRenderer,
-      tooltip: tooltip
-  }));
 
   tooltip.get("background").setAll({
       fill: am5.color(0x1D4BFF),
@@ -96,11 +95,25 @@ function dayChartInit(divId) {
       fontFamily: 'Geologica Roman'
   });
 
-  xRenderer.grid.template.set("visible", false);
+  var xAxis;
 
-  xRenderer.labels.template.setAll({
-      centerX: am5.p0
-  });
+  if(chartType === 'day') {
+    xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+        baseInterval: {
+            timeUnit: "day",
+            count: 1
+        },
+        renderer: xRenderer,
+        tooltip: tooltip
+    }));
+  } else {
+    xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+      categoryField: "category",
+      renderer: xRenderer,
+      tooltip: tooltip
+    }));
+  }
+
 
   var yRenderer = am5xy.AxisRendererY.new(root, {});
 
@@ -120,14 +133,28 @@ function dayChartInit(divId) {
       labelText: "{valueY}"
   });
 
-  var series = chart.series.push(am5xy.ColumnSeries.new(root, {
+  var series;
+
+  if(chartType === 'day') {
+    series = chart.series.push(am5xy.ColumnSeries.new(root, {
+        name: "Series",
+        xAxis: xAxis,
+        yAxis: yAxis,
+        valueYField: "value",
+        valueXField: "date",
+        tooltip: tooltip_2
+    }));
+  } else {
+    series = chart.series.push(am5xy.ColumnSeries.new(root, {
       name: "Series",
       xAxis: xAxis,
       yAxis: yAxis,
       valueYField: "value",
-      valueXField: "date",
+      sequencedInterpolation: true,
+      categoryXField: "category",
       tooltip: tooltip_2
-  }));
+    }));
+  }
 
   tooltip_2.get("background").setAll({
       stroke: am5.color(0x1D4BFF),
@@ -155,10 +182,7 @@ function dayChartInit(divId) {
       shadowColor: am5.color(0x1336AC),
       shadowBlur: 10,
       shadowOffsetX: 0,
-      shadowOffsetY: 0
-  });
-
-  series.columns.template.setAll({
+      shadowOffsetY: 0,
       cornerRadiusTL: 20,
       cornerRadiusTR: 20,
       cornerRadiusBR: 20,
@@ -192,246 +216,17 @@ function dayChartInit(divId) {
   }, this);
 
   // Set data
-  am5.net.load("json/day.json").then(function(result) {
+  am5.net.load("json/"+chartType+".json").then(function(result) {
       var data = am5.JSONParser.parse(result.response);
-      series.data.setAll(data);
+      if(chartType === 'day') {
+        series.data.setAll(data);
+      } else {
+        xAxis.data.setAll(data);
+        series.data.setAll(data);
+      }
   }).catch(function(result) {
       console.log("Error loading " + result.xhr.responseURL);
   });
-
-  // Make stuff animate on load
-  // https://www.amcharts.com/docs/v5/concepts/animations/
-  series.appear(1000, 100);
-  chart.appear(1000, 100);
-}
-
-function weekChartInit(divId) {
-  maybeDisposeRoot(divId);
-
-
-  // Create root element
-  // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-  var root = am5.Root.new(divId);
-  root._logo.dispose();
-  root.locale = am5locales_ru_RU;
-
-  const myTheme = am5.Theme.new(root);
-
-  myTheme.rule("Label").setAll({
-      fontFamily: 'Geologica Roman'
-  });
-
-  // Set themes
-  // https://www.amcharts.com/docs/v5/concepts/themes/
-  root.setThemes([
-      am5themes_Animated.new(root),
-      myTheme,
-      am5themes_Responsive.new(root)
-  ]);
-
-  root.interfaceColors.set("grid", am5.color(0x666587));
-  root.interfaceColors.set("text", am5.color(0x666587));
-
-
-  // Create chart
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/
-  var chart = root.container.children.push(am5xy.XYChart.new(root, {
-      panX: true,
-      panY: false,
-      wheelX: "none",
-      wheelY: "none",
-      paddingLeft: 0
-  }));
-
-  // Add cursor
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-  var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
-  cursor.lineY.set("visible", false);
-  cursor.lineX.set("visible", false);
-
-
-  // Create axes
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-  var xRenderer = am5xy.AxisRendererX.new(root, {
-    minorGridEnabled: false,
-    minorLabelsEnabled: false
-  });
-
-  xRenderer.labels.template.setAll({
-    centerX: am5.p50
-  });
-
-  xRenderer.grid.template.setAll({
-    location: 1
-  })
-
-  var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-    maxDeviation: 0.3,
-    categoryField: "category",
-    renderer: xRenderer,
-    tooltip: am5.Tooltip.new(root, {})
-  }));
-
-  var yRenderer = am5xy.AxisRendererY.new(root, {
-    strokeOpacity: 0.1
-  })
-
-  var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-    maxDeviation: 0.3,
-    renderer: yRenderer
-  }));
-
-  // Create series
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-  var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-    name: "Series 1",
-    xAxis: xAxis,
-    yAxis: yAxis,
-    valueYField: "value",
-    sequencedInterpolation: true,
-    categoryXField: "category",
-    tooltip: am5.Tooltip.new(root, {
-      labelText: "{valueY}"
-    })
-  }));
-
-  series.columns.template.setAll({ cornerRadiusTL: 5, cornerRadiusTR: 5, strokeOpacity: 0 });
-  series.columns.template.adapters.add("fill", function (fill, target) {
-    return chart.get("colors").getIndex(series.columns.indexOf(target));
-  });
-
-  series.columns.template.adapters.add("stroke", function (stroke, target) {
-    return chart.get("colors").getIndex(series.columns.indexOf(target));
-  });
-
-
-  // Set data
-  am5.net.load("json/week.json").then(function(result) {
-      var data = am5.JSONParser.parse(result.response);
-
-      xAxis.data.setAll(data);
-      series.data.setAll(data);
-  }).catch(function(result) {
-      console.log("Error loading " + result.xhr.responseURL);
-  });
-
-
-  // Make stuff animate on load
-  // https://www.amcharts.com/docs/v5/concepts/animations/
-  series.appear(1000, 100);
-  chart.appear(1000, 100);
-}
-
-function monthChartInit(divId) {
-  maybeDisposeRoot(divId);
-
-
-  // Create root element
-  // https://www.amcharts.com/docs/v5/getting-started/#Root_element
-  var root = am5.Root.new(divId);
-  root._logo.dispose();
-  root.locale = am5locales_ru_RU;
-
-  const myTheme = am5.Theme.new(root);
-
-  myTheme.rule("Label").setAll({
-      fontFamily: 'Geologica Roman'
-  });
-
-  // Set themes
-  // https://www.amcharts.com/docs/v5/concepts/themes/
-  root.setThemes([
-      am5themes_Animated.new(root),
-      myTheme,
-      am5themes_Responsive.new(root)
-  ]);
-
-  root.interfaceColors.set("grid", am5.color(0x666587));
-  root.interfaceColors.set("text", am5.color(0x666587));
-
-
-  // Create chart
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/
-  var chart = root.container.children.push(am5xy.XYChart.new(root, {
-      panX: true,
-      panY: false,
-      wheelX: "none",
-      wheelY: "none",
-      paddingLeft: 0
-  }));
-
-  // Add cursor
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/cursor/
-  var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
-  cursor.lineY.set("visible", false);
-  cursor.lineX.set("visible", false);
-
-
-  // Create axes
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
-  var xRenderer = am5xy.AxisRendererX.new(root, {
-    minorGridEnabled: false,
-    minorLabelsEnabled: false
-  });
-
-  xRenderer.labels.template.setAll({
-    centerX: am5.p50,
-  });
-
-  xRenderer.grid.template.setAll({
-    location: 1
-  })
-
-  var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
-    maxDeviation: 0.3,
-    categoryField: "category",
-    renderer: xRenderer,
-    tooltip: am5.Tooltip.new(root, {})
-  }));
-
-  var yRenderer = am5xy.AxisRendererY.new(root, {
-    strokeOpacity: 0.1
-  })
-
-  var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
-    maxDeviation: 0.3,
-    renderer: yRenderer
-  }));
-
-  // Create series
-  // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
-  var series = chart.series.push(am5xy.ColumnSeries.new(root, {
-    name: "Series 1",
-    xAxis: xAxis,
-    yAxis: yAxis,
-    valueYField: "value",
-    sequencedInterpolation: true,
-    categoryXField: "category",
-    tooltip: am5.Tooltip.new(root, {
-      labelText: "{valueY}"
-    })
-  }));
-
-  series.columns.template.setAll({ cornerRadiusTL: 5, cornerRadiusTR: 5, strokeOpacity: 0 });
-  series.columns.template.adapters.add("fill", function (fill, target) {
-    return chart.get("colors").getIndex(series.columns.indexOf(target));
-  });
-
-  series.columns.template.adapters.add("stroke", function (stroke, target) {
-    return chart.get("colors").getIndex(series.columns.indexOf(target));
-  });
-
-
-  // Set data
-  am5.net.load("json/month.json").then(function(result) {
-      var data = am5.JSONParser.parse(result.response);
-
-      xAxis.data.setAll(data);
-      series.data.setAll(data);
-  }).catch(function(result) {
-      console.log("Error loading " + result.xhr.responseURL);
-  });
-
 
   // Make stuff animate on load
   // https://www.amcharts.com/docs/v5/concepts/animations/
@@ -442,15 +237,12 @@ function monthChartInit(divId) {
 $(document).ready(function () {
   var chartType = getMyCookie("CHART_TYPE");
 
-  if (chartType === undefined || chartType === "day") {
+  if (chartType === undefined) {
     chartType = 'day';
     setMyCookie(chartType);
-    dayChartInit("chartdiv");
-  } else if (chartType === "week") {
-    weekChartInit("chartdiv");
-  } else if (chartType === "month") {
-    monthChartInit("chartdiv");
   }
+
+  chartInit("chartdiv", chartType);
 
   $('.js-data-toggler').removeClass('is-active');
   $('.js-data-toggler[data-interval="'+chartType+'"]').addClass('is-active');
@@ -463,17 +255,7 @@ $(document).ready(function () {
 
     setMyCookie(chartType);
 
-    if (chartType === "day") {
-      dayChartInit("chartdiv");
-    }
-
-    if (chartType === "week") {
-      weekChartInit("chartdiv");
-    }
-
-    if (chartType === "month") {
-      monthChartInit("chartdiv");
-    }
+    chartInit("chartdiv", chartType);
 
     return false;
   });
