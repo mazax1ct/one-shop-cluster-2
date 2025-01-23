@@ -70,3 +70,14 @@ $(document).on('click', '.js-cluster-account-tab-toggler', function () {
 
   return false;
 });
+
+//табы в разделе faq
+$(document).on('click', '.js-faq-tab-toggler', function () {
+  $(this).closest('.tabs-nav').find('.tabs-nav__button').removeClass('is-active');
+  $(this).addClass('is-active');
+
+  $('.faq-tabs .tab').removeClass('is-active');
+  $('.faq-tabs .tab[data-target="'+$(this).attr('data-target')+'"]').addClass('is-active');
+
+  return false;
+});
