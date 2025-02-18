@@ -352,6 +352,15 @@ textarea {
     }
 
     &__right {}
+
+    &__center {
+        @media(max-width: $md - 0.02px) {
+            width: 100%;
+        }
+        @media(min-width: $md) {
+            margin-right: auto;
+        }
+    }
 }
 
 .color-func {

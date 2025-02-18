@@ -31,6 +31,8 @@
     
     <link rel="stylesheet" href="plugins_css/select2.css" />
     
+    <link rel="stylesheet" href="plugins_css/air-datepicker.css" />
+    
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -93,6 +95,18 @@
                     <div class="title-block">
                         <div class="title-block__left">
                             <h1>Баланс <span class="balance-value">452 357,33 ₽</span></h1>
+                        </div>
+
+                        <div class="title-block__center">
+                            <div class="dates-period">
+                                <label class="input-group">
+                                    <input class="js-start input-group__input" type="text" placeholder="дд.мм.гг">
+                                </label>
+
+                                <label class="input-group">
+                                    <input class="js-end input-group__input" type="text" placeholder="дд.мм.гг">
+                                </label>
+                            </div>
                         </div>
 
                         <div class="title-block__right">
@@ -758,6 +772,10 @@
     <script src="js/select2-addon.js"></script>
     
     <script src="js/main.js"></script>
+
+    <script src="js/air-datepicker.js"></script>
+
+    <script src="js/balance.js"></script>
 
     <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
     <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
