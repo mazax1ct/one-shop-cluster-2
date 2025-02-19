@@ -11,6 +11,39 @@
             width: calc(100% / 5 - var(--gap) * 4 / 5);
         }
     }
+
+    &--adm {
+        button.cluster-item__cell .cluster-item__cell-deps svg {
+            fill: var(--func);
+        }
+
+        .cluster-item__cell-summ {
+            color: var(--func);
+        }
+
+        .cluster-item__title-block {
+            @include hover {
+                background-color: #5B066C;
+                cursor: pointer;
+
+                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell {
+                    background-color: #5B066C;
+                }
+
+                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell .cluster-item__cell-num {
+                    color: #B60EE0;
+                }
+
+                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell .cluster-item__cell-deps svg {
+                    fill: #B60EE0;
+                }
+
+                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell .cluster-item__cell-summ {
+                    color: #fff;
+                }
+            }
+        }
+    }
 }
 
 .cluster-item {
@@ -27,6 +60,13 @@
         @media(min-width: $lg) {
             display: flex;
             flex-direction: column-reverse;
+        }
+
+        .cluster-item__title-block {
+            @media(min-width: $lg) {
+                border-top: 1px solid rgba(0,0,0,.15);
+                border-bottom: none;
+            }
         }
     }
 
@@ -56,6 +96,7 @@
         line-height: 1;
         position: relative;
         padding: 16px;
+        transition: background-color 0.3s;
         @media(max-width: $lg - 0.02px) {
             align-items: center;
             display: flex;
@@ -185,6 +226,7 @@
         justify-content: center;
         min-height: 50px;
         position: relative;
+        transition: background-color 0.3s;
 
         &:not(:last-child) {
             border-bottom: 1px solid rgba(#000,0.15);
@@ -199,6 +241,10 @@
         position: absolute;
         top: 4px;
         transition: color 0.3s;
+
+        &--type_1 {
+            color: var(--attention) !important;
+        }
     }
 
     &__cell-deps {

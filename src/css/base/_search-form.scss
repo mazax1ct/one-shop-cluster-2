@@ -1,0 +1,64 @@
+.search-form {
+    max-width: 530px;
+    position: relative;
+    z-index: 1;
+
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+
+    &__inner {
+        align-items: flex-end;
+        display: flex;
+        gap: 8px;
+
+        .input-group {
+            margin-bottom: 0;
+            flex-grow: 1;
+            max-width: 520px;
+        }
+
+        .button {
+            width: 102px;
+        }
+    }
+
+    &__dropdown {
+        background: linear-gradient(var(--panel-dark-3), var(--panel-dark-3) 0) padding-box, linear-gradient(45deg, #251668, #2A0F46) border-box;
+        border: 1px solid transparent;
+        border-radius: 16px;
+        left: 0;
+        position: absolute;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        top: calc(100% + 8px);
+        width: 100%;
+        z-index: 1;
+    }
+
+    &__dropdown-list {
+        @include scrollbar;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    &__dropdown-item {
+        @include button-reset;
+        color: var(--func);
+        font-size: 14px;
+        font-weight: 300;
+        height: 48px;
+        padding-left: 24px;
+        padding-right: 24px;
+        transition: color 0.3s;
+        text-align: left;
+        width: 100%;
+        @include hover {
+            color: var(--func-light);
+        }
+
+        span {
+            color: #fff;
+        }
+    }
+}

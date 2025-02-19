@@ -103,142 +103,75 @@
         <div class="container">
             <div class="columns columns--gap_32">
                 <div class="column column-small">
-                    <div class="depositos-menu box box--type_1">
+                    <div class="adm-menu box box--type_1">
                         <div class="box__title-block">
-                            <h2>Депозиты <small class="color-func">Финансы в кластере</small></h2>
+                            <h2>Администрирование</h2>
                         </div>
                     
-                        <p class="depositos-menu__balance">1 034 150 <span>₽</span></p>
-                    
-                        <ul class="depositos-menu__list">
-                            <li class="depositos-menu__item">
-                                <a class="depositos-menu__link is-active" href="#">
-                                    <div><span>Этап I</span> <b>104 000 ₽</b></div>
-                                    <div><span>10</span> депозитов, из них <span>3</span> завершено</div>
-                                </a>
+                        <ul class="adm-menu__list">
+                            <li class="adm-menu__item">
+                                <a class="adm-menu__link is-active" href="#">Заявки на вступление</a>
                             </li>
                     
-                            <li class="depositos-menu__item">
-                                <a class="depositos-menu__link" href="#">
-                                    <div><span>Этап II</span> <b>48 000 ₽</b></div>
-                                    <div><span>6</span> депозитов, из них <span>1</span> завершен</div>
-                                </a>
+                            <li class="adm-menu__item">
+                                <a class="adm-menu__link" href="#">Права на второй депозит</a>
                             </li>
                     
-                            <li class="depositos-menu__item">
-                                <a class="depositos-menu__link" href="#">
-                                    <div><span>Этап III</span> <b>1 278 000 ₽</b></div>
-                                    <div><span>15</span> депозитов, из них <span>0</span> завершено</div>
-                                </a>
+                            <li class="adm-menu__item">
+                                <a class="adm-menu__link" href="#">Управление секциями</a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="column column-big">
-                    <div class="depositos box box--type_2">
+                    <div class="requests box box--type_2">
                         <div class="box__title-block">
                             <div class="box__title-block-left">
-                                <h2>Депозиты <small class="color-func">Этап III, Кластер №1</small></h2>
+                                <h2>Заявки на вступление в частный кластер <small class="color-func">Кластер №1</small></h2>
                             </div>
                     
-                            <button class="button button--primary button--h_32" type="button">Создать депозит</button>
+                            <div class="box__title-block-right">
+                                <div class="requests__search input-group">
+                                    <input class="input-group__input" type="text" name="" value="" placeholder="поиск...">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#search_icon" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     
-                        <div class="depositos__list">
-                            <h3>Сектор I</h3>
-                    
-                            <table class="depositos__table depositos__table--type_2">
-                                <tr class="depositos__table-titles">
-                                    <th class="color-func-light">Номер</th>
-                                    <th>Сумма</th>
-                                    <th>Дата окончания</th>
-                                    <th>Секция</th>
-                                    <th>Пополнения</th>
-                                    <th>Статус</th>
-                                    <th></th>
+                        <div class="requests__list">
+                            <table class="requests__table">
+                                <tr>
+                                    <td data-title="ID"><a href="#">#5884900</a></td>
+                                    <td data-title="ФИО">Александр Викторович Хедкрашер</td>
+                                    <td class="color-func-light" data-title="Дата">от 10.01.2025</td>
+                                    <td><button class="button button--primary button--h_32" type="button">Одобрить</button> <button class="button button--secondary button--h_32" type="button">Отклонить</button></td>
                                 </tr>
                                 <tr>
-                                    <td class="color-func-light fw_500" data-title="ID">#567339</td>
-                                    <td class="fw_500" data-title="Сумма">1 000 000 ₽</td>
-                                    <td class="color-func-light" data-title="Дата">10.01.2025</td>
-                                    <td class="color-func-light" data-title="Секция">секция 2</td>
-                                    <td class="color-func-light" data-title="Пополнения"><a href="javascript:void(0)" data-fancybox="poplnenia_1" data-src="#popolnenia">1 пополнение</a></td>
-                                    <td class="color-green" data-title="Статус">Завершен</td>
-                                    <td><button class="button button--primary button--h_32" type="button">Закрыть депозит</button></td>
+                                    <td data-title="ID"><a href="#">#5884900</a></td>
+                                    <td data-title="ФИО">Александр Викторович Хедкрашер</td>
+                                    <td class="color-func-light" data-title="Дата">от 10.01.2025</td>
+                                    <td><button class="button button--primary button--h_32" type="button">Одобрить</button> <button class="button button--secondary button--h_32" type="button">Отклонить</button></td>
                                 </tr>
                                 <tr>
-                                    <td class="color-func-light fw_500" data-title="ID">#567339</td>
-                                    <td class="fw_500" data-title="Сумма">1 000 000 ₽</td>
-                                    <td class="color-func-light" data-title="Дата">10.01.2025</td>
-                                    <td class="color-func-light" data-title="Секция">секция 2</td>
-                                    <td class="color-func-light" data-title="Пополнения"><a href="javascript:void(0)" data-fancybox="poplnenia_2" data-src="#popolnenia">1 пополнение</a></td>
-                                    <td class="color-func-light" data-title="Статус">В работе</td>
-                                    <td><button class="button button--secondary button--h_32" type="button">Пополнить</button></td>
-                                </tr>
-                            </table>
-                    
-                            <h3>Сектор II</h3>
-                    
-                            <table class="depositos__table depositos__table--type_2">
-                                <tr class="depositos__table-titles">
-                                    <th class="color-func-light">Номер</th>
-                                    <th>Сумма</th>
-                                    <th>Дата окончания</th>
-                                    <th>Секция</th>
-                                    <th>Пополнения</th>
-                                    <th>Статус</th>
-                                    <th></th>
+                                    <td data-title="ID"><a href="#">#5884900</a></td>
+                                    <td data-title="ФИО">Александр Викторович Хедкрашер</td>
+                                    <td class="color-func-light" data-title="Дата">от 10.01.2025</td>
+                                    <td><button class="button button--primary button--h_32" type="button">Одобрить</button> <button class="button button--secondary button--h_32" type="button">Отклонить</button></td>
                                 </tr>
                                 <tr>
-                                    <td class="color-func-light fw_500" data-title="ID">#567339</td>
-                                    <td class="fw_500" data-title="Сумма">1 000 000 ₽</td>
-                                    <td class="color-func-light" data-title="Дата">10.01.2025</td>
-                                    <td class="color-func-light" data-title="Секция">секция 2</td>
-                                    <td class="color-func-light" data-title="Пополнения"><a href="javascript:void(0)" data-fancybox="poplnenia_3" data-src="#popolnenia">1 пополнение</a></td>
-                                    <td class="color-green" data-title="Статус">Завершен</td>
-                                    <td><button class="button button--primary button--h_32" type="button">Закрыть депозит</button></td>
+                                    <td data-title="ID"><a href="#">#5884900</a></td>
+                                    <td data-title="ФИО">Александр Викторович Хедкрашер</td>
+                                    <td class="color-func-light" data-title="Дата">от 10.01.2025</td>
+                                    <td><button class="button button--primary button--h_32" type="button">Одобрить</button> <button class="button button--secondary button--h_32" type="button">Отклонить</button></td>
                                 </tr>
                                 <tr>
-                                    <td class="color-func-light fw_500" data-title="ID">#567339</td>
-                                    <td class="fw_500" data-title="Сумма">1 000 000 ₽</td>
-                                    <td class="color-func-light" data-title="Дата">10.01.2025</td>
-                                    <td class="color-func-light" data-title="Секция">секция 2</td>
-                                    <td class="color-func-light" data-title="Пополнения"><a href="javascript:void(0)" data-fancybox="poplnenia_4" data-src="#popolnenia">1 пополнение</a></td>
-                                    <td class="color-func-light" data-title="Статус">В работе</td>
-                                    <td><button class="button button--secondary button--h_32" type="button">Пополнить</button></td>
-                                </tr>
-                            </table>
-                    
-                            <h3>Сектор III</h3>
-                    
-                            <table class="depositos__table depositos__table--type_2">
-                                <tr class="depositos__table-titles">
-                                    <th class="color-func-light">Номер</th>
-                                    <th>Сумма</th>
-                                    <th>Дата окончания</th>
-                                    <th>Секция</th>
-                                    <th>Пополнения</th>
-                                    <th>Статус</th>
-                                    <th></th>
-                                </tr>
-                                <tr>
-                                    <td class="color-func-light fw_500" data-title="ID">#567339</td>
-                                    <td class="fw_500" data-title="Сумма">1 000 000 ₽</td>
-                                    <td class="color-func-light" data-title="Дата">10.01.2025</td>
-                                    <td class="color-func-light" data-title="Секция">секция 2</td>
-                                    <td class="color-func-light" data-title="Пополнения"><a href="javascript:void(0)" data-fancybox="poplnenia_5" data-src="#popolnenia">1 пополнение</a></td>
-                                    <td class="color-green" data-title="Статус">Завершен</td>
-                                    <td><button class="button button--primary button--h_32" type="button">Закрыть депозит</button></td>
-                                </tr>
-                                <tr>
-                                    <td class="color-func-light fw_500" data-title="ID">#567339</td>
-                                    <td class="fw_500" data-title="Сумма">1 000 000 ₽</td>
-                                    <td class="color-func-light" data-title="Дата">10.01.2025</td>
-                                    <td class="color-func-light" data-title="Секция">секция 2</td>
-                                    <td class="color-func-light" data-title="Пополнения"><a href="javascript:void(0)" data-fancybox="poplnenia_6" data-src="#popolnenia">1 пополнение</a></td>
-                                    <td class="color-func-light" data-title="Статус">В работе</td>
-                                    <td><button class="button button--secondary button--h_32" type="button">Пополнить</button></td>
+                                    <td data-title="ID"><a href="#">#5884900</a></td>
+                                    <td data-title="ФИО">Александр Викторович Хедкрашер</td>
+                                    <td class="color-func-light" data-title="Дата">от 10.01.2025</td>
+                                    <td><button class="button button--primary button--h_32" type="button">Одобрить</button> <button class="button button--secondary button--h_32" type="button">Отклонить</button></td>
                                 </tr>
                             </table>
                         </div>
@@ -781,84 +714,6 @@
                 </tr>
     
             </table>
-        </div>
-    </div>
-    
-    <div id="approve_popup" class="popup">
-        <p class="popup__title">Подтверждение <small>Выдача прав на второй депозит</small></p>
-    
-        <div class="popup__text-block">
-            <p>Прежде, чем продолжить, проверьте, пожалуйста, введенные Вами данные. Тут, наверное, будет какой-нибудь дисклеймер о том, что администрация не несет ответственности за допущенную ошибку, а средства замораживаются до истечения срока
-                депозита.</p>
-    
-            <div class="search-result">
-                <p class="search-result__title">Виктор Андреевич Корнеплод</p>
-                <p>Номер карты: <span class="color-func-light">123345</span></p>
-                <p>Телефон: <span class="color-func-light">+7 (965) 556-67-78</span></p>
-                <p>E-mail: <span class="color-func-light">sadovod@vkmail.ru</span></p>
-                <p>Город: <span class="color-func-light">Москва</span></p>
-            </div>
-        </div>
-    
-        <div class="popup__buttons">
-            <button class="button button--secondary" type="button">Отмена</button>
-            <button class="button button--primary" type="button">Выдать права</button>
-        </div>
-    </div>
-    
-    <div id="deactivate_popup" class="popup">
-        <p class="popup__title">Сектор VIII <small>Кластер №1</small></p>
-    
-        <div class="popup__text-block">
-            <div class="cluster-info">
-                <p>Состояние: <span class="color-purple">Активен</span></p>
-                <p>Наполненность: <span class="color-func-light">2 249 / 1 000 000</span></p>
-                <p>Сумма депозитов: <span class="color-func-light">1 047 000 ₽</span></p>
-                <p>Количество участников: <span class="color-func-light">120</span></p>
-            </div>
-        </div>
-    
-        <div class="popup__buttons">
-            <button class="button button--secondary" type="button">Отмена</button>
-            <button class="button button--warning" type="button">Деактивировать</button>
-        </div>
-    </div>
-    
-    <div id="activate_popup" class="popup">
-        <p class="popup__title">Секция VIII/2 <small>Кластер №1</small></p>
-    
-        <div class="popup__text-block">
-            <div class="cluster-info">
-                <p>Состояние: <span class="color-blue">Неактивна</span></p>
-                <p>Наполненность: <span class="color-func-light">2 249 / 1 000 000</span></p>
-                <p>Сумма депозитов: <span class="color-func-light">1 047 000 ₽</span></p>
-                <p>Количество участников: <span class="color-func-light">120</span></p>
-            </div>
-        </div>
-    
-        <div class="popup__buttons">
-            <button class="button button--secondary" type="button">Отмена</button>
-            <button class="button button--primary" type="button">Активировать</button>
-        </div>
-    </div>
-    
-    <div id="activate_approve_popup" class="popup">
-        <p class="popup__title">Секция VIII/2 <small>Кластер №1</small></p>
-    
-        <div class="popup__text-block">
-            <div class="cluster-info">
-                <p>Состояние: <span class="color-red">Ожидание</span></p>
-                <p>До автоактивации: <span class="color-func-light">12:03:08</span></p>
-                <p>Активацию инициировал: <span class="color-func-light">Арнольд Густавович Чугуниев</span></p>
-                <p>Наполненность: <span class="color-func-light">2 249 / 1 000 000</span></p>
-                <p>Сумма депозитов: <span class="color-func-light">1 047 000 ₽</span></p>
-                <p>Количество участников: <span class="color-func-light">120</span></p>
-            </div>
-        </div>
-    
-        <div class="popup__buttons">
-            <button class="button button--warning" type="button">Отменить активацию</button>
-            <button class="button button--primary" type="button">Подтвердить активацию</button>
         </div>
     </div>
 

@@ -68,11 +68,22 @@
                     </li>
                     <li class="header__menu-item header__menu-item--separator"></li>
                     <li class="header__menu-item">
+                        <a class="header__menu-link" href="#" title="Уведомления">
+                            <span class="header__menu-link-inner">
+                                <svg aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#bell_icon" />
+                                </svg>
+                                <span>10</span>
+                            </span>
+                            <span class="header__menu-link-text">Уведомления</span>
+                        </a>
+                    </li>
+                    <li class="header__menu-item">
                         <a class="header__menu-link" href="#" title="Администрирование">
                             <svg aria-hidden="true">
                                 <use xlink:href="images/sprite.svg#wrench_icon" />
                             </svg>
-                            <span>Администрирование</span>
+                            <span class="header__menu-link-text">Администрирование</span>
                         </a>
                     </li>
                     <li class="header__menu-item">
@@ -80,7 +91,7 @@
                             <svg aria-hidden="true">
                                 <use xlink:href="images/sprite.svg#exit_icon" />
                             </svg>
-                            <span>Выход</span>
+                            <span class="header__menu-link-text">Выход</span>
                         </a>
                     </li>
                 </ul>
@@ -899,6 +910,84 @@
                 </tr>
     
             </table>
+        </div>
+    </div>
+    
+    <div id="approve_popup" class="popup">
+        <p class="popup__title">Подтверждение <small>Выдача прав на второй депозит</small></p>
+    
+        <div class="popup__text-block">
+            <p>Прежде, чем продолжить, проверьте, пожалуйста, введенные Вами данные. Тут, наверное, будет какой-нибудь дисклеймер о том, что администрация не несет ответственности за допущенную ошибку, а средства замораживаются до истечения срока
+                депозита.</p>
+    
+            <div class="search-result">
+                <p class="search-result__title">Виктор Андреевич Корнеплод</p>
+                <p>Номер карты: <span class="color-func-light">123345</span></p>
+                <p>Телефон: <span class="color-func-light">+7 (965) 556-67-78</span></p>
+                <p>E-mail: <span class="color-func-light">sadovod@vkmail.ru</span></p>
+                <p>Город: <span class="color-func-light">Москва</span></p>
+            </div>
+        </div>
+    
+        <div class="popup__buttons">
+            <button class="button button--secondary" type="button">Отмена</button>
+            <button class="button button--primary" type="button">Выдать права</button>
+        </div>
+    </div>
+    
+    <div id="deactivate_popup" class="popup">
+        <p class="popup__title">Сектор VIII <small>Кластер №1</small></p>
+    
+        <div class="popup__text-block">
+            <div class="cluster-info">
+                <p>Состояние: <span class="color-purple">Активен</span></p>
+                <p>Наполненность: <span class="color-func-light">2 249 / 1 000 000</span></p>
+                <p>Сумма депозитов: <span class="color-func-light">1 047 000 ₽</span></p>
+                <p>Количество участников: <span class="color-func-light">120</span></p>
+            </div>
+        </div>
+    
+        <div class="popup__buttons">
+            <button class="button button--secondary" type="button">Отмена</button>
+            <button class="button button--warning" type="button">Деактивировать</button>
+        </div>
+    </div>
+    
+    <div id="activate_popup" class="popup">
+        <p class="popup__title">Секция VIII/2 <small>Кластер №1</small></p>
+    
+        <div class="popup__text-block">
+            <div class="cluster-info">
+                <p>Состояние: <span class="color-blue">Неактивна</span></p>
+                <p>Наполненность: <span class="color-func-light">2 249 / 1 000 000</span></p>
+                <p>Сумма депозитов: <span class="color-func-light">1 047 000 ₽</span></p>
+                <p>Количество участников: <span class="color-func-light">120</span></p>
+            </div>
+        </div>
+    
+        <div class="popup__buttons">
+            <button class="button button--secondary" type="button">Отмена</button>
+            <button class="button button--primary" type="button">Активировать</button>
+        </div>
+    </div>
+    
+    <div id="activate_approve_popup" class="popup">
+        <p class="popup__title">Секция VIII/2 <small>Кластер №1</small></p>
+    
+        <div class="popup__text-block">
+            <div class="cluster-info">
+                <p>Состояние: <span class="color-red">Ожидание</span></p>
+                <p>До автоактивации: <span class="color-func-light">12:03:08</span></p>
+                <p>Активацию инициировал: <span class="color-func-light">Арнольд Густавович Чугуниев</span></p>
+                <p>Наполненность: <span class="color-func-light">2 249 / 1 000 000</span></p>
+                <p>Сумма депозитов: <span class="color-func-light">1 047 000 ₽</span></p>
+                <p>Количество участников: <span class="color-func-light">120</span></p>
+            </div>
+        </div>
+    
+        <div class="popup__buttons">
+            <button class="button button--warning" type="button">Отменить активацию</button>
+            <button class="button button--primary" type="button">Подтвердить активацию</button>
         </div>
     </div>
 
