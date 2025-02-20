@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+    <title>Кластер</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#101010">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-config" content="images/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">-->
+
+    <link rel="preload" href="fonts/subset-GeologicaRoman-ExtraLight.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/subset-GeologicaRoman-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/subset-GeologicaRoman-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/subset-GeologicaRoman-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/subset-GeologicaRoman-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/subset-GeologicaRoman-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="plugins_css/jquery.fancybox.css" />
+    
+    <link rel="stylesheet" href="plugins_css/select2.css" />
+    
+    <link rel="stylesheet" href="plugins_css/air-datepicker.css" />
+    
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="page page--gradient page--h_100">
+    <header class="header">
+        <div class="header__inner container">
+            <a class="header__logo" href="#">
+                Кластер 2.0
+            </a>
+    
+            <button class="js-menu-toggler header__burger" type="button">
+                <svg aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#burger_icon" />
+                </svg>
+            </button>
+    
+            <div class="header__menu">
+                <ul class="header__menu-list">
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">Начало</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link is-active" href="#">Кластер</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">Баланс</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">Калькулятор</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#">Помощь</a>
+                    </li>
+                    <li class="header__menu-item header__menu-item--separator"></li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#" title="Уведомления">
+                            <span class="header__menu-link-inner">
+                                <svg aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#bell_icon" />
+                                </svg>
+                                <span>10</span>
+                            </span>
+                            <span class="header__menu-link-text">Уведомления</span>
+                        </a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#" title="Администрирование">
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#wrench_icon" />
+                            </svg>
+                            <span class="header__menu-link-text">Администрирование</span>
+                        </a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a class="header__menu-link" href="#" title="Выход">
+                            <svg aria-hidden="true">
+                                <use xlink:href="images/sprite.svg#exit_icon" />
+                            </svg>
+                            <span class="header__menu-link-text">Выход</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="page__content">
+        <div class="container">
+            <div class="columns columns--gap_32">
+                <div class="column column-small">
+                    <div class="cluster-info cluster-info--type_1 box box--type_2">
+                        <div class="box__title-block">
+                            <h2>Информация</h2>
+                        </div>
+                    
+                        <div class="cluster-info__admin cluster-info__admin--type_1">
+                            <div class="cluster-info__admin-info">
+                                <p class="cluster-info__admin-prop">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#user_icon" />
+                                    </svg>
+                                    <span>Валентина Стрельникова</span>
+                                </p>
+                    
+                                <p class="cluster-info__admin-prop">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#phone_icon" />
+                                    </svg>
+                                    <span>+7 (965) 556-67-78</span>
+                                </p>
+                    
+                                <p class="cluster-info__admin-prop">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#email_icon" />
+                                    </svg>
+                                    <span>vsstrelnikova@othermail.com</span>
+                                </p>
+                    
+                                <p class="cluster-info__admin-prop">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="images/sprite.svg#city_icon" />
+                                    </svg>
+                                    <span>Москва</span>
+                                </p>
+                            </div>
+                        </div>
+                    
+                        <button class="button button--primary shadow" type="button">Выйти из аккаунта</button>
+                    </div>
+                </div>
+
+                <div class="column column-big">
+                    <div class="logs box box--type_2">
+                        <div class="box__title-block">
+                            <div class="box__title-block-left">
+                                <h2>История событий</h2>
+                            </div>
+                        </div>
+                    
+                        <div class="logs__list">
+                            <table class="logs__table">
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                                <tr>
+                                    <td class="color-func-light" data-title="Дата">10.01.2025 22:00:06</td>
+                                    <td data-title="Событие">Вход в аккаунт</td>
+                                </tr>
+                            </table>
+                        </div>
+                    
+                        <button class="logs__show-more button button--primary" type="button">Показать ещё</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner container">
+            <div class="footer__address">
+                г. Санкт-Петербург, ул. Дедлайновая 7<br>
+                ИНН 5582247836, ОГРН 2257756993449<br>
+                2023, ООО «ВанШоп»
+            </div>
+    
+            <div class="footer__contacts">
+                Техподдержка:<br>
+                <a href="mailto:texpomosh@one-shopw.com">texpomosh@one-shopw.com</a>
+            </div>
+    
+            <div class="footer__links">
+                <a href="#">Политика обработки персональных данных</a><br>
+                <a href="#">Пользовательское соглашение</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="info" class="popup">
+        <p class="popup__title">Условные обозначения <small>Работа с кластером</small></p>
+    
+        <div class="popup__text-block">
+            <h2>Сектор</h2>
+    
+            <p>Ячейка сектора содержит информацию о номере и проценте заполненности, состоянии сектора, количестве пользователей в секторе, вложенной Вами сумме и общей доходности по этой сумме.</p>
+    
+            <p class="cluster-legend">
+                <svg class="green" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#check_icon" />
+                </svg>
+                Сектор активен и доступен для создания депозитов
+            </p>
+    
+            <p class="cluster-legend">
+                <svg class="green" aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#double_check_icon" />
+                </svg>
+                Сектор заполнен и недоступен для создания депозитов
+            </p>
+    
+            <p class="cluster-legend">
+                <svg aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#lock_icon" />
+                </svg>
+                Сектор заблокирован
+            </p>
+    
+            <p class="cluster-legend">
+                <svg aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#users_icon" />
+                </svg>
+                Число пользователей в секторе
+            </p>
+    
+            <h2>Секция</h2>
+    
+            <p>Ячейка секции содержит информацию о номере секции, числе депозитов, размещенных в секции и сумме Ваших депозитов в этой секции.</p>
+    
+            <p class="cluster-legend">
+                <svg aria-hidden="true">
+                    <use xlink:href="images/sprite.svg#box_icon" />
+                </svg>
+                Общее число депозитов в секции
+            </p>
+    
+            <h2>Цветовые обозначения ячеек</h2>
+    
+            <p class="cluster-legend">
+                <span class="color-legend color-legend--type_1"></span>
+                Сектор/секция заблокированы
+            </p>
+    
+            <p class="cluster-legend">
+                <span class="color-legend color-legend--type_2"></span>
+                Сектор/секция активны
+            </p>
+    
+            <p class="cluster-legend">
+                <span class="color-legend color-legend--type_3"></span>
+                Секция активна и содержит Ваши депозиты
+            </p>
+        </div>
+    </div>
+    
+    <div id="section_popup" class="popup">
+        <p class="popup__title">Депозиты <small>Секция III/7</small></p>
+    
+        <div class="popup__text-block">
+            <p><button class="button button--primary" type="button">Открыть новый депозит</button></p>
+    
+            <div class="deps-list">
+                <div class="accordion accordion--type_2">
+                    <button class="accordion__toggler" type="button">
+                        <span>
+                            <span class="dep-title"><span class="dep-title__num">#888888</span> <span class="dep-title__summ">8 888 000 ₽</span> <span>6 пополнений</span> <span>до 88 сентября 8888</span></span>
+                        </span>
+                        <svg aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+                        <div class="dep-info">
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+                        </div>
+    
+                        <button class="button button--primary" type="button">Пополнить</button>
+                    </div>
+                </div>
+    
+                <div class="accordion accordion--type_2">
+                    <button class="accordion__toggler" type="button">
+                        <span>
+                            <span class="dep-title"><span class="dep-title__num">#888888</span> <span class="dep-title__summ">8 888 000 ₽</span> <span>6 пополнений</span> <span>до 88 сентября 8888</span></span>
+                        </span>
+                        <svg aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+                        <div class="dep-info">
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+                        </div>
+    
+                        <button class="button button--primary" type="button">Пополнить</button>
+                    </div>
+                </div>
+    
+                <div class="accordion accordion--type_2">
+                    <button class="accordion__toggler" type="button">
+                        <span>
+                            <span class="dep-title"><span class="dep-title__num">#888888</span> <span class="dep-title__summ">8 888 000 ₽</span> <span>6 пополнений</span> <span>до 88 сентября 8888</span></span>
+                        </span>
+                        <svg aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+                        <div class="dep-info">
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+                        </div>
+    
+                        <button class="button button--primary" type="button">Пополнить</button>
+                    </div>
+                </div>
+    
+                <div class="accordion accordion--type_2">
+                    <button class="accordion__toggler" type="button">
+                        <span>
+                            <span class="dep-title"><span class="dep-title__num">#888888</span> <span class="dep-title__summ">8 888 000 ₽</span> <span>6 пополнений</span> <span>до 88 сентября 8888</span></span>
+                        </span>
+                        <svg aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+                        <div class="dep-info">
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+                        </div>
+    
+                        <button class="button button--primary" type="button">Пополнить</button>
+                    </div>
+                </div>
+    
+                <div class="accordion accordion--type_2">
+                    <button class="accordion__toggler" type="button">
+                        <span>
+                            <span class="dep-title"><span class="dep-title__num">#888888</span> <span class="dep-title__summ">8 888 000 ₽</span> <span>6 пополнений</span> <span>до 88 сентября 8888</span></span>
+                        </span>
+                        <svg aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+                        <div class="dep-info">
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+                        </div>
+    
+                        <button class="button button--primary" type="button">Пополнить</button>
+                    </div>
+                </div>
+    
+                <div class="accordion accordion--type_2">
+                    <button class="accordion__toggler" type="button">
+                        <span>
+                            <span class="dep-title"><span class="dep-title__num">#888888</span> <span class="dep-title__summ">8 888 000 ₽</span> <span>6 пополнений</span> <span>до 88 сентября 8888</span></span>
+                        </span>
+                        <svg aria-hidden="true">
+                            <use xlink:href="images/sprite.svg#chevron_down_icon"></use>
+                        </svg>
+                    </button>
+                    <div class="accordion__body">
+                        <div class="dep-info">
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+    
+                            <div class="dep-info__item">
+                                <span>88 сентября 8888</span>
+                                <span>1 000 ₽</span>
+                            </div>
+                        </div>
+    
+                        <button class="button button--primary" type="button">Пополнить</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="dep_add_popup" class="popup">
+        <p class="popup__title">Пополнение депозита #888888 <small>Секция III/7</small></p>
+    
+        <div class="popup__text-block">
+            <form class="form">
+                <div class="form__row form__row--flex">
+                    <div class="form__cell">
+                        <div class="select-wrapper">
+                            <label class="input-label" for="sector">Сектор</label>
+                            <select id="sect" class="js-select">
+                                <option value="1">I</option>
+                                <option value="2">II</option>
+                                <option value="3">III</option>
+                                <option value="4">IV</option>
+                                <option value="5">V</option>
+                                <option value="6">VI</option>
+                                <option value="7">VII</option>
+                                <option value="8">VIII</option>
+                            </select>
+                            <div class="error-text">Сектор не доступен</div>
+                        </div>
+                    </div>
+    
+                    <div class="form__cell">
+                        <div class="select-wrapper">
+                            <label class="input-label" for="section">Секция</label>
+                            <select id="section" class="js-select">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                            <div class="error-text">Секция заблокирована</div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form__row">
+                    <div class="select-wrapper">
+                        <label class="input-label" for="sector">Счет оплаты</label>
+                        <select id="sector" class="js-select">
+                            <option value="1">Бонусный счет</option>
+                            <option value="2">Другой счет</option>
+                        </select>
+                        <div class="error-text">На счету недостаточно средств</div>
+                    </div>
+                </div>
+    
+                <div class="form__row">
+                    <div class="input-group">
+                        <label class="input-label" for="inp_1">Сумма пополнения</label>
+                        <div class="quantity">
+                            <input id="inp_1" class="input-group__input" type="text" name="" value="" placeholder="Мин.: 50 000₽">
+                            <button class="button button--primary" type="button" title="Уменьшить">
+                                <svg aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#minus_icon" />
+                                </svg>
+                            </button>
+    
+                            <button class="button button--primary" type="button" title="Увеличить">
+                                <svg aria-hidden="true">
+                                    <use xlink:href="images/sprite.svg#plus_icon" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="success-text">Средств достаточно для оплаты на выбранную сумму 👍</div>
+                    </div>
+                </div>
+    
+                <p>Сервис Яндекс Музыка может содержать информацию, не предназначенную для несовершеннолетних. При ухудшении самочувствия незамедлительно обратитесь к врачу. Добавьте две столовых ложки символов для получения четвертой строки.</p>
+    
+                <label class="checkbox">
+                    <input type="checkbox" name="terms">
+                    <span class="checkbox__icon"></span>
+                    <span class="checkbox__text">Я ознакомлен со всеми <a href="#">соглашениями</a></span>
+                </label>
+    
+                <div class="form__buttons">
+                    <button class="button button--secondary" type="button">Отмена</button>
+                    <button class="button button--primary" type="button" disabled>Продолжить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div id="dep_add_check_popup" class="popup">
+        <p class="popup__title">Пополнение депозита #888888 <small>Секция III/7</small></p>
+    
+        <div class="popup__text-block">
+            <p>Прежде, чем продолжить, проверьте, пожалуйста, введенные Вами данные. Тут, наверное, будет какой-нибудь дисклеймер о том, что администрация не несет ответственности за допущенную ошибку, а средства замораживаются до истечения срока
+                депозита.</p>
+    
+            <form class="form">
+                <div class="form__row">
+                    <div class="input-group">
+                        <label class="input-label" for="num">Номер пополняемого/создаваемого депозита</label>
+                        <input id="num" class="input-group__input" type="text" name="" value="284654" readonly>
+                    </div>
+                </div>
+    
+                <div class="form__row form__row--flex">
+                    <div class="form__cell">
+                        <div class="input-group">
+                            <label class="input-label" for="sector_num">Сектор</label>
+                            <input id="sector_num" class="input-group__input" type="text" name="" value="III" readonly>
+                        </div>
+                    </div>
+    
+                    <div class="form__cell">
+                        <div class="input-group">
+                            <label class="input-label" for="section_num">Секция</label>
+                            <input id="section_num" class="input-group__input" type="text" name="" value="5" readonly>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="form__row">
+                    <div class="input-group">
+                        <label class="input-label" for="schet">Счет оплаты</label>
+                        <input id="schet" class="input-group__input" type="text" name="" value="Бонусный счет" readonly>
+                    </div>
+                </div>
+    
+                <div class="form__row">
+                    <div class="input-group">
+                        <label class="input-label" for="summ">Сумма оплаты</label>
+                        <input id="summ" class="input-group__input" type="text" name="" value="50 000 ₽" readonly>
+                    </div>
+                </div>
+    
+                <div class="form__buttons">
+                    <button class="button button--secondary" type="button">Назад</button>
+                    <button class="button button--primary" type="button">Пополнить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <div id="success_popup" class="popup popup--success">
+        <p class="popup__title">Пополнение депозита #888888 <small>Секция III/7</small></p>
+    
+        <div class="popup__text-block">
+            <p>Пополнение депозита прошло успешно!<br> Средства будут переведены в течение 20 минут.</p>
+    
+            <p>Сервис Яндекс Музыка может содержать информацию, не предназначенную для несовершеннолетних. При ухудшении самочувствия незамедлительно обратитесь к врачу. Добавьте две столовых ложки символов для получения четвертой строки.</p>
+        </div>
+    </div>
+    
+    <div id="error_popup" class="popup popup--error">
+        <p class="popup__title">Пополнение депозита #888888 <small>Секция III/7</small></p>
+    
+        <div class="popup__text-block">
+            <p>Пополнение депозита не удалось!<br> Причина: все плохо уходите.</p>
+    
+            <p>Сервис Яндекс Музыка может содержать информацию, не предназначенную для несовершеннолетних. При ухудшении самочувствия незамедлительно обратитесь к врачу. Добавьте две столовых ложки символов для получения четвертой строки.</p>
+        </div>
+    </div>
+    
+    <div id="popolnenia" class="popup popup--w_478">
+        <p class="popup__title">Пополнения <small>Депозит #567339</small></p>
+    
+        <div class="popup__text-block">
+            <table class="addons">
+                <tr>
+                    <td>Транзакция #097567</td>
+                    <td>24 сентября 2024</td>
+                    <td>1 000 ₽</td>
+                </tr>
+                <tr>
+                    <td>Транзакция #097567</td>
+                    <td>24 сентября 2024</td>
+                    <td>1 000 ₽</td>
+                </tr>
+                <tr>
+                    <td>Транзакция #097567</td>
+                    <td>24 сентября 2024</td>
+                    <td>1 000 ₽</td>
+                </tr>
+                <tr>
+                    <td>Транзакция #097567</td>
+                    <td>24 сентября 2024</td>
+                    <td>1 000 ₽</td>
+                </tr>
+    
+            </table>
+        </div>
+    </div>
+    
+    <div id="approve_popup" class="popup">
+        <p class="popup__title">Подтверждение <small>Выдача прав на второй депозит</small></p>
+    
+        <div class="popup__text-block">
+            <p>Прежде, чем продолжить, проверьте, пожалуйста, введенные Вами данные. Тут, наверное, будет какой-нибудь дисклеймер о том, что администрация не несет ответственности за допущенную ошибку, а средства замораживаются до истечения срока
+                депозита.</p>
+    
+            <div class="search-result">
+                <p class="search-result__title">Виктор Андреевич Корнеплод</p>
+                <p>Номер карты: <span class="color-func-light">123345</span></p>
+                <p>Телефон: <span class="color-func-light">+7 (965) 556-67-78</span></p>
+                <p>E-mail: <span class="color-func-light">sadovod@vkmail.ru</span></p>
+                <p>Город: <span class="color-func-light">Москва</span></p>
+            </div>
+        </div>
+    
+        <div class="popup__buttons">
+            <button class="button button--secondary" type="button">Отмена</button>
+            <button class="button button--primary" type="button">Выдать права</button>
+        </div>
+    </div>
+    
+    <div id="deactivate_popup" class="popup">
+        <p class="popup__title">Сектор VIII <small>Кластер №1</small></p>
+    
+        <div class="popup__text-block">
+            <div class="cluster-info">
+                <p>Состояние: <span class="color-purple">Активен</span></p>
+                <p>Наполненность: <span class="color-func-light">2 249 / 1 000 000</span></p>
+                <p>Сумма депозитов: <span class="color-func-light">1 047 000 ₽</span></p>
+                <p>Количество участников: <span class="color-func-light">120</span></p>
+            </div>
+        </div>
+    
+        <div class="popup__buttons">
+            <button class="button button--secondary" type="button">Отмена</button>
+            <button class="button button--warning" type="button">Деактивировать</button>
+        </div>
+    </div>
+    
+    <div id="activate_popup" class="popup">
+        <p class="popup__title">Секция VIII/2 <small>Кластер №1</small></p>
+    
+        <div class="popup__text-block">
+            <div class="cluster-info">
+                <p>Состояние: <span class="color-blue">Неактивна</span></p>
+                <p>Наполненность: <span class="color-func-light">2 249 / 1 000 000</span></p>
+                <p>Сумма депозитов: <span class="color-func-light">1 047 000 ₽</span></p>
+                <p>Количество участников: <span class="color-func-light">120</span></p>
+            </div>
+        </div>
+    
+        <div class="popup__buttons">
+            <button class="button button--secondary" type="button">Отмена</button>
+            <button class="button button--primary" type="button">Активировать</button>
+        </div>
+    </div>
+    
+    <div id="activate_approve_popup" class="popup">
+        <p class="popup__title">Секция VIII/2 <small>Кластер №1</small></p>
+    
+        <div class="popup__text-block">
+            <div class="cluster-info">
+                <p>Состояние: <span class="color-red">Ожидание</span></p>
+                <p>До автоактивации: <span class="color-func-light">12:03:08</span></p>
+                <p>Активацию инициировал: <span class="color-func-light">Арнольд Густавович Чугуниев</span></p>
+                <p>Наполненность: <span class="color-func-light">2 249 / 1 000 000</span></p>
+                <p>Сумма депозитов: <span class="color-func-light">1 047 000 ₽</span></p>
+                <p>Количество участников: <span class="color-func-light">120</span></p>
+            </div>
+        </div>
+    
+        <div class="popup__buttons">
+            <button class="button button--warning" type="button">Отменить активацию</button>
+            <button class="button button--primary" type="button">Подтвердить активацию</button>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+    
+    <script src="js/jquery.fancybox.min.js"></script>
+    <script src="js/fancybox-defaults.js"></script>
+    
+    <script src="js/select2.full.min.js"></script>
+    <script src="js/select2-addon.js"></script>
+    
+    <script src="js/main.js"></script>
+</body>
+
+</html>

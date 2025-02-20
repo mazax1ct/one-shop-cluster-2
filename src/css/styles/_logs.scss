@@ -1,0 +1,55 @@
+.logs {
+    display: flex;
+    flex-direction: column;
+
+    &__list {
+        @include scrollbar;
+        overflow-y: auto;
+    }
+
+    &__table {
+        border: none;
+        border-collapse: collapse;
+        font-size: 14px;
+
+        tr {
+            @media(max-width: $md - 0.02px) {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            &:not(:last-child) {
+                td {
+                    &:nth-child(2) {
+                        @media(max-width: $sm - 0.02px) {
+                            border-bottom: 1px solid var(--func);
+                            padding-bottom: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+        td {
+            @media(max-width: $sm - 0.02px) {
+                width: 100%;
+            }
+            padding: 5px 10px 5px 0;
+            @media(min-width: $sm) {
+                height: 44px;
+                padding-right: 30px;
+            }
+
+            &::before {
+                @media(max-width: $sm - 0.02px) {
+                    content: attr(data-title) ': ';
+                }
+            }
+        }
+    }
+
+    &__show-more {
+        align-self: flex-start;
+        margin-top: 24px;
+    }
+}

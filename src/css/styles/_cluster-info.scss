@@ -1,4 +1,8 @@
 .cluster-info {
+    &--type_1 {
+        height: auto !important;
+    }
+
     &__admin-title {
         font-weight: 500;
         line-height: 2.28571;
@@ -16,6 +20,12 @@
             flex-direction: row-reverse;
             justify-content: space-between;
             gap: 12px;
+        }
+
+        &--type_1 {
+            @media(min-width: $fhd) {
+                display: block;
+            }
         }
     }
 
