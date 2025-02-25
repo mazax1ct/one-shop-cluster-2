@@ -242,6 +242,18 @@ textarea {
             padding-right: 24px;
         }
     }
+
+    .column-40 {
+        @media(min-width: $lg) {
+            width: 40%;
+        }
+    }
+
+    .column-60 {
+        @media(min-width: $lg) {
+            width: 60%;
+        }
+    }
 }
 
 .box {

@@ -54,6 +54,10 @@
         display: flex;
     }
 
+    .tabs-nav {
+        margin-top: 16px;
+    }
+
     &__tabs-nav-button {
         align-items: center;
         background-color: var(--panel-dark);

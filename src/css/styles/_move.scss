@@ -37,8 +37,13 @@
         margin-bottom: 16px;
     }
 
+    .dates-period {
+        flex-wrap: nowrap;
+        margin-bottom: 12px;
+    }
+
     .select-wrapper {
-        margin-bottom: 24px;
+        margin-bottom: 12px;
     }
 
     &__list {
@@ -55,12 +60,85 @@
             border: none;
             width: 100%;
 
-            td {
-                height: 36px;
+            tr {
+                @media(max-width: $sm - 0.02px) {
+                    display: flex;
+                    flex-wrap: wrap;
+                }
+
+                &:first-child {
+                    @media(max-width: $sm - 0.02px) {
+                        display: none;
+                    }
+                    @media(min-width: $sm) {
+                        position: sticky;
+                        top: -2px;
+                        z-index: 1;
+                    }
+                }
+            }
+
+            th {
+                background-color: var(--panel-dark-2);
+                height: 30px;
                 padding: 0;
+                text-align: left;
+
+                &:not(:last-child) {
+                    padding-right: 8px;
+                }
+            }
+
+            td {
+                padding: 0 0 5px;
+                @media(min-width: $sm) {
+                    height: 36px;
+                }
+
+                &::before {
+                    @media(max-width: $sm - 0.02px) {
+                        content: attr(data-title) ': ';
+                    }
+                }
+
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) {
+                    &::before {
+                        @media(max-width: $sm - 0.02px) {
+                            display: block;
+                        }
+                    }
+                }
+
+                &:nth-child(1),
+                &:nth-child(2) {
+                    @media(max-width: $sm - 0.02px) {
+                        padding-top: 5px;
+                        width: 50%;
+                    }
+                }
+
+                &:nth-child(3) {
+                    @media(max-width: $sm - 0.02px) {
+                        width: 100%;
+                    }
+                }
 
                 &:first-child {
                     white-space: nowrap;
+                }
+
+                &:nth-child(4),
+                &:nth-child(5) {
+                    @media(max-width: $sm - 0.02px) {
+                        border-bottom: 1px solid var(--func);
+                        padding-bottom: 5px;
+                        width: 50%;
+                    }
+                    @media(min-width: $sm) {
+                        text-align: center;
+                    }
                 }
 
                 &:not(:last-child) {
