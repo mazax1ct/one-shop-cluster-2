@@ -75,7 +75,7 @@
         display: flex;
         font-weight: 300;
         gap: 10px;
-        word-break: break-all;
+        //word-break: break-all;
         @media(min-width: $fhd) {
             font-size: 14px;
         }
