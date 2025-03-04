@@ -1,3 +1,24 @@
+.light-theme {
+    .header {
+        background: none;
+
+        &::after {
+            background: var(--func-light);
+        }
+    }
+
+    .header__menu-link {
+        color: var(--func-dark);
+        @include hover {
+            color: var(--func);
+        }
+
+        &.is-active {
+            color: var(--func);
+        }
+    }
+}
+
 .header {
     background: linear-gradient(90deg, #151438 0%, #19183A 53.5%, #28193B 100%);
     left: 0;
@@ -34,7 +55,7 @@
     }
 
     &__logo {
-        color: #fff;
+        color: var(--text_color);
         font-size: 16px;
         font-weight: 600;
         line-height: 1.5;
@@ -44,7 +65,7 @@
             line-height: 1;
         }
         @include hover {
-            color: #fff;
+            color: var(--text_color);
         }
     }
 

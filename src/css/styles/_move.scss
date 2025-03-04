@@ -1,3 +1,15 @@
+.light-theme {
+    .move__list {
+        color: var(--func);
+
+        table {
+            th {
+                background-color: var(--bg);
+            }
+        }
+    }
+}
+
 .move {
     &__title-block {
         align-items: center;

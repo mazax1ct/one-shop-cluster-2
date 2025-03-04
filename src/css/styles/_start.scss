@@ -9,3 +9,11 @@
         margin-bottom: 32px;
     }
 }
+
+.light-theme {
+    .start {
+        h1 {
+            text-shadow: none;
+        }
+    }
+}

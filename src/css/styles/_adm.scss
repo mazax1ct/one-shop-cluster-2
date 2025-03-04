@@ -1,3 +1,11 @@
+.light-theme {
+    .adm-menu__link {
+        &.is-active {
+            color: var(--text_color);
+        }
+    }
+}
+
 .adm-menu {
     height: auto !important;
 
@@ -149,7 +157,7 @@
 }
 
 .search-result {
-    color: #fff;
+    color: var(--text_color);
 
     &__title {
         font-weight: 500;
@@ -164,15 +172,5 @@
 
     .button {
         margin-top: 12px;
-    }
-}
-
-.cluster-info {
-    color: #fff;
-
-    p {
-        &:not([class]) {
-            margin-bottom: 16px;
-        }
     }
 }

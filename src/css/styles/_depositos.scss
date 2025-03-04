@@ -1,3 +1,9 @@
+.light-theme {
+    .depositos-menu__link > div:last-child {
+        color: var(--func);
+    }
+}
+
 .depositos {
     display: flex;
     flex-direction: column;
@@ -257,7 +263,7 @@
 
         & > div {
             &:first-child {
-                color: #fff;
+                color: var(--text_color);
 
                 span {
                     font-weight: 500;

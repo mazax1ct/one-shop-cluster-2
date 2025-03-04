@@ -1,3 +1,29 @@
+.light-theme .select2-container {
+  color: var(--text_color)
+}
+
+.light-theme .select2-container--default .select2-selection--single {
+  background-color: var(--bg);
+  border-color: var(--func-light)
+}
+
+.light-theme .select2-container--default .select2-selection--single .select2-selection__arrow b {
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.71875 5.875L1.09375 1.28125C0.9375 1.15625 0.9375 0.90625 1.09375 0.75L1.71875 0.15625C1.875 0 2.09375 0 2.25 0.15625L6 3.84375L9.71875 0.15625C9.875 0 10.125 0 10.25 0.15625L10.875 0.75C11.0312 0.90625 11.0312 1.15625 10.875 1.28125L6.25 5.875C6.09375 6.03125 5.875 6.03125 5.71875 5.875Z' fill='%23B9B8D3'/%3E%3C/svg%3E%0A");
+}
+
+.light-theme .select2-dropdown {
+  background-color: var(--bg);
+  border: 1px solid var(--func-light);
+}
+
+.light-theme .select2-results__option:not(:last-child) {
+  border-color: var(--func-light);
+}
+
+.light-theme .select2-container--default .select2-results__option--highlighted {
+  color: #fff
+}
+
 .select-wrapper {
   position: relative;
   text-align: left;

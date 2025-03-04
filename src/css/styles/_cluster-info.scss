@@ -1,4 +1,12 @@
+.light-theme {
+    .cluster-info__admin-prop {
+        color: var(--func);
+    }
+}
+
 .cluster-info {
+    color: var(--text_color);
+
     &--type_1 {
         height: auto !important;
     }
@@ -94,6 +102,12 @@
         }
         @media(min-width: $lg) {
             margin-top: 24px;
+        }
+    }
+
+    p {
+        &:not([class]) {
+            margin-bottom: 16px;
         }
     }
 }

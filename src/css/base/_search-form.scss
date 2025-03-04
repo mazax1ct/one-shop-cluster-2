@@ -1,3 +1,16 @@
+.light-theme {
+    .search-form__dropdown {
+        background: var(--bg);
+        border: 1px solid var(--func-light);
+    }
+
+    .search-form__dropdown-item {
+        &:not(:last-child) {
+            border-bottom: 1px solid var(--func-light);
+        }
+    }
+}
+
 .search-form {
     max-width: 530px;
     position: relative;
@@ -58,7 +71,7 @@
         }
 
         span {
-            color: #fff;
+            color: var(--text_color);
         }
     }
 }

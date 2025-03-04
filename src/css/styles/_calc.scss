@@ -1,3 +1,21 @@
+.light-theme {
+    .calc__tabs-nav-button {
+        background-color: var(--bg);
+        border: 1px solid var(--func-light);
+
+        &:not(:last-child) {
+            border-right: none;
+        }
+
+        &:not(.is-active) {
+            @include hover {
+                background-color: var(--active-2);
+                color: #fff;
+            }
+        }
+    }
+}
+
 .calc {
     &__val {
         font-size: 24px;
@@ -69,7 +87,7 @@
         flex-direction: column;
         height: 48px;
         justify-content: center;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s, color 0.3s;
 
         &:not(.is-active) {
             @include hover {

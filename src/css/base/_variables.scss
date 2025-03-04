@@ -9,6 +9,7 @@ $fhd: 1900px;
     --main-font: 'Geologica Roman', Arial, sans-serif;
     --container_padding: 16px;
     --bg: #070713;
+    --text_color: #fff;
     --panel-dark-3: #0D0D1B;
     --panel-dark-2: #141428;
     --panel-dark: #19193B;
@@ -39,4 +40,10 @@ $fhd: 1900px;
         --page_content_padding_bottom: 48px;
         --container_padding: 64px;
     }
+}
+
+.light-theme {
+    --bg: #f0f0f0;
+    --text_color: #262626;
+    --highlight-green: #2ee08c;
 }

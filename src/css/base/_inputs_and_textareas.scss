@@ -1,3 +1,17 @@
+.light-theme {
+    .input-group__input {
+        background-color: var(--bg);
+        border-color: var(--func-light);
+        color: var(--text_color);
+    }
+
+    .input-group__textarea {
+        background-color: var(--bg);
+        border-color: var(--func-light);
+        color: var(--text_color);
+    }
+}
+
 .input-group {
     &:not(:last-child) {
         margin-bottom: 12px;

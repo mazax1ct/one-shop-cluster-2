@@ -27,10 +27,25 @@ html {
     touch-action: manipulation;
 }
 
+.light-theme {
+    .page {
+        background: none;
+    }
+
+    .box {
+        background: var(--bg);
+        border: 1px solid var(--func-light);
+    }
+
+    .color-func-light {
+        color: var(--func);
+    }
+}
+
 .page {
     @include scrollbar;
     background-color: var(--bg);
-    color: #fff;
+    color: var(--text_color);
     display: flex;
     flex-direction: column;
     font-size: 14px;
@@ -374,6 +389,8 @@ textarea {
         }
     }
 }
+
+.light-theme {}
 
 .color-func {
     color: var(--func);

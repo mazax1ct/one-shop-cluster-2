@@ -1,3 +1,127 @@
+.light-theme {
+    .cluster-item--type_1 {
+        background: var(--func-light);
+
+        .cluster-item__title-block .status svg,
+        .cluster-item__title-block .users svg {
+            fill: var(--func-dark);
+        }
+
+        .cluster-item__cell-summ,
+        .cluster-item__summ,
+        .cluster-item__title-block .users {
+            color: var(--func-dark);
+
+            span {
+                color: var(--func-dark);
+            }
+        }
+
+        button.cluster-item__cell {
+            .cluster-item__cell-deps {
+                transition: color 0.3s;
+            }
+            @include hover {
+                .cluster-item__cell-deps {
+                    color: var(--active-2);
+                }
+            }
+        }
+    }
+
+    button.cluster-item__cell {
+        .cluster-item__cell-deps {
+            svg {
+                fill: var(--func-dark);
+            }
+        }
+    }
+
+    .cluster-item--type_2 {
+        background-color: var(--func);
+
+        .cluster-item__cell-num {
+            color: var(--func-dark);
+        }
+
+        .cluster-item__cell-deps {
+            svg {
+                fill: var(--func-dark);
+            }
+        }
+
+        button.cluster-item__cell {
+            .cluster-item__cell-deps {
+                transition: color 0.3s;
+            }
+            @include hover {
+                .cluster-item__cell-deps {
+                    color: #b60ee0;
+                }
+            }
+        }
+
+        button.cluster-item__cell--type_1 {
+            .cluster-item__cell-deps,
+            .cluster-item__cell-num {
+                color: var(--func-light);
+            }
+
+            .cluster-item__cell-deps {
+                svg {
+                    fill: var(--func-light);
+                }
+            }
+            @include hover {
+                .cluster-item__cell-deps {
+                    color: #8043d6;
+                }
+            }
+        }
+    }
+
+    .cluster--adm {
+        .cluster-item__title-block {
+            @include hover {
+                background-color: var(--active-2);
+                cursor: pointer;
+
+                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell {
+                    background-color: var(--active-2);
+                }
+
+                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell .cluster-item__cell-num {
+                    color: #fff;
+                }
+
+                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell .cluster-item__cell-deps {
+                    color: #fff;
+                }
+
+                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell .cluster-item__cell-deps svg {
+                    fill: #fff;
+                }
+
+                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell .cluster-item__cell-summ {
+                    color: #fff;
+                }
+            }
+        }
+
+        .cluster-item__cell-summ {
+            color: var(--text_color);
+        }
+
+        button.cluster-item__cell .cluster-item__cell-deps svg {
+            fill: var(--text_color);
+        }
+
+        .cluster-item--type_2 button.cluster-item__cell--type_1 .cluster-item__cell-deps svg {
+            fill: var(--func-light);
+        }
+    }
+}
+
 .cluster {
     @media(min-width: $lg) {
         --gap: 2px;
@@ -274,9 +398,7 @@
 
 button {
     &.cluster-item__cell {
-        border-top: none;
-        border-left: none;
-        border-right: none;
+        border: none;
         background-color: transparent;
         cursor: pointer;
         display: block;

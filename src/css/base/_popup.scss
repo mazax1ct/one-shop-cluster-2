@@ -1,3 +1,30 @@
+.light-theme {
+    .popup {
+        background-color: var(--bg);
+
+        &--success {
+            background-image: url("../images/icons/success--light.svg");
+        }
+
+        &--error {
+            background-image: url("../images/icons/error.svg");
+        }
+    }
+
+    .popup__text-block {
+        color: var(--text_color);
+    }
+
+    .popup__closer {
+        background: var(--bg);
+        border: 1px solid var(--func-light);
+
+        svg {
+            fill: var(--func-light);
+        }
+    }
+}
+
 .popup {
     @include scrollbar;
     background-color: var(--panel-dark-2);
