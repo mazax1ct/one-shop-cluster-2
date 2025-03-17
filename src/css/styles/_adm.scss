@@ -4,6 +4,16 @@
             color: var(--text_color);
         }
     }
+
+    .requests__table {
+        color: var(--func-light);
+    }
+
+    .requests__search {
+        svg {
+            fill: var(--func-light);
+        }
+    }
 }
 
 .adm-menu {

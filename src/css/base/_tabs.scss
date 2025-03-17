@@ -1,3 +1,13 @@
+.light-theme {
+    .tabs-nav__button {
+        &:not(.is-active) {
+            @include hover {
+                background-color: var(--panel-3);
+            }
+        }
+    }
+}
+
 .tabs-nav {
     display: flex;
     flex-wrap: wrap;

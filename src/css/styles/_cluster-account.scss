@@ -1,3 +1,51 @@
+.light-theme {
+    .cluster-account {
+        h2 {
+            small {
+                color: var(--func-light);
+            }
+        }
+    }
+
+    .cluster-account__balance {
+        color: var(--active-2);
+
+        span {
+            color: var(--highlight-purple-light);
+        }
+    }
+
+    .cluster-account__step-info {
+        b {
+            color: var(--highlight-purple);
+        }
+
+        small {
+            color: var(--func-light);
+
+            span {
+                color: var(--highlight-purple);
+            }
+        }
+    }
+
+    .cluster-info__admin-title {
+        color: var(--highlight-purple);
+
+        span {
+            color: var(--func-light);
+        }
+    }
+
+    .cluster-info__admin-prop {
+        &:has(.color-green) {
+            svg {
+                fill: var(--highlight-green);
+            }
+        }
+    }
+}
+
 .cluster-account {
     &:not(:last-child) {
         margin-bottom: 16px;

@@ -1,20 +1,32 @@
 .light-theme {
     .header {
-        background: none;
+        background: var(--panel-1);
 
         &::after {
-            background: var(--func-light);
+            background: #fff;
         }
     }
 
+    .header__logo {
+        color: var(--func);
+    }
+
     .header__menu-link {
-        color: var(--func-dark);
+        color: var(--func-light);
         @include hover {
             color: var(--func);
         }
 
         &.is-active {
             color: var(--func);
+            border-bottom-color: var(--highlight-purple);
+        }
+    }
+
+    .header__menu-link-inner {
+        span {
+            border-color: var(--attention);
+            color: var(--attention);
         }
     }
 }

@@ -1,14 +1,52 @@
 .light-theme {
+    .input-label {
+        color: var(--func-light);
+    }
+
     .input-group__input {
-        background-color: var(--bg);
-        border-color: var(--func-light);
-        color: var(--text_color);
+        background-color: rgba(#fff, 0.5);
+        border-color: rgba(#fff, 0.5);
+        color: var(--func);
+
+        &::-webkit-input-placeholder {
+            color: var(--func-light);
+        }
+
+        &::-moz-placeholder {
+            color: var(--func-light);
+        }
+
+        &:-ms-input-placeholder {
+            color: var(--func-light);
+        }
+
+        &:disabled {
+            background-color: var(--panel-3);
+            color: var(--func-light);
+        }
     }
 
     .input-group__textarea {
-        background-color: var(--bg);
-        border-color: var(--func-light);
-        color: var(--text_color);
+        background-color: rgba(#fff, 0.5);
+        border-color: rgba(#fff, 0.5);
+        color: var(--func);
+
+        &::-webkit-input-placeholder {
+            color: var(--func-light);
+        }
+
+        &::-moz-placeholder {
+            color: var(--func-light);
+        }
+
+        &:-ms-input-placeholder {
+            color: var(--func-light);
+        }
+
+        &:disabled {
+            background-color: var(--panel-3);
+            color: var(--func-light);
+        }
     }
 }
 

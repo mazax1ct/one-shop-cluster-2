@@ -1,100 +1,189 @@
 .light-theme {
     .cluster-item--type_1 {
-        background: var(--func-light);
-
-        .cluster-item__title-block .status svg,
-        .cluster-item__title-block .users svg {
-            fill: var(--func-dark);
+        .cluster-item__dropdown,
+        .cluster-item__title-block {
+            background-color: #4F3F96;
         }
+    }
 
-        .cluster-item__cell-summ,
-        .cluster-item__summ,
-        .cluster-item__title-block .users {
-            color: var(--func-dark);
-
-            span {
-                color: var(--func-dark);
-            }
+    .cluster-item--type_2 {
+        .cluster-item__dropdown,
+        .cluster-item__title-block {
+            background-color: #6D55D8;
         }
+    }
 
-        button.cluster-item__cell {
-            .cluster-item__cell-deps {
-                transition: color 0.3s;
-            }
-            @include hover {
-                .cluster-item__cell-deps {
-                    color: var(--active-2);
-                }
+    .cluster-item__title-block {
+        border-bottom: 1px solid rgba(0,0,0,.10);
+
+        .status {
+            svg {
+                fill: #23FF98;
             }
         }
     }
 
+    .cluster-item__title-block .users {
+        color: #23FF98;
+    }
+
+    .cluster-item__summ {
+        color: #fff;
+
+        span {
+            color: #23FF98;
+        }
+
+        svg {
+            fill: #23FF98;
+        }
+    }
+
+    .cluster-item__column {
+        &:first-child {
+            border-right: 1px solid rgba(0,0,0,.10);
+        }
+    }
+
+    .cluster-item__cell {
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(0,0,0,.10);
+        }
+    }
+
+    .cluster-item__cell-num {
+        color: var(--highlight-purple-light);
+    }
+
+    .cluster-item__cell-deps {
+        color: #fff;
+
+        svg {
+            fill: var(--highlight-purple-light);
+        }
+    }
+
     button.cluster-item__cell {
-        .cluster-item__cell-deps {
+        @include hover {
+            background-color: var(--active);
+
+            .cluster-item__cell-deps {
+                svg {
+                    fill: #23FF98;
+                }
+            }
+
+            .cluster-item__cell-num {
+                color: #23FF98;
+            }
+
+            .cluster-item__cell-summ {
+                color: #fff;
+            }
+        }
+
+        &:not(:hover) {
             svg {
-                fill: var(--func-dark);
+                fill: #23FF98;
+            }
+
+            .cluster-item__cell-summ {
+                color: #23FF98;
             }
         }
     }
 
     .cluster-item--type_2 {
-        background-color: var(--func);
-
-        .cluster-item__cell-num {
-            color: var(--func-dark);
-        }
-
-        .cluster-item__cell-deps {
-            svg {
-                fill: var(--func-dark);
-            }
-        }
+        background-color: #6D55D8;
 
         button.cluster-item__cell {
-            .cluster-item__cell-deps {
-                transition: color 0.3s;
-            }
+            background-color: #6D55D8;
             @include hover {
+                background-color: var(--active-2);
+
                 .cluster-item__cell-deps {
-                    color: #b60ee0;
+                    svg {
+                        fill: #23FF98;
+                    }
+                }
+
+                .cluster-item__cell-num {
+                    color: #23FF98;
+                }
+
+                .cluster-item__cell-summ {
+                    color: #fff;
                 }
             }
         }
 
         button.cluster-item__cell--type_1 {
-            .cluster-item__cell-deps,
-            .cluster-item__cell-num {
-                color: var(--func-light);
-            }
-
-            .cluster-item__cell-deps {
-                svg {
-                    fill: var(--func-light);
-                }
-            }
+            background-color: #4F3F96;
             @include hover {
+                background-color: var(--active-2);
+
                 .cluster-item__cell-deps {
-                    color: #8043d6;
+                    svg {
+                        fill: #23FF98;
+                    }
+                }
+
+                .cluster-item__cell-num {
+                    color: #23FF98;
+                }
+
+                .cluster-item__cell-summ {
+                    color: #fff;
                 }
             }
         }
     }
 
     .cluster--adm {
+        .cluster-item--type_1 {
+            .cluster-item__dropdown,
+            .cluster-item__title-block {
+                background-color: #4F3F96;
+            }
+        }
+
+        .cluster-item--type_2 {
+            .cluster-item__dropdown,
+            .cluster-item__title-block {
+                background-color: #6D55D8;
+            }
+        }
+
+        button.cluster-item__cell .cluster-item__cell-deps svg {
+            fill: var(--highlight-purple-light);
+        }
+
+        .cluster-item__cell-summ {
+            color: var(--highlight-purple-light);
+        }
+
+        button.cluster-item__cell {
+            &:not(:hover) {
+                .cluster-item__cell-summ {
+                    color: var(--highlight-purple-light);
+                }
+            }
+        }
+
         .cluster-item__title-block {
             @include hover {
                 background-color: var(--active-2);
                 cursor: pointer;
 
-                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell {
+                &:hover + .cluster-item__dropdown {
                     background-color: var(--active-2);
                 }
 
-                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell .cluster-item__cell-num {
-                    color: #fff;
+                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell {
+                    //background-color: var(--active-2);
                 }
 
-                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell .cluster-item__cell-deps {
+                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell .cluster-item__cell-num {
                     color: #fff;
                 }
 
@@ -106,18 +195,6 @@
                     color: #fff;
                 }
             }
-        }
-
-        .cluster-item__cell-summ {
-            color: var(--text_color);
-        }
-
-        button.cluster-item__cell .cluster-item__cell-deps svg {
-            fill: var(--text_color);
-        }
-
-        .cluster-item--type_2 button.cluster-item__cell--type_1 .cluster-item__cell-deps svg {
-            fill: var(--func-light);
         }
     }
 }
@@ -150,8 +227,12 @@
                 background-color: #5B066C;
                 cursor: pointer;
 
-                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell {
+                &:hover + .cluster-item__dropdown {
                     background-color: #5B066C;
+                }
+
+                &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell {
+                    //background-color: #5B066C;
                 }
 
                 &:hover + .cluster-item__dropdown .cluster-item__cells .cluster-item__column .cluster-item__cell .cluster-item__cell-num {
@@ -195,16 +276,28 @@
     }
 
     &--type_1 {
-        background-color: var(--panel-dark);
+        //background-color: var(--panel-dark);
+        .cluster-item__dropdown,
+        .cluster-item__title-block {
+            background-color: var(--panel-dark);
+        }
     }
 
     &--type_2 {
-        background-color: #33193B;
+        //background-color: #33193B;
+        .cluster-item__dropdown,
+        .cluster-item__title-block {
+            background-color: #33193B;
+        }
     }
 
     &--type_3 {
-        background-color: var(--panel-dark);
         opacity: 0.5;
+
+        .cluster-item__dropdown,
+        .cluster-item__title-block {
+            background-color: var(--panel-dark);
+        }
 
         .cluster-item__title-block {
             .status {
@@ -320,6 +413,7 @@
 
     &__dropdown {
         display: none;
+        transition: background-color 0.3s;
         @media(min-width: $lg) {
             display: block;
         }

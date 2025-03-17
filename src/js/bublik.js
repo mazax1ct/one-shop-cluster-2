@@ -62,6 +62,10 @@ function chartInit(divId, data) {
     // https://www.amcharts.com/docs/v5/charts/radar-chart/#Adding_axes
     var xRenderer = am5radar.AxisRendererCircular.new(root, {});
 
+    xRenderer.grid.template.setAll({
+      forceHidden: true
+    });
+
 
     var xAxis = chart.xAxes.push(am5xy.ValueAxis.new(root, {
       renderer: xRenderer,
@@ -71,13 +75,16 @@ function chartInit(divId, data) {
     }));
 
 
-    var yRenderer = am5radar.AxisRendererRadial.new(root, {
-      /*minGridDistance: 20*/
-    });
+    var yRenderer = am5radar.AxisRendererRadial.new(root, {});
 
     yRenderer.labels.template.setAll({
       visible: false,
     });
+
+    yRenderer.grid.template.setAll({
+      forceHidden: true
+    });
+
 
     var yAxis = chart.yAxes.push(am5xy.CategoryAxis.new(root, {
       categoryField: "category",
@@ -95,7 +102,7 @@ function chartInit(divId, data) {
       clustered: false,
       valueXField: "full",
       categoryYField: "category",
-      fill: '#121225'
+      fill: '#ffffff'
     }));
 
     series1.columns.template.setAll({
@@ -111,7 +118,6 @@ function chartInit(divId, data) {
     var series2 = chart.series.push(am5radar.RadarColumnSeries.new(root, {
       xAxis: xAxis,
       yAxis: yAxis,
-      //clustered: false,
       valueXField: "value",
       categoryYField: "category"
     }));

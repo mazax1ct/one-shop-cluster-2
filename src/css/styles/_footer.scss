@@ -1,7 +1,14 @@
 .light-theme {
     .footer {
-        background: var(--bg);
-        border-top: 1px solid var(--func-light);
+        background: #DDDDED;
+        color: var(--func-light);
+
+        a {
+            color: var(--highlight-purple);
+            @include hover {
+                color: var(--active);
+            }
+        }
     }
 }
 

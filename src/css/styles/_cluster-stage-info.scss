@@ -1,3 +1,11 @@
+.light-theme {
+    .cluster-stage-info {
+        small {
+            color: var(--func-light);
+        }
+    }
+}
+
 .cluster-stage-info {
     align-items: flex-end;
     display: flex;

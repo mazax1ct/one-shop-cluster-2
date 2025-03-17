@@ -1,12 +1,17 @@
 .light-theme {
     .search-form__dropdown {
-        background: var(--bg);
-        border: 1px solid var(--func-light);
+        background: var(--panel-3);
+        border: 1px solid #fff;
     }
 
     .search-form__dropdown-item {
-        &:not(:last-child) {
-            border-bottom: 1px solid var(--func-light);
+        color: var(--func-light);
+        @include hover {
+            color: var(--func);
+        }
+
+        span {
+            color: var(--active);
         }
     }
 }

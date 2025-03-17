@@ -1,7 +1,7 @@
 .light-theme {
     .air-datepicker {
-        background-color: var(--bg);
-        border-color: var(--func-light);
+        background-color: var(--panel-1);
+        border-color: #fff;
         color: var(--text_color);
     }
 }
@@ -165,4 +165,9 @@
 
 .air-datepicker--pointer {
     display: none;
+}
+
+.air-datepicker-cell.-day-.-other-month-.-disabled-,
+.air-datepicker-cell.-day-.-other-month-.-disabled-.-focus- {
+    color: var(--adp-color-disabled);
 }

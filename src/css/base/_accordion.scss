@@ -1,22 +1,31 @@
 .light-theme {
     .accordion--type_1 {
-        background: var(--bg);
-        border-color: var(--func-light);
+        background: var(--panel-2);
+        border-color: #fff;
+
+        .accordion__toggler {
+            color: var(--func);
+
+            svg {
+                fill: var(--func-xlight);
+            }
+        }
 
         .accordion__body {
-            color: var(--text_color);
+            color: var(--func-light);
         }
     }
 
     .accordion--type_2 {
-        border: 1px solid var(--func-light);
+        background: var(--panel-3);
+        border: 1px solid var(--panel-1);
 
         .accordion__toggler {
-            background: var(--bg);
+            background: var(--panel-3);
         }
 
         .accordion__body {
-            background: var(--bg);
+            background: var(--panel-3);
             color: var(--text_color);
         }
     }

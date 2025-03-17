@@ -1,6 +1,80 @@
 .light-theme {
-    .depositos-menu__link > div:last-child {
-        color: var(--func);
+    .depositos-menu__link {
+        & > div:first-child {
+            b {
+                color: var(--highlight-purple);
+            }
+        }
+
+        & > div:last-child {
+            color: var(--func);
+
+            span {
+                color: var(--highlight-purple);
+            }
+        }
+
+        &.is-active {
+            border-color: var(--highlight-purple);
+        }
+    }
+
+    .depositos-menu__balance {
+        color: var(--highlight-purple);
+
+        span {
+            color: var(--highlight-purple-light);
+        }
+    }
+
+    .depositos__table-titles {
+        color: var(--highlight-purple);
+
+        th {
+            &:first-child {
+                color: var(--func);
+            }
+        }
+    }
+
+    .depositos__table--type_1 {
+        td {
+            color: var(--func);
+
+            &:first-child {
+                color: var(--func);
+            }
+
+            &:nth-child(2) {
+                color: var(--highlight-purple);
+            }
+
+            &.color-green {
+                color: var(--highlight-green);
+            }
+
+            &.color-func {
+                color: var(--func-light);
+            }
+        }
+    }
+
+    .depositos__table--type_2 {
+        td {
+            color: var(--func);
+
+            &:nth-child(2) {
+                color: var(--highlight-purple);
+            }
+
+            &.color-green {
+                color: var(--highlight-green);
+            }
+
+            &.color-func {
+                color: var(--func-light);
+            }
+        }
     }
 }
 

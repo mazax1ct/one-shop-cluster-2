@@ -22,6 +22,8 @@ $fhd: 1900px;
     --func: #666587;
     --func-light: #B9B8D3;
     --purple: #A82F9C;
+    --orange: #FF611D;
+    --blue: #195DDC;
     --container_max_width: 1920px;
     --page_content_padding_top: 20px;
     --page_content_padding_bottom: 32px;
@@ -43,7 +45,20 @@ $fhd: 1900px;
 }
 
 .light-theme {
-    --bg: #f0f0f0;
-    --text_color: #262626;
-    --highlight-green: #2ee08c;
+    --bg: #E4E4F0;
+    --text_color: #504488;
+    --highlight-green: #40A67B;
+    --active: #6D55D8;
+    --active-2: #7E66E8;
+    --func: #504488;
+    --func-dark: #413B5A;
+    --func-light: #8178A9;
+    --func-xlight: #B9B2D7;
+    --highlight-purple: #8975E3;
+    --highlight-purple-light: #A999F0;
+    --panel-1: #F5F5FA;
+    --panel-2: #F2F2FA;
+    --panel-3: #EDEDF7;
+    --orange: #FF7E46;
+    --blue: #417FF2;
 }

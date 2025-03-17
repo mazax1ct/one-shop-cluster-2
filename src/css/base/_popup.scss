@@ -1,6 +1,11 @@
 .light-theme {
+    .fancybox-bg {
+        background-color: rgba(#6D55D8, 0.25);
+    }
+
     .popup {
-        background-color: var(--bg);
+        background-color: var(--panel-2);
+        border-color: #fff;
 
         &--success {
             background-image: url("../images/icons/success--light.svg");
@@ -11,16 +16,22 @@
         }
     }
 
+    .popup__title {
+        small {
+            color: var(--func-light);
+        }
+    }
+
     .popup__text-block {
         color: var(--text_color);
     }
 
     .popup__closer {
-        background: var(--bg);
-        border: 1px solid var(--func-light);
+        background: var(--panel-2);
+        border: 1px solid var(--active);
 
         svg {
-            fill: var(--func-light);
+            fill: var(--active);
         }
     }
 }

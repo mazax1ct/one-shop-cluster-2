@@ -1,7 +1,22 @@
 .light-theme {
+    .button {
+        &.shadow {
+            box-shadow: none;
+        }
+    }
+
     .button--secondary {
-        background-color: #869eff;
-        border-color: #869eff;
+        border-color: var(--active);
+        color: var(--active);
+
+        &:not(.disabled),
+        &:not(:disabled),
+        &:not([data-disabled]) {
+            @include hover {
+                background-color: var(--active-2);
+                color: #fff;
+            }
+        }
     }
 }
 

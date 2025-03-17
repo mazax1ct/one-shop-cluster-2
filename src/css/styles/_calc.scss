@@ -1,17 +1,66 @@
 .light-theme {
+    .calc {
+        .box__title-block {
+            div {
+                &:nth-child(2) {
+                    span {
+                        &.color-func {
+                            color: var(--func-light);
+                        }
+
+                        &.color-green {
+                            color: #2BD263;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .calc__income {
+        &.color-green {
+            color: #2BD263;
+        }
+    }
+
+    .calc__badge--type_1 {
+        background-color: #FF7E46;
+    }
+
+    .calc__badge--type_2 {
+        background-color: #2BD263;
+    }
+
+    .calc__badge--type_3 {
+        background-color: #417FF2;
+    }
+
     .calc__tabs-nav-button {
-        background-color: var(--bg);
-        border: 1px solid var(--func-light);
+        background-color: var(--panel-3);
+        color: var(--func-light);
 
         &:not(:last-child) {
-            border-right: none;
+            border-right: 1px solid rgba(#000, 0.05);
+        }
+
+        &.is-active {
+            background-color: var(--active-2);
+            color: #fff;
+
+            &.calc__tabs-nav-button--type_1 {
+                color: #fff;
+            }
         }
 
         &:not(.is-active) {
             @include hover {
-                background-color: var(--active-2);
+                background-color: var(--active);
                 color: #fff;
             }
+        }
+
+        &.calc__tabs-nav-button--type_1 {
+            color: var(--func-xlight);
         }
     }
 }

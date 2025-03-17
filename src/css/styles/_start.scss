@@ -13,6 +13,8 @@
 .light-theme {
     .start {
         h1 {
+            color: var(--func-dark);
+            font-weight: 200;
             text-shadow: none;
         }
     }

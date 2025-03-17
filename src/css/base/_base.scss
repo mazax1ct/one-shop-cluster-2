@@ -33,12 +33,28 @@ html {
     }
 
     .box {
-        background: var(--bg);
-        border: 1px solid var(--func-light);
+        background: var(--panel-1);
+        border: 1px solid #fff;
     }
 
-    .color-func-light {
-        color: var(--func);
+    .box__title-block {
+        h2 {
+            small {
+                color: var(--func-light);
+
+                &.color-purple {
+                    color: var(--purple);
+                }
+            }
+        }
+    }
+
+    .title-block__left {
+        h1 {
+            .balance-value {
+                color: var(--active-2);
+            }
+        }
     }
 }
 
@@ -390,8 +406,6 @@ textarea {
     }
 }
 
-.light-theme {}
-
 .color-func {
     color: var(--func);
 }
@@ -413,11 +427,11 @@ textarea {
 }
 
 .color-orange {
-    color: #FF611D;
+    color: var(--orange);
 }
 
 .color-blue {
-    color: #195DDC;
+    color: var(--blue);
 }
 
 .fw_500 {

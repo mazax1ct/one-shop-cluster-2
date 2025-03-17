@@ -1,3 +1,21 @@
+.light-theme {
+    .cluster-stage-deps__summ {
+        color: var(--highlight-purple-light);
+
+        span {
+            color: var(--highlight-purple);
+        }
+    }
+
+    .cluster-stage-deps__info {
+        color: var(--func-light);
+
+        span {
+            color: var(--highlight-purple);
+        }
+    }
+}
+
 .cluster-stage-deps {
     @media(min-width: $lg) {
         text-align: right;
@@ -5,6 +23,7 @@
 
     &__summ {
         font-size: 20px;
+        font-weight: 500;
         line-height: 1.2;
         @media(min-width: $lg) {
             font-size: 24px;
