@@ -81,3 +81,22 @@ $(document).on('click', '.js-faq-tab-toggler', function () {
 
   return false;
 });
+
+//смена темы
+$(document).on('click', '.js-theme-toggler', function () {
+  var _this = $(this);
+  if(!$('html').hasClass('light-theme')) {
+      var date = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 7);
+      document.cookie = "PAGE_THEME=LIGHT; path=/; samesite=strict; expires="+ date.toUTCString();
+      $('html').addClass('light-theme');
+      _this.find('use').attr('xlink:href', 'images/sprite.svg#moon_icon');
+      _this.attr('title', 'Светлая тема');
+      _this.find('.header__menu-link-text').text('Светлая тема');
+  } else {
+      document.cookie = "PAGE_THEME=; path=/; samesite=strict; Max-Age=-1;";
+      $('html').removeClass('light-theme');
+      _this.find('use').attr('xlink:href', 'images/sprite.svg#sun_icon');
+      _this.attr('title', 'Тёмная тема');
+      _this.find('.header__menu-link-text').text('Тёмная тема');
+  }
+});

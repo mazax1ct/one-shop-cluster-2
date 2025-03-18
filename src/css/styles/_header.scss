@@ -11,6 +11,16 @@
         color: var(--func);
     }
 
+    .header__menu {
+        @media(max-width: $md - 0.02px) {
+            background-color: var(--panel-2);
+        }
+    }
+
+    .header__menu-item--separator {
+        border-color: var(--panel-3);
+    }
+
     .header__menu-link {
         color: var(--func-light);
         @include hover {

@@ -19,6 +19,48 @@ function maybeDisposeRoot(divId) {
 }
 
 function chartInit(divId, chartType) {
+  let interfaceColorsGrid = am5.color(0x666587);
+  let interfaceColorsText = am5.color(0x666587);
+
+  let tooltipFill = am5.color(0x1D4BFF);
+  let tooltipStroke = am5.color(0x1D4BFF);
+  let tooltipLabelFill = am5.color(0xFFFFFF);
+
+  let tooltip_2Fill = am5.color(0x1D4BFF);
+  let tooltip_2Stroke = am5.color(0x1D4BFF);
+  let tooltip_2LabelFill = am5.color(0xFFFFFF);
+
+  let seriesColumnsStart = am5.color(0x1336AC);
+  let seriesColumnsStop = am5.color(0xA301A6);
+  let seriesColumnsShadow = am5.color(0x1336AC);
+  let seriesColumnsShadowHover = am5.color(0x1E73FF);
+
+  let scrollbarXFill = am5.color(0xffffff);
+  let scrollbarXThumb = am5.color(0x1D4BFF);
+
+  let pageTheme = getMyCookie("PAGE_THEME");
+
+  if (pageTheme === 'LIGHT') {
+    interfaceColorsGrid = am5.color(0x666587);
+    interfaceColorsText = am5.color(0x666587);
+
+    tooltipFill = am5.color(0x6D55D8);
+    tooltipStroke = am5.color(0x6D55D8);
+    tooltipLabelFill = am5.color(0xFFFFFF);
+
+    tooltip_2Fill = am5.color(0x6D55D8);
+    tooltip_2Stroke = am5.color(0x6D55D8);
+    tooltip_2LabelFill = am5.color(0xFFFFFF);
+
+    seriesColumnsStart = am5.color(0x7D61FB);
+    seriesColumnsStop = am5.color(0x40AEE5);
+    /*seriesColumnsShadow = am5.color(0x1336AC);
+    seriesColumnsShadowHover = am5.color(0x1E73FF);*/
+
+    scrollbarXFill = am5.color(0xffffff);
+    scrollbarXThumb = am5.color(0x8975E3);
+  }
+
     maybeDisposeRoot(divId);
 
     // Create root element
@@ -41,8 +83,8 @@ function chartInit(divId, chartType) {
         am5themes_Responsive.new(root)
     ]);
 
-    root.interfaceColors.set("grid", am5.color(0x666587));
-    root.interfaceColors.set("text", am5.color(0x666587));
+    root.interfaceColors.set("grid", interfaceColorsGrid);
+    root.interfaceColors.set("text", interfaceColorsText);
 
 
     // Create chart
@@ -54,6 +96,8 @@ function chartInit(divId, chartType) {
         wheelY: "panX",
         paddingLeft: 0
     }));
+
+    chart.zoomOutButton.set("forceHidden", true);
 
 
     // Add cursor
@@ -72,11 +116,11 @@ function chartInit(divId, chartType) {
 
     xRenderer.grid.template.set("visible", false);
 
-    if(chartType === 'day') {
+    //if(chartType === 'day') {
         xRenderer.labels.template.setAll({
             centerX: am5.p0
         });
-    }
+    //}
 
 
     var tooltip = am5.Tooltip.new(root, {
@@ -84,13 +128,13 @@ function chartInit(divId, chartType) {
     });
 
     tooltip.get("background").setAll({
-        fill: am5.color(0x1D4BFF),
-        stroke: am5.color(0x1D4BFF),
+        fill: tooltipFill,
+        stroke: tooltipStroke,
         cornerRadius: 5
     });
 
     tooltip.label.setAll({
-        fill: am5.color(0xffffff),
+        fill: tooltipLabelFill,
         fontFamily: 'Geologica Roman'
     });
 
@@ -110,9 +154,15 @@ function chartInit(divId, chartType) {
             renderer: xRenderer,
             tooltip: tooltip
         }));
+        xAxis.get("dateFormats")["day"] = "dd.MM.yyyy";
+        xAxis.get("periodChangeDateFormats")["day"] = "dd.MM.yyyy";
     } else {
+        xRenderer.labels.template.setAll({
+            text: "{categoryAxis}"
+        });
         xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
             categoryField: "category",
+            maxDeviation: 0,
             renderer: xRenderer,
             tooltip: tooltip
         }));
@@ -122,11 +172,11 @@ function chartInit(divId, chartType) {
     var yRenderer = am5xy.AxisRendererY.new(root, {});
 
     var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+        strictMinMax: true,
         renderer: yRenderer
     }));
 
     yRenderer.labels.template.set('visible', false);
-
 
     // Add series
     // https://www.amcharts.com/docs/v5/charts/xy-chart/series/
@@ -161,93 +211,123 @@ function chartInit(divId, chartType) {
     }
 
     tooltip_2.get("background").setAll({
-        stroke: am5.color(0x1D4BFF),
-        fill: am5.color(0x1D4BFF),
+        stroke: tooltip_2Stroke,
+        fill: tooltip_2Fill,
         fillOpacity: 1,
         cornerRadius: 5,
     });
 
     tooltip_2.label.setAll({
-        fill: am5.color(0xffffff),
+        fill: tooltip_2LabelFill,
         fontFamily: 'Geologica Roman'
     });
 
     series.columns.template.set("fillGradient", am5.LinearGradient.new(root, {
         stops: [{
-            color: am5.color(0x1336AC)
+            color: seriesColumnsStart
         }, {
-            color: am5.color(0xA301A6)
+            color: seriesColumnsStop
         }],
-        rotation: 90
+        rotation: 90,
+        target: chart.plotContainer
     }));
 
-    series.columns.template.setAll({
-        strokeOpacity: 0,
-        shadowColor: am5.color(0x1336AC),
-        shadowBlur: 10,
-        shadowOffsetX: 0,
-        shadowOffsetY: 0,
-        cornerRadiusTL: 20,
-        cornerRadiusTR: 20,
-        cornerRadiusBR: 20,
-        cornerRadiusBL: 20,
-        strokeOpacity: 0,
-        width: 8
-    });
+    if (pageTheme !== 'LIGHT') {
+      series.columns.template.setAll({
+          shadowColor: seriesColumnsShadow,
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowOffsetY: 0,
+          cornerRadiusTL: 20,
+          cornerRadiusTR: 20,
+          cornerRadiusBR: 20,
+          cornerRadiusBL: 20,
+          strokeOpacity: 0,
+          width: 8
+      });
+    } else {
+      series.columns.template.setAll({
+          cornerRadiusTL: 20,
+          cornerRadiusTR: 20,
+          cornerRadiusBR: 20,
+          cornerRadiusBL: 20,
+          strokeOpacity: 0,
+          width: 8
+      });
+    }
 
-    series.columns.template.events.on("pointerover", function(ev) {
-        ev.target.animate({
-            key: "shadowColor",
-            to: am5.color(0x1E73FF),
-            duration: 500,
-            easing: am5.ease.linear
-        });
-    }, this);
+      if (pageTheme !== 'LIGHT') {
+        series.columns.template.events.on("pointerover", function(ev) {
+            ev.target.animate({
+                key: "shadowColor",
+                to: seriesColumnsShadowHover,
+                duration: 500,
+                easing: am5.ease.linear
+            });
+        }, this);
 
-    series.columns.template.events.on("pointerout", function(ev) {
-        ev.target.animate({
-            key: "shadowBlur",
-            to: 10,
-            duration: 500,
-            easing: am5.ease.linear
-        });
-        ev.target.animate({
-            key: "shadowColor",
-            to: am5.color(0x1336AC),
-            duration: 500,
-            easing: am5.ease.linear
-        });
-    }, this);
+        series.columns.template.events.on("pointerout", function(ev) {
+            ev.target.animate({
+                key: "shadowColor",
+                to: seriesColumnsShadow,
+                duration: 500,
+                easing: am5.ease.linear
+            });
+        }, this);
+      }
 
     // Add scrollbar
     // https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
     var scrollbarX = chart.set("scrollbarX", am5.Scrollbar.new(root, {
-      orientation: "horizontal",
+        orientation: "horizontal",
     }));
+
+    chart.bottomAxesContainer.children.push(scrollbarX);
 
     scrollbarX.startGrip.set("forceHidden", true);
     scrollbarX.endGrip.set("forceHidden", true);
 
     scrollbarX.get("background").setAll({
-      fill: am5.color(0xffffff),
-      fillOpacity: 0.2
+        fill: scrollbarXFill,
+        fillOpacity: 0
     });
 
     scrollbarX.thumb.setAll({
-      fill: am5.color(0x1D4BFF),
-      fillOpacity: 1
+        fill: scrollbarXThumb,
+        fillOpacity: 1
     });
 
-    $.get("/local/ajax/json_transaction_list.php",{UID:uid, TIME:chartType},function (jsonData) {
+    ///local/ajax/json_transaction_list.php
+    $.get("/json/data.json",{TIME:chartType},function (jsonData) {
         if(chartType === 'day') {
             if(jsonData.length >= 30) {
-              series.events.once("datavalidated", function(ev) {
-                ev.target.get("xAxis").zoomToDates(new Date(jsonData[0].date), new Date(jsonData[30].date));
-              });
+                series.events.once("datavalidated", function(ev) {
+                    ev.target.get("xAxis").zoomToDates(new Date(jsonData[0].date), new Date(jsonData[30].date));
+                });
             }
-
+            scrollbarX.set("forceHidden", false);
             series.data.setAll(jsonData);
         } else {
+            if($('body').width() < 768) {
+                series.events.once("datavalidated", function(ev) {
+                    ev.target.get("xAxis").zoomToIndexes(0, 10);
+                });
+                if(jsonData.length > 10) {
+                    scrollbarX.set("forceHidden", false);
+                } else {
+                    scrollbarX.set("forceHidden", true);
+                }
+            } else {
+                series.events.once("datavalidated", function(ev) {
+                    ev.target.get("xAxis").zoomToIndexes(0, 30);
+                });
+
+                if(jsonData.length > 30) {
+                    scrollbarX.set("forceHidden", false);
+                } else {
+                    scrollbarX.set("forceHidden", true);
+                }
+            }
 
             xAxis.data.setAll(jsonData);
             series.data.setAll(jsonData);
@@ -264,7 +344,7 @@ $(document).ready(function () {
     var chartType = getMyCookie("CHART_TYPE");
 
     if (chartType === undefined) {
-        chartType = 'day';
+        chartType = 'month';
         setMyCookie(chartType);
     }
 

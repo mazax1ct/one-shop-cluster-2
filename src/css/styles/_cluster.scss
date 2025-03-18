@@ -7,9 +7,62 @@
     }
 
     .cluster-item--type_2 {
+        background-color: #6D55D8;
+
+        button.cluster-item__cell {
+            background-color: #6D55D8;
+            @include hover {
+                background-color: var(--active-2);
+
+                .cluster-item__cell-deps {
+                    svg {
+                        fill: #23FF98;
+                    }
+                }
+
+                .cluster-item__cell-num {
+                    color: #23FF98;
+                }
+
+                .cluster-item__cell-summ {
+                    color: #fff;
+                }
+            }
+        }
+
+        button.cluster-item__cell--type_1 {
+            background-color: #4F3F96;
+            @include hover {
+                background-color: var(--active-2);
+
+                .cluster-item__cell-deps {
+                    svg {
+                        fill: #23FF98;
+                    }
+                }
+
+                .cluster-item__cell-num {
+                    color: #23FF98;
+                }
+
+                .cluster-item__cell-summ {
+                    color: #fff;
+                }
+            }
+        }
+
         .cluster-item__dropdown,
         .cluster-item__title-block {
             background-color: #6D55D8;
+        }
+    }
+
+    .cluster-item--type_3 {
+        opacity: 0.85;
+
+        .cluster-item__dropdown,
+        .cluster-item__title-block {
+            background-color: #4F3F96;
         }
     }
 
@@ -21,10 +74,14 @@
                 fill: #23FF98;
             }
         }
+
+        .users {
+            color: #23FF98;
+        }
     }
 
-    .cluster-item__title-block .users {
-        color: #23FF98;
+    .cluster-item__toggler {
+        color: #fff;
     }
 
     .cluster-item__summ {
@@ -89,52 +146,6 @@
 
             .cluster-item__cell-summ {
                 color: #23FF98;
-            }
-        }
-    }
-
-    .cluster-item--type_2 {
-        background-color: #6D55D8;
-
-        button.cluster-item__cell {
-            background-color: #6D55D8;
-            @include hover {
-                background-color: var(--active-2);
-
-                .cluster-item__cell-deps {
-                    svg {
-                        fill: #23FF98;
-                    }
-                }
-
-                .cluster-item__cell-num {
-                    color: #23FF98;
-                }
-
-                .cluster-item__cell-summ {
-                    color: #fff;
-                }
-            }
-        }
-
-        button.cluster-item__cell--type_1 {
-            background-color: #4F3F96;
-            @include hover {
-                background-color: var(--active-2);
-
-                .cluster-item__cell-deps {
-                    svg {
-                        fill: #23FF98;
-                    }
-                }
-
-                .cluster-item__cell-num {
-                    color: #23FF98;
-                }
-
-                .cluster-item__cell-summ {
-                    color: #fff;
-                }
             }
         }
     }
