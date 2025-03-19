@@ -22,15 +22,15 @@ var data = [{
     }
 }];
 
-function maybeDisposeRoot(divId) {
-    am5.array.each(am5.registry.rootElements, function(root) {
-        if (root.dom.id == divId) {
-            root.dispose();
-        }
-    });
-}
-
 function chartInit(divId, data) {
+    let seriesFill = '#121225';
+
+    let pageTheme = getMyCookie("PAGE_THEME");
+
+    if (pageTheme === 'LIGHT') {
+      seriesFill = '#EDEDF7';
+    }
+
     maybeDisposeRoot(divId);
 
     // Create root element
@@ -102,7 +102,7 @@ function chartInit(divId, data) {
       clustered: false,
       valueXField: "full",
       categoryYField: "category",
-      fill: '#ffffff'
+      fill: seriesFill
     }));
 
     series1.columns.template.setAll({

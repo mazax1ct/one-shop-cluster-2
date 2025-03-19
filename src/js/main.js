@@ -1,3 +1,23 @@
+function getMyCookie(name) {
+    var matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+function setMyCookie(cookieName, value) {
+    var date = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 7);
+    document.cookie = cookieName +"="+value+"; path=/; expires=" + date.toUTCString();
+}
+
+function maybeDisposeRoot(divId) {
+    am5.array.each(am5.registry.rootElements, function(root) {
+        if (root.dom.id == divId) {
+            root.dispose();
+        }
+    });
+}
+
 //кнопка бургер
 $(document).on('click', '.js-menu-toggler', function() {
   if(!$(this).hasClass('is-active')) {
@@ -58,6 +78,12 @@ $(document).on('afterLoad.fb', function( e, instance, slide ) {
 
 $(document).ready(function () {
   formInit();
+
+  let pageTheme = getMyCookie('PAGE_THEME');
+
+  if(pageTheme === 'LIGHT'){
+    $('html').addClass('light-theme');
+  }
 });
 
 //табы этапов в блоке фанансов в кластере
@@ -86,17 +112,10 @@ $(document).on('click', '.js-faq-tab-toggler', function () {
 $(document).on('click', '.js-theme-toggler', function () {
   var _this = $(this);
   if(!$('html').hasClass('light-theme')) {
-      var date = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 7);
-      document.cookie = "PAGE_THEME=LIGHT; path=/; samesite=strict; expires="+ date.toUTCString();
-      $('html').addClass('light-theme');
-      _this.find('use').attr('xlink:href', 'images/sprite.svg#moon_icon');
-      _this.attr('title', 'Светлая тема');
-      _this.find('.header__menu-link-text').text('Светлая тема');
+      setMyCookie('PAGE_THEME', 'LIGHT');
   } else {
-      document.cookie = "PAGE_THEME=; path=/; samesite=strict; Max-Age=-1;";
-      $('html').removeClass('light-theme');
-      _this.find('use').attr('xlink:href', 'images/sprite.svg#sun_icon');
-      _this.attr('title', 'Тёмная тема');
-      _this.find('.header__menu-link-text').text('Тёмная тема');
+      setMyCookie('PAGE_THEME', 'DARK');
   }
+
+  location.reload();
 });

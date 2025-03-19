@@ -1,23 +1,3 @@
-function getMyCookie(name) {
-    var matches = document.cookie.match(new RegExp(
-        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-    ));
-    return matches ? decodeURIComponent(matches[1]) : undefined;
-}
-
-function setMyCookie(value) {
-    var date = new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * 7);
-    document.cookie = "CHART_TYPE="+value+"; path=/; expires=" + date.toUTCString();
-}
-
-function maybeDisposeRoot(divId) {
-    am5.array.each(am5.registry.rootElements, function(root) {
-        if (root.dom.id == divId) {
-            root.dispose();
-        }
-    });
-}
-
 function chartInit(divId, chartType) {
   let interfaceColorsGrid = am5.color(0x666587);
   let interfaceColorsText = am5.color(0x666587);
@@ -54,8 +34,6 @@ function chartInit(divId, chartType) {
 
     seriesColumnsStart = am5.color(0x7D61FB);
     seriesColumnsStop = am5.color(0x40AEE5);
-    /*seriesColumnsShadow = am5.color(0x1336AC);
-    seriesColumnsShadowHover = am5.color(0x1E73FF);*/
 
     scrollbarXFill = am5.color(0xffffff);
     scrollbarXThumb = am5.color(0x8975E3);
@@ -345,7 +323,7 @@ $(document).ready(function () {
 
     if (chartType === undefined) {
         chartType = 'month';
-        setMyCookie(chartType);
+        setMyCookie('CHART_TYPE', chartType);
     }
 
     chartInit("chartdiv", chartType);
@@ -359,7 +337,7 @@ $(document).ready(function () {
 
         chartType = $(this).attr('data-interval');
 
-        setMyCookie(chartType);
+        setMyCookie('CHART_TYPE', chartType);
 
         chartInit("chartdiv", chartType);
 
