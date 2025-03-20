@@ -1,3 +1,17 @@
+.light-theme {
+    .color-legend--type_1 {
+        background-color: rgba(#4f3f96, 0.85);
+    }
+
+    .color-legend--type_2 {
+        background-color: #6D55D8;
+    }
+
+    .color-legend--type_3 {
+        background-color: #4f3f96;
+    }
+}
+
 .cluster-legend {
     align-items: center;
     display: flex;
